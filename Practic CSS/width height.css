@@ -3,5 +3,10 @@
     padding: 0;
 }
 div{
-    
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    border: 10px solid darkblue;
+    border-radius: 50%;
+    margin-top: 20px;
 }
