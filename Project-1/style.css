@@ -28,3 +28,6 @@ a:active{
 a:hover{
     color: white;
  }
+ td{
+    padding: 10px;
+ }
