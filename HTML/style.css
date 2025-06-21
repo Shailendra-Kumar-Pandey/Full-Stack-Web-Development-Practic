@@ -3,3 +3,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    /* position: relative; */
+}
+.box{
+    position: absolute;
+    left: 200px;
+    top: 200px;
+    width: 400px;
+    height: 200px;
+    border:5px solid red;
+    background-image:url(./asset/image/Hero.png);
+    background-size: 200px 200px;
+}
+h4,h5{
+    color: darkgoldenrod;
+}
+h5{
+    position: inherit;
+    left: 150px;
+    top:100px
+    
+}
