@@ -3,9 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    /* position: relative; */
-}
 .box{
     position: absolute;
     left: 200px;
@@ -23,5 +20,16 @@ h5{
     position: inherit;
     left: 150px;
     top:100px
-    
+}
+button{
+    background-color: red;
+    color:ghostwhite;
+    border: none ;
+    padding: 10px;
+    margin: 10px;
+    font-family: sans-serif;
+    border-radius: 35% ;
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
 }
