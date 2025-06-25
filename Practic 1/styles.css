@@ -9,8 +9,17 @@ body{
     color: #555;
 }
 .container{
-    width: 90%;
+    width: 100%;
     margin: auto;
     overflow: hidden;
-
+}
+header{
+    background: #35424a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+h1{
+    margin: 0;
+    font-size: 2.5em;
 }
