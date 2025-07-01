@@ -99,3 +99,21 @@ footer{
     bottom: 0;
     width: 100%;
 }
+@media screen and (max-width: 768px) {
+    #secondary-section, aside {
+        float: none;
+        width: 100%;
+    }
+    #secondary-section {
+        margin-bottom: 20px;
+    }
+    nav ul li {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+        font-size: 18px;
+    }
+    
+}
