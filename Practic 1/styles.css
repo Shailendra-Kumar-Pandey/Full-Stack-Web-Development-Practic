@@ -95,8 +95,7 @@ footer{
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
+    text-align: center;
     width: 100%;
 }
 @media screen and (max-width: 768px) {
