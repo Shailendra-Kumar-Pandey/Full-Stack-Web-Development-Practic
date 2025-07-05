@@ -10,4 +10,15 @@ div{
     width: 200px;
     height: 200px;
     background-color: red;
+    position: relative;
+    animation-name: square;
+    animation-duration: 10s;
+}
+@keyframes square {
+    from{
+        background-color: darkblue;
+    }
+    to{
+        background-color: darkgreen;
+    }
 }
