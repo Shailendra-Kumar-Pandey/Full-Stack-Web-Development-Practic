@@ -13,12 +13,42 @@ div{
     position: relative;
     animation-name: square;
     animation-duration: 10s;
+    animation-iteration-count:infinite ;
+
 }
-@keyframes square {
+/* @keyframes square {
     from{
         background-color: darkblue;
     }
     to{
         background-color: darkgreen;
+    }
+} */
+
+@keyframes square {
+    0%{
+        background-color: darkred;
+        left: 0px;
+        top: 0px;
+    }
+    25%{
+        background-color: darkblue;
+        left: 700px;
+        top: 0px;
+    }
+    50%{
+        background-color: black;
+        left: 700px;
+        top: 400px;
+    }
+    75%{
+        background-color: yellow;
+        left: 0px;
+        top: 400px
+    }
+    100%{
+        background-color: darkgreen;
+        left: 0px;
+        top: 0px;
     }
 }
