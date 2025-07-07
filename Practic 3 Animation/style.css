@@ -12,15 +12,15 @@ div{
     height: 200px;
     background-color: red;
     position: relative;
-    animation-name: square;
+    /* animation-name: square;
     animation-duration: 10s;
     animation-timing-function: linear;
     animation-delay: 1s;
     animation-iteration-count:infinite;
     animation-direction: alternate;
     animation-fill-mode: backwards;
-    animation-play-state: running;
-
+    animation-play-state: running; */
+    animation: square 10s linear 1s infinite alternate backwards running;
 }
 /* @keyframes square {
     from{
