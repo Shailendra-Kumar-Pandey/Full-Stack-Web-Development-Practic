@@ -28,7 +28,7 @@ h1 {
 .square{
     width: 120px;
     height: 120px;
-    border: 10px solid purple;
+    border: 5px solid purple;
     position: absolute;
     animation-name: square;
     animation-duration: 3s;
@@ -44,9 +44,9 @@ h1 {
     100%{border-color: darkmagenta; transform: scale(1.1); }
 }
  @keyframes square {   /* square round to clock wise */
-    0%{left:;}
-    25%{}
-    50%{}
-    75%{}
-    100%{}
-}
+    0%   {transform: rotate(0deg); }
+    25%  { border-width: 10px; border-color: lightblue;}
+    50%  { border-width: 15px; border-color: crimson;}
+    75%  { border-width: 20px; border-color: lightgray;}
+    100% { border-width: 5px; transform: rotate(360deg); }
+ }
