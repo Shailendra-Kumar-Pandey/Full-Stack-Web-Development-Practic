@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    color: crimson;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    text-align: center;
+}
+
+div{
+    width:100px;
+    height:100px;
+    margin:200px auto;
+    background-color: darkmagenta;
+
+    transform: rotate(45deg);
+    transform: scale(2);
+    transform: scaleX(2);
+    transform: scaleY(13);
+    transform: skewX(-20deg);
+    transform: skewY(30deg);
+    transform: scale(1);
+    transform: translate(100px);
+    transform: translate(-200px);
+    transform: translate(100px, 100px);
+    transform: translateX(200px);
+    transform: scale(1); 
+}
+
+div:hover{
+    cursor: pointer;
+    transition: all 2s linear;
+    transform: rotate(90deg);
+    transform:rotateX(60deg);
+    transform:rotateY(60deg); 
+}
