@@ -16,14 +16,15 @@ div{
     height: 100px;
     background-color: darkblue;
     margin: 30px auto;
-    transition-property: all ;
-    transition-duration: 3s;
-    transition-timing-function: ease-in;
-    transition-behavior: alternate;
+   
 }
 div:hover{
     width: 200px;
     height: 200px;
+     transition-property: all ;
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+    transition-behavior: alternate;
     transform:rotate(360deg);
     border-radius: 50%;
     background-color: yellow;
