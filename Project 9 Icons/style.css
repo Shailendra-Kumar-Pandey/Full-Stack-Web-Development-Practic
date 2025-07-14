@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h3{
+    margin: 20px auto;
+    color: crimson;
+    text-align: center;
+    font-size: 50px;
+}
+h1{
+    font-family: sans-serif;
+    margin: 30px auto;
+    color: darkblue;
+    text-align: center;
+}
+i{
+    color: darkcyan;
+    font-size: 30px;
+    padding: 20px;
+}
