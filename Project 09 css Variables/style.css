@@ -14,6 +14,7 @@ body{
     color: black;
 }
 h1{
+    text-align: center;
     font-size: 2rem;
     color: var(--font_theme_color);
 }
@@ -22,6 +23,7 @@ h1{
     color: var(--font_theme_color);
     padding: 20px 0;
     text-align: center;
+    border-radius: 10px;
 }
 .logo{
     margin: 20px auto;
@@ -49,9 +51,45 @@ hr{
     position: relative;
     bottom: 0;
     width: 100%;
+    border-radius: 10px;
 }
 .education{
     margin: 10px auto;
     width: 100%;
-    
+    background-color:var(--font_theme_color);
+    color:azure;
+    padding: 20px;
+    border-radius: 10px;
+}
+.education ul{
+    list-style-type: none;
+    padding: 0;
+}
+.content{
+    margin: 20px auto;
+    width: 100%;
+    background-color: var(--background_theme_color);
+    color: var(--font_theme_color);
+    padding: 20px;
+    border-radius: 10px;
+}
+.skills{
+    margin: 20px auto;
+    width: 100%;
+    background-color: var(--font_theme_color);
+    color: azure;
+    padding: 20px;
+    border-radius: 10px;
+}
+.skills ul{
+    list-style-type: none;
+    padding: 0;
+}
+.contact{
+    margin: 20px auto;
+    width: 100%;
+    background-color: var(--background_theme_color);
+    color: var(--font_theme_color);
+    padding: 20px;
+    border-radius: 10px;
 }
