@@ -1,6 +1,6 @@
 :root{
-    --background_theme_color: lightBlue;
-    --font_theme_color: rgb(32, 30, 30);
+    --background_theme_color: darkslategray;
+    --font_theme_color: darkblue;
 }
 *{
     margin: 0;
