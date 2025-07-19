@@ -17,6 +17,12 @@ h1{
 }
 i{
     color: darkcyan;
-    font-size: 30px;
-    padding: 20px;
+    font-size: 100px;
+    padding: 10px;
+}
+
+body .material-icons{
+    font-size:100px;
+    color: darkblue;
+    padding: 10px;
 }
