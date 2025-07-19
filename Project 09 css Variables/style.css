@@ -1,5 +1,5 @@
 :root{
-    --background_theme_color: darkslategray;
+    --background_theme_color: rgb(238, 191, 103);
     --font_theme_color: darkblue;
 }
 *{
