@@ -1,1 +1,42 @@
-.top-50
+body{
+      background-color:  rgba(240, 231, 194, 0.144);
+      color: #333;
+}
+h1{
+    cursor: pointer;
+}
+.carousel-inner{
+    height: 450px;
+    overflow: hidden; 
+    object-fit:fill;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .carousel-inner{
+        height: auto;
+    }    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {
+     .carousel-inner{
+        height: auto;
+    }
+} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+     .carousel-inner{
+        height: auto;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+     .carousel-inner{
+        height: auto;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
