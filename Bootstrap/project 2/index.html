@@ -18,9 +18,7 @@
     h1{
       cursor: pointer;
     }
-    .theam{
-      
-    }
+    
   </style>
    <script
       src="https://kit.fontawesome.com/3759ee4088.js"
@@ -30,13 +28,13 @@
 
 <body>
   <!-- Navigation bar -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="background-color: lab(79% -4.13 61.03);">
         <nav class="navbar navbar-expand-lg " style="background-color: lab(79% -4.13 61.03);" data-bs-theme="dark">
     <div class="container-fluid">
-      <h2 style="cursor: pointer;" class="navbar-brand mb-0 d-flex justify-content-end align-items-center" href="#">
+      <h2 style="cursor: pointer;" class="navbar-brand mb-0 d-flex justify-content-end align-items-center" href="#">eShopping
         <img src="./favicon_io/favicon.ico"
         alt=""
-      /> eShopping Mart
+      /> 
       </h2>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,19 +43,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active fs-5" aria-current="page" href="#">Home</a>
+            <a class="nav-link active fs-5 text-dark" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  fs-5" href="#">About us</a>
+            <a class="nav-link active fs-5 text-dark" href="#">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link  fs-5" href="#">Categories</a>
+            <a class="nav-link active fs-5 text-dark" href="#">Categories</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="#">Partner with us</a>
+            <a class="nav-link active fs-5 text-dark" href="#">Partner with us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link fs-5" href="#">Careers</a>
+            <a class="nav-link active fs-5 text-dark" href="#">Careers</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -73,39 +71,48 @@
     </div>
   <!-- End of navbar  -->
   <div class="container-fluid">
-    <div id="carouselExample" class="carousel slide">
-      <div class="carousel-inner theam">
-        <div class="carousel-item active">
-          <img src="./slider/4 (1).jpg" class="d-block w-100" alt="..." />
+         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" >
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6" aria-label="Slide 7"></button>
+          </div>
+          <div class="carousel-inner" style=" height: 450px;overflow: hidden; object-fit:fill;">
+            <div class="carousel-item active">
+              <img src="./slider/4 (1).jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption top-50 d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./slider/3 (1).jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption top-50 d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="./slider/2 (1).jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption top-50 d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p>
+              </div>
+            </div>
+          </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <div class="carousel-item">
-          <img src="./slider/3 (1).jpg" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./slider/1 (1).jpg" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./slider/2 (1).jpg" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./slider/5 (1).jpg" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./slider/7 (1).jpg" class="d-block w-100" alt="..." />
-        </div>
-        <div class="carousel-item">
-          <img src="./slider/9 (1).jpg" class="d-block w-100" alt="..." />
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
   </div>
   <!-- End of Slider -->
   <div class="container-fluid">
