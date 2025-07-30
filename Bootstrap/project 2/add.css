@@ -5,10 +5,21 @@ body{
 h1{
     cursor: pointer;
 }
+
 .carousel-inner{
+    width: 100%;
     height: 440px;
     overflow: hidden; 
     object-fit:fill;
+}
+.black-overlay{
+    position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-color: rgba(0, 0, 0, 0.5) !important; /* Black with transparency */
+      background-blend-mode: saturation !important;
 }
 .shedow{
     background-color: #84ceeb6c !important;

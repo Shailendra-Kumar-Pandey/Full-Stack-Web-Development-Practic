@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Black Shadow Overlay</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .image-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .image-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .black-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Black with transparency */
+      z-index: 1;
+    }
+
+    .image-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body class="p-5">
+
+  <div class="container text-center">
+    <div class="image-wrapper">
+      <img src="../Bootstrap/project 2/slider/6 (1).jpg" alt="Overlay Example" class="img-fluid rounded">
+      <div class="black-overlay"></div>
+      <div class="image-text h4">Overlay Text</div>
+    </div>
+  </div>
+
+</body>
+</html>
