@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Contact Section</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    /* ===== Base Styles ===== */
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+    }
+
+    .contact-box {
+      background-color: #f8f9fa;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-icon {
+      font-size: 28px;
+      color: #0d6efd;
+      margin-bottom: 10px;
+    }
+
+    .footer-menu {
+      background-color: #4fc3f7;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .footer-menu a {
+      display: inline-block;
+      margin: 8px 15px;
+      color: black;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-menu a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====== Media Queries ====== */
+
+    /* ✅ For Tablets (width ≤ 768px) */
+    @media (max-width: 768px) {
+      .contact-box {
+        font-size: 16px;
+        padding: 15px;
+      }
+
+      .contact-icon {
+        font-size: 24px;
+      }
+
+      .footer-menu a {
+        display: block;
+        margin: 10px 0;
+        font-size: 15px;
+      }
+    }
+
+    /* ✅ For Mobile (width ≤ 480px) */
+    @media (max-width: 480px) {
+      .contact-box {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .contact-icon {
+        font-size: 20px;
+      }
+
+      .footer-menu {
+        padding: 10px 0;
+      }
+
+      .footer-menu a {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 📍 Contact Section -->
+<div class="container my-5">
+  <div class="row g-4">
+    <div class="col-12 col-md-4">
+      <div class="contact-box">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <strong>Address</strong><br>
+        Maa Sharda Bhawan<br>
+        In front of Samaritan Hospital<br>
+        Pateri, Satna, MP 485001
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="contact-box">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <strong>Phone</strong><br>
+        +91 9806638963
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="contact-box">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <strong>Email</strong><br>
+        shailendrakr2010@gmail.com
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 📄 Footer Menu -->
+<div class="footer-menu">
+  <a href="#"><i class="fas fa-sitemap"></i> Sitemap</a>
+  <a href="#"><i class="fas fa-lock"></i> Privacy Policy</a>
+  <a href="#"><i class="fas fa-file-contract"></i> Terms of Use</a>
+  <a href="#"><i class="fas fa-handshake"></i> Investor Relations</a>
+</div>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -17,7 +17,7 @@ h1{
       top: 0 !important;
       left: 0 !important;
       width: 100% !important;
-      height: 100% !important;
+      height:99% !important;
       background-color: rgba(0, 0, 0, 0.5) !important; /* Black with transparency */
       background-blend-mode: saturation !important;
 }
@@ -39,25 +39,53 @@ b p span{
 .btn{
     background-color:#8860d0 !important ;
 }
+  .contact-box {
+      /* background-color: #f8f9fa; */
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .contact-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+/* .main-div{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(189, 111, 10);
+    margin: auto 20px;
+} */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .carousel-inner{
         height: auto;
-    }    
+    }
+    
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-/* @media only screen and (min-width: 600px) {
-     .carousel-inner{
+@media only screen and (man-width: 768px) {
+     /* .carousel-inner{
         height: auto;
-    }
-} */
+    }*/
+    .footer-bar {
+    flex-direction: column;
+    text-align: center;
+  }
+}
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
      .carousel-inner{
         height: auto;
     }
+    .footer-bar a {
+    padding: 5px 0;
+  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -68,4 +96,45 @@ b p span{
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 1200px) {...} */
+/* @media only screen and (min-width: 480px) {
+    
+} */
+  @media (max-width: 768px) {
+      .contact-box {
+        width: 100%;
+        height: 10%;
+        margin: 0;
+        padding: 0;;
+        }
+
+      .contact-icon {
+        margin-top: 0;
+        font-size: 15px;
+      }
+
+      .footer-menu a {
+        display: block;
+        margin: 10px 0;
+        font-size: 15px;
+      }
+    }
+
+    /* ✅ For Mobile (width ≤ 480px) */
+    @media (max-width: 480px) {
+      /* .contact-box {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      .contact-icon {
+        font-size: 20px;
+      } */
+
+      .footer-menu {
+        padding: 10px 0;
+      }
+
+      .footer-menu a {
+        font-size: 14px;
+      }
+    }
