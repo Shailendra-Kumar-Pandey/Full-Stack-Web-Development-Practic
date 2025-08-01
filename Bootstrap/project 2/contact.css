@@ -1,0 +1,37 @@
+.contact-section {
+            margin: 16px auto;
+            background: azure;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+            overflow: hidden;
+        }
+
+        .contact-image {
+            background: url('Customer-Portals.jpg') center center/cover no-repeat;
+            min-height: 400px;
+            border-radius: 10px;
+        }
+
+        .contact-form {
+            padding: 40px;
+        }
+
+        .form-control,
+        .btn {
+            border-radius: 30px;
+        }
+
+        .form-icon {
+            margin-right: 10px;
+            color: #5ab9ea;
+        }
+
+        @media (max-width: 768px) {
+            .contact-image {
+                min-height: 250px;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+        }
