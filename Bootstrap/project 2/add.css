@@ -39,53 +39,51 @@ b p span{
 .btn{
     background-color:#8860d0 !important ;
 }
-  .contact-box {
-      /* background-color: #f8f9fa; */
+.contact-box {
       padding: 10px;
       margin-bottom: 15px;
       border-radius: 10px;
       text-align: center;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
       transition: all 0.3s ease;
-    }
+}
 
-    .contact-icon {
+.contact-icon {
       font-size: 28px;
       margin-bottom: 10px;
-    }
+}
 
 footer-menu {
       padding: 15px 0;
       text-align: center;
-    }
-
-    .footer-menu a {
+}
+.footer-menu a {
       display: inline-block;
       margin: 8px 15px;
       font-weight: 500;
-    }
+}
 
-     .modal-content {
+.modal-content {
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0,0,0,0.25);
-    }
+}
 
-    .modal-header {
+.modal-header {
       background-color: #5ab9ea;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-    }
+}
 
-    .modal-footer {
+.modal-footer {
       justify-content: center;
-    }
+}
 
-    a:hover{
+a:hover{
       /* background-color: #8860d0; */
       color: azure !important;
       border-bottom: 1.5px solid azure !important;
-    }
-    @media (max-width: 576px) {
+}
+@media (max-width: 576px) {
       .modal-dialog {
         margin: 10px;
       }
@@ -93,58 +91,30 @@ footer-menu {
       .modal-content {
         font-size: 15px;
       }
-    }
-/* .main-div{
-    width: 100%;
-    height: 200px;
-    background-color: rgb(189, 111, 10);
-    margin: auto 20px;
-} */
-/* Extra small devices (phones, 600px and down) */
+}
+
 @media only screen and (max-width: 600px) {
     .carousel-inner{
         height: auto;
     }
     
 }
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (man-width: 768px) {
-     /* .carousel-inner{
-        height: auto;
-    }*/
-    .footer-bar {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
-     .carousel-inner{
-        height: auto;
-    }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
      .carousel-inner{
         height: auto;
     }
 }
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-/* @media only screen and (min-width: 480px) {
-    
-} */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
       .contact-box {
         width: 100%;
         height: 10%;
         margin: 0;
         padding: 0;;
         }
-
+         .carousel-inner{
+        height: auto;
+    }
       .contact-icon {
         margin-top: 0;
         font-size: 15px;
@@ -155,19 +125,9 @@ footer-menu {
         margin: 10px 0;
         font-size: 15px;
       }
-    }
+}
 
-    /* ✅ For Mobile (width ≤ 480px) */
-    @media (max-width: 480px) {
-      /* .contact-box {
-        font-size: 15px;
-        padding: 10px;
-      }
-
-      .contact-icon {
-        font-size: 20px;
-      } */
-
+@media (max-width: 480px) {
       .footer-menu {
         padding:0;
         text-align: center;
@@ -176,4 +136,4 @@ footer-menu {
       .footer-menu a {
         font-size: 14px;
       }
-    }
+}
