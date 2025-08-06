@@ -9,6 +9,12 @@ console.table([name, age, mobile_no]);
 var x = 20;
 const y = 10;
 let z = 10;
+console.log("x -", x);
+console.log("y -", y);
+console.log("z -", z);
+
 if (true) {
+    var x = 30;
+    
     
 }
