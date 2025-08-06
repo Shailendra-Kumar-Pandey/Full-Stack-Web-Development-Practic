@@ -8,3 +8,6 @@ console.log(typeof age + " : " + age); // number
 
 let name = "John"; // string
 console.log(typeof name +" : "+ name); // string
+
+let isStudent = true; // boolean
+console.log(typeof isStudent + " : " + isStudent); // boolean
