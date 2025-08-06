@@ -24,3 +24,24 @@ console.log(typeof symbol ); // symbol
 let bigIntValue = BigInt(123456789012345678901234567890); // bigint
 console.log(typeof bigIntValue + " : " + bigIntValue); // bigint
 
+/* Output -
+
+number : 30
+string : John
+boolean : true
+object : null
+undefined : undefined
+symbol
+bigint : 123456789012345677877719597056890n  */
+
+
+// 2 non-primitive datatypes
+
+let students = ["shailendra", "sachin", "sanjay"]; // array
+
+let data = students; // reference to the array
+
+students.push("ramesh"); // modifying the array
+students.push("Gayatri"); // modifying the array
+
+console.log(students == data)
