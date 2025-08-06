@@ -18,8 +18,8 @@ console.log(typeof height + " : " + height); // object (null is a special case i
 let weight; // undefined
 console.log(typeof weight + " : " + weight); // undefined
 
-let symbol = Symbol("unique"); // symbol
-console.log(typeof symbol + " : " + symbol); // symbol
+let symbol = Symbol("121"); // symbol
+console.log(typeof symbol ); // symbol
 
 let bigIntValue = BigInt(123456789012345678901234567890); // bigint
 console.log(typeof bigIntValue + " : " + bigIntValue); // bigint
