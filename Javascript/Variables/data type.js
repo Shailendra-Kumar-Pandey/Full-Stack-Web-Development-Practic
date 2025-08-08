@@ -42,6 +42,7 @@ let students = ["shailendra", "sachin", "sanjay"]; // array
 let data = students; // reference to the array
 
 students.push("ramesh"); // modifying the array
+
 students.push("Gayatri"); // modifying the array
 
 console.log(students == data)
