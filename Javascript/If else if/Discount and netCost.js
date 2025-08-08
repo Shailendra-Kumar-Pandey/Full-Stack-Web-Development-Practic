@@ -5,7 +5,7 @@
  If C > 30000 and <= 40000 then R = 40%
  If C > 40000 then R = 50% */
 
- const cost = 30000;
+ const cost = 10000;
 
  let discount;
  let netCost;
