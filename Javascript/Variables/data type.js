@@ -47,3 +47,8 @@ students.push("Gayatri"); // modifying the array
 
 console.log(students == data)
 
+
+
+let marks = 80;
+
+
