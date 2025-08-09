@@ -1,3 +1,5 @@
+/* Write a program to find the biggest number among three numbers */ 
+
 const a = 30;
 const b = 20;
 const c = 50;

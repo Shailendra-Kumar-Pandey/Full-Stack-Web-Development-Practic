@@ -13,3 +13,30 @@ if (true) {
 }
 
 console.log("A -", a);
+
+if (true){
+console.log(username);   // undefined
+}
+var username = "John Doe";
+/*
+if (true){
+console.log(username1);   // Error: username1 is not defined
+}
+let username1 = "John Doe";
+*/
+var username2 = "John Doe";
+if (true){
+    console.log(username2);   // John Doe
+    username2 = "John";
+}
+console.log(username2);   // John
+
+
+
+// let abc =20;
+if (true) {
+    // console.log(abc);   // 20
+    let abc = 30;  // Error: Identifier 'abc' has already been declared
+    console.log(abc);   // 30
+}
+
