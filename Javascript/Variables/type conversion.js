@@ -62,6 +62,3 @@ console.log(Boolean(null)); // false - null to boolean conversion
 console.log(Boolean(undefined)); // false - undefined to boolean conversion
 console.log(Boolean([])); // true - empty array to boolean conversion
 console.log(Boolean([1, 2, 3])); // true - non-empty array to boolean conversion
-
-console.log(null == undefined); // true - loose equality
-console.log(null === undefined); // false - strict equality

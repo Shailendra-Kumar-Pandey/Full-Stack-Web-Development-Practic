@@ -45,10 +45,7 @@ students.push("ramesh"); // modifying the array
 
 students.push("Gayatri"); // modifying the array
 
-console.log(students == data)
-
-
-
-let marks = 80;
-
-
+console.log(students == data) // true, both refer to the same array
+console.log(students === data) // true, both refer to the same array
+console.log(students); // ["shailendra", "sachin", "sanjay", "ramesh", "Gayatri"]
+console.log(data); // ["shailendra", "sachin", "sanjay", "ramesh", "Gayatri"]
