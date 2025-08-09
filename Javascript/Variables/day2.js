@@ -13,8 +13,4 @@ console.log("x -", x);
 console.log("y -", y);
 console.log("z -", z);
 
-if (true) {
-    var x = 30;
-    
-    
-}
+console.table([x, y, z]);
