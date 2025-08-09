@@ -4,6 +4,7 @@ const a = 30;
 const b = 70;
 const c = 50;
 let big = a;
+
 if(a < b){
     big = b;
 }
