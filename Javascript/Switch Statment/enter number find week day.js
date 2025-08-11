@@ -1,6 +1,6 @@
 /* write a program to find the week day */
 
-const day = 3;
+const day = 5;
 switch (day) {
     case 1:
         console.log("Monday");
@@ -27,4 +27,3 @@ switch (day) {
         console.log("Invalid day");
         break;
 }
- 
