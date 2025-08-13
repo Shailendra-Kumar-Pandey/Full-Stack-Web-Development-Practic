@@ -81,6 +81,6 @@ console.log(student);       //  print full object
 let property  = "first Name";       
 let value = "Gayatri";
 
-student[property] = value;      
+student[property] = value;      // update value in first name
 
-console.log(student);
+console.log(student);           // print full object
