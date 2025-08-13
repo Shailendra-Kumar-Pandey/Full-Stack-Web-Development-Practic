@@ -17,6 +17,16 @@ console.log(student[0].name); // Print name of first student
 
 let newResultArr = [];
 
-for (let i = 0; i < students.length; i ++){
-    if()
+
+for (let i = 0; i < student.length; i ++){
+    if(student[i].age >= 18 && student[i].city == "Satna"){
+        newResultArr.push(student[i].name, student[i].age);
+    }
 }
+
+// console.log(newResultArr);  //  only print age >= 18 
+
+// console.log(newResultArr);      // Only print age >= 18 && city = "Satna"
+
+// console.log(newResultArr);      // Only print [ 'Shailendra', 29, 'Gayatri', 26 ]
+
