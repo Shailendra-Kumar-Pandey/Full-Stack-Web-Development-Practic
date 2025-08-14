@@ -10,4 +10,7 @@ function print(){
     console.log("Hello Bro...");
 }
 
-print();
+print();            // calling function (execute function inside statement)
+
+console.log(print());       // print function inside with return *undefined
+
