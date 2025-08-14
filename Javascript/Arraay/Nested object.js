@@ -6,4 +6,14 @@ const data = [
 ]
 
 
-console.log(data); 
+console.log(data);          // Print full array
+
+console.log(data[1]);           // print array in 1st index
+
+console.log(data[1].data1);     // Print for nested array
+
+console.table(data[1].data1);       // Print for nested array in table format
+
+console.log(data[1].data1[0]);      //  Gomti Prashad Sharma
+
+console.log(data[1].data1[2]);      // Saleha, Panna (M.P.)
