@@ -6,11 +6,26 @@ function <functionName>(){
 }
 */
 
+/*      //Without return (void function) 
 function print(){
     console.log("Hello Bro...");
 }
 
-print();            // calling function (execute function inside statement)
+print();            // calling function (execute function inside statement)     // hello bro....
 
-console.log(print());       // print function inside with return *undefined
+console.log(print());       // print function inside with return *undefined // hello bro.... undefined
+
+*/
+
+/*
+function sumPrint(){
+    console.log(10 + 50);
+    return "sum";
+}
+
+sumPrint();         // print - 60
+
+console.log(sumPrint());        // print - 60   sum
+
+*/
 
