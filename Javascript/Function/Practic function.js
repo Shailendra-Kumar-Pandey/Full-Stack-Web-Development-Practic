@@ -17,7 +17,7 @@ console.log(print());       // print function inside with return *undefined // h
 
 */
 
-/*
+/*      // return something function 
 function sumPrint(){
     console.log(10 + 50);
     return "sum";
@@ -28,4 +28,6 @@ sumPrint();         // print - 60
 console.log(sumPrint());        // print - 60   sum
 
 */
+
+
 
