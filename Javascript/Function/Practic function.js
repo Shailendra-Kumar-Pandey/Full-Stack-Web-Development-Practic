@@ -35,5 +35,8 @@ function sothing (num1, num2){          // num1 and num2 are parameters
     return num1 + num2;             // return the sum of num1 and num2
 }
 
-sothing(10, 20);       // calling function with arguments
+sothing(10, 20);       // calling function with arguments           // print nothing
 
+let result = sothing(10, 20);       // calling function with arguments and storing the result
+
+console.log(result);
