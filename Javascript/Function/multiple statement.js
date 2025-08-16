@@ -15,3 +15,8 @@ function multipleStatements(num){
 multipleStatements(4);          // print 1
 
 console.log(multipleStatements(4));          // print 1 and Even Number
+
+console.log(multipleStatements(7));          // print 2; 3 and Odd Number
+
+let result = multipleStatements(7);
+console.log(result);          // print 2; 3 and Odd Number
