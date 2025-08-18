@@ -1,0 +1,1 @@
+/* Write a program to print the first 10 prime numbers  */
