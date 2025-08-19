@@ -2,3 +2,8 @@
 
 // 1. Function Declaration 
 
+
+function someThing() {
+    // code
+}
+
