@@ -1,11 +1,14 @@
 /* Write a program to print the first 10 prime numbers  */
 
-for (let i = 0; i < 100; i++) {
-    for (let j = 0; j < i; j++) {
-            if(j % i == 0)
-                break;        
+
+ let j=2,i=2;
+    for(i=2;i<70;i++)
+    {
+        for(j=2;j<i;j++)
+        {
+            if(i%j==0)
+                break;
+        }
+        if(i==j)
+            console.log(i);
     }
-    if(i==j){
-        console.log(i);
-    }
-}
