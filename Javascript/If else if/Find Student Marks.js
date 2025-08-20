@@ -8,11 +8,11 @@ Above 80 : Grade A
 let marks = 99;
 
 if(marks >= 0 && marks <=34){
-    console.log("Bro..You are Fail...");
+    console.log(marks + " : Bro..You are Fail...");
 }else if(marks >= 35 && marks <= 60){
-    console.log("Grade - C")
+    console.log(marks + " : Grade - C")
 }else if(marks >= 61 && marks <= 80){
-    console.log("Grade - B")
+    console.log(marks + " : Grade - B")
 }else{
-    console.log("Grade - A")
+    console.log(marks + " : Grade - A")
 }
