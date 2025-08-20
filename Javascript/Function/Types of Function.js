@@ -30,3 +30,5 @@ const someFunction = function() {
 
 someFunction(); // Invoking the function
 console.log(someFunction()); // Logging the function itself return undifine
+
+
