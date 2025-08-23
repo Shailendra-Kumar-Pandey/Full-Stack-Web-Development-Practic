@@ -29,12 +29,10 @@ console.log(bankCustmarData);           // Print full Object
 
 property = "pinCode";
 
-bankCustmarData[property] = ""
+bankCustmarData[property] = ""          //  add element 
 
-console.log(bankCustmarData);
+console.log(bankCustmarData);       // Print full object
 
-bankCustmarData.custmarId = 1234567890
+bankCustmarData.custmarId = 1234567890      // Update custmar ID
 
-console.log(bankCustmarData);
-
-
+console.log(bankCustmarData);           // Print full Object
