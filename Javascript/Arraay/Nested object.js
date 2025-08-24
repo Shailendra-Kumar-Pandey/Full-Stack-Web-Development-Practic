@@ -2,7 +2,7 @@
 
 const data = [
     { name: "Shailendar Kumar Pandey", age: 30, location: "India", address: {pinCode: 485001, city: "Satna", state: "Madhya Pradesh"} },
-    { name : "Gayatri Shailendra Pandey", age: 27, location: "India", data1 : [fatherName= "Gomti Prashad Sharma",age= 48, address = "Saleha, Panna (M.P)"]}
+    { name : "Gayatri Shailendra Pandey", age: 27, location: "India", data1 : ["Gomti Prashad Sharma", 48, "Saleha, Panna (M.P)"]}
 ]
 
 
