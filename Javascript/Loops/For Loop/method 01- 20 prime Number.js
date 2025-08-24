@@ -1,4 +1,4 @@
-/* Write a program to print the first 10 prime numbers  */
+/* Write a program to print the first 20 prime numbers  */
 
 
  let j=2, i=2, count=0;
