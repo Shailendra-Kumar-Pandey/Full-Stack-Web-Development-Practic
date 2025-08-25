@@ -51,3 +51,16 @@ console.log(add(5, 10)); // 15
 const add1 = (num1, num2) => num1 + num2;  // Single line arrow function
 
 console.log(add1(15, 10)); // 25
+
+// 4. imidiately Invoked Function Expression (IIFE)
+
+(function(){
+    console.log("This is an IIFE Function");
+})();
+
+
+(()=>{
+    console.log("This is an Arrow (IIFE Function) Function")
+})();
+
+
