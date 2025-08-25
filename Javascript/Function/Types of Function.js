@@ -32,3 +32,22 @@ someFunction(); // Invoking the function
 console.log(someFunction()); // Logging the function itself return undifine
 
 
+// 3. Arrow Function
+ 
+const doSomething = () => {
+    console.log("This is an Arrow Function");
+}
+
+doSomething();  // Invoking the function
+
+console.log(doSomething()); // Logging the function itself return undifine
+
+const add = (num1, num2) => {
+    return num1 + num2;
+}
+
+console.log(add(5, 10)); // 15
+
+const add1 = (num1, num2) => num1 + num2;  // Single line arrow function
+
+console.log(add1(15, 10)); // 25
