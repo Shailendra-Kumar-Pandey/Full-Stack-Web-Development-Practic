@@ -43,3 +43,8 @@ console.log(data.endsWith("Pandey"));  // true
 console.log(data.endsWith("dey"));   // true
 console.log(data.endsWith("Kumar"));  // false
 
+
+// 6. startsWith()    // return boolean value
+
+console.log(data.startsWith("Shailendra"));  // true
+console.log(data.startsWith("Kumar"));        // false
