@@ -48,3 +48,13 @@ console.log(data.endsWith("Kumar"));  // false
 
 console.log(data.startsWith("Shailendra"));  // true
 console.log(data.startsWith("Kumar"));        // false
+
+
+// 7. repeat()
+
+console.log(data.repeat(2));  // Shailendra Kumar PandeyShailendra Kumar Pandey
+console.log(data.repeat(1000));  // Shailendra Kumar PandeyShailendra Kumar Pandey
+
+// 8. slice()
+
+
