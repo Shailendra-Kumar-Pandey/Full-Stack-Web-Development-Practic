@@ -25,3 +25,21 @@ console.log(data.toLocaleLowerCase());  // shailendra kumar pandey
 console.log(data.toUpperCase());  // SHAILENDRA KUMAR PANDEY
 
 
+// 4. concat()
+
+console.log(data.concat(" ", "is", " ", "a", " ", "developer"));  // Shailendra Kumar Pandey is a developer
+
+
+console.log(data.concat(` is a developer`))     // Shailendra Kumar Pandey is a developer
+
+console.log(`${data} is a Software Engineer`)     // Shailendra Kumar Pandey is a Software Engineer
+
+console.log(data + " is a Software Developer")     // Shailendra Kumar Pandey is a Software Developer
+
+// 5. endsWith()        // return boolean value 
+
+console.log(data.endsWith("y"));      // true
+console.log(data.endsWith("Pandey"));  // true
+console.log(data.endsWith("dey"));   // true
+console.log(data.endsWith("Kumar"));  // false
+
