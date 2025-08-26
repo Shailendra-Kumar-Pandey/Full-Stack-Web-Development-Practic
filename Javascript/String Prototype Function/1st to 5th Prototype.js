@@ -55,6 +55,8 @@ console.log(data.startsWith("Kumar"));        // false
 console.log(data.repeat(2));  // Shailendra Kumar PandeyShailendra Kumar Pandey
 console.log(data.repeat(1000));  // Shailendra Kumar PandeyShailendra Kumar Pandey
 
-// 8. slice()
+// 8. replace()
+
+console.log(data.replace("Shailendra", "John"));  // John Kumar Pandey
 
 
