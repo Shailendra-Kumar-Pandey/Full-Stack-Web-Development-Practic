@@ -59,4 +59,26 @@ console.log(data.repeat(1000));  // Shailendra Kumar PandeyShailendra Kumar Pand
 
 console.log(data.replace("Shailendra", "John"));  // John Kumar Pandey
 
+// 9. slice()
+
+console.log(data.slice(0, 10));  // Shailendra  // 0 to 9
+console.log(data.slice(10));      // Kumar Pandey   // 10 to end
+
+console.log("Gayatri".slice(0, 4));  // Gaya
+console.log("Gayatri".slice(4));      // tri
+
+// 10. split()
+
+console.log(data.split(" "));  // ["Shailendra", "Kumar", "Pandey"] 
+const [firstName, lastName] = data.split(" ");
+console.log(firstName);  // Shailendra
+console.log(lastName);   // Kumar Pandey
+console.log(typeof firstName);  // string
+
+const [fName, mName, lName] = data.split(" ");  // Shailendra, Kumar, Pandey
+
+const fullName = data.split(" ");  // ["Shailendra", "Kumar", "Pandey"]
+console.log(fullName);  // ["Shailendra", "Kumar", "Pandey"]
+
+console.log(fullName[0]);  // Shailendra
 
