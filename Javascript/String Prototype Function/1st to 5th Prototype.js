@@ -82,3 +82,23 @@ console.log(fullName);  // ["Shailendra", "Kumar", "Pandey"]
 
 console.log(fullName[0]);  // Shailendra
 
+// 11. includes()
+
+console.log(data.includes("Shailendra",0));  // true
+console.log(data.includes("Kumar"));        // true
+console.log(data.includes("Pandey"));      // true
+console.log(data.includes("John"));        // false
+
+// 12. trim()
+
+let data_2 = "     Hello World     ";   // Original string with extra spaces
+console.log(data_2.trim());  // "Hello World"
+
+// 13. trimStart()
+
+console.log(data_2.trimStart());  // "Hello World     "
+
+// 14. trimEnd()
+
+console.log(data_2.trimEnd());  // "     Hello World"
+
