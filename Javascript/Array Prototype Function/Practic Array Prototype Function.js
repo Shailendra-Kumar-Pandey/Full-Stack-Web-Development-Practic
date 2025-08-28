@@ -37,3 +37,5 @@ users.forEach(function(ele, i, arr){
     console.log(ele, i, arr);      //
 });
 // console.log(result);  // undefined
+
+

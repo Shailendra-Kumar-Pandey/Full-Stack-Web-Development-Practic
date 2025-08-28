@@ -82,7 +82,7 @@ console.log(fullName);  // ["Shailendra", "Kumar", "Pandey"]
 
 console.log(fullName[0]);  // Shailendra
 
-// 11. includes()
+// 11. includes()       // returns boolean value
 
 console.log(data.includes("Shailendra",0));  // true
 console.log(data.includes("Kumar"));        // true
