@@ -1,0 +1,2 @@
+/* Number Prototype function */
+
