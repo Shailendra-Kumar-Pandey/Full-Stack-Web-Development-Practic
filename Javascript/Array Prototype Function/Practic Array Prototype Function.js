@@ -47,3 +47,37 @@ console.log(users.slice(0, 3));     // [{id: 1, name: "Shailendra", email: "shai
 users.splice(2, 1); // removes the user at index 2
 
 console.log(users);      // [{id: 4, name: "Doe", email: "doe@example.com", age: 22}, {id: 5, name: "Alice", email: "alice@example.com", age: 26}]
+
+
+// 9. filter()        // Creates a new array with all elements that pass the test implemented by the provided function.
+
+const adultUsers = users.filter(function(ele){
+    return ele.age > 28;
+});
+
+console.log(adultUsers);  // [{id: 1, name: "Shailendra", email: "shailendrakr2010@gmail.com", age: 30}]
+
+// 10. map()        // Creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+const userNames = users.map(function(ele){
+    return ele.age > 28;
+});
+
+console.log(userNames);  // ["Shailendra", "John", "Jane", "Doe", "Alice"]
+
+
+// 11. find()        // Returns the value of the first element in the array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned.
+
+const user = users.find(function(ele){
+    return ele.id === 2;
+});
+
+console.log(user);  // {id: 2, name: "John", email: "john@example.com", age: 25}
+
+// 12. findIndex()        // Returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test.
+
+const userIndex = users.findIndex(function(ele){
+    return ele.id === 3;
+});
+
+console.log(userIndex);  // 2
