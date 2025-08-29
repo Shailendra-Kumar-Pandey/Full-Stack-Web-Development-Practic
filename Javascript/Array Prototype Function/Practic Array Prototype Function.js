@@ -81,3 +81,33 @@ const userIndex = users.findIndex(function(ele){
 });
 
 console.log(userIndex);  // 2
+
+// 13. some()        // Tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value.
+
+const hasAdultUsers = users.some(function(ele){
+    return ele.age > 30;
+});
+
+console.log(hasAdultUsers);  // false
+
+// 14. every()        // Tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value.
+
+const allAdultUsers = users.every(function(ele){
+    return ele.age > 18;
+});
+
+console.log(allAdultUsers);  // true
+
+
+//  Callback Function   //  A function that is passed as an argument to another function 
+
+function doSomething(fun){
+    fun(30,50)
+}
+
+
+function addTwoNumbers(num1, num2){
+    console.log(num1 + num2)
+}
+
+doSomething(addTwoNumbers)      //  Callback Function 
