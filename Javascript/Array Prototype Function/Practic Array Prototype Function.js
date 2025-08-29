@@ -38,4 +38,12 @@ users.forEach(function(ele, i, arr){
 });
 // console.log(result);  // undefined
 
+// 7.slice()        // Returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.
 
+console.log(users.slice(0, 3));     // [{id: 1, name: "Shailendra", email: "shailendrakr2010@gmail.com", age: 30}, {id: 2, name: "John", email: "john@example.com", age: 25}, {id: 3, name: "Jane", email: "jane@example.com", age: 28}]
+
+// 8. splice()        // Changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
+
+users.splice(2, 1); // removes the user at index 2
+
+console.log(users);      // [{id: 4, name: "Doe", email: "doe@example.com", age: 22}, {id: 5, name: "Alice", email: "alice@example.com", age: 26}]
