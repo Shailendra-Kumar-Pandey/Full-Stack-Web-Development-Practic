@@ -9,6 +9,7 @@ const data = [
 
 // 01. forEach() method         - this function only itration  and not a return value
 
+/*
 data.forEach(function(ele, i, arr){
     console.log(ele);
     console.log(ele.name);
@@ -21,3 +22,18 @@ data.forEach((ele)=>{
     console.log(ele.id, ele.name, ele.age);
 })
 
+*/
+
+// 2. map() method         - this function return a new array
+
+// const result = data.map(function(ele){
+//     return ele.name;
+// })
+
+// console.log(result);
+
+const result = data.map((ele)=>{
+    return ele.age;
+})
+
+console.log(result);
