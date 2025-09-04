@@ -111,3 +111,12 @@ function addTwoNumbers(num1, num2){
 }
 
 doSomething(addTwoNumbers)      //  Callback Function 
+
+
+// 15 . reduce()        // Executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+
+const totalAge = users.reduce(function(acc, ele){       // acc = accumulator, ele = current element
+    return acc + ele.age;       // acc = accumulator 
+}, 0);
+
+console.log(totalAge);  //  130
