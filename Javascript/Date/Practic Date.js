@@ -11,5 +11,5 @@ console.log(date.getMinutes());      //  0-59
 console.log(date.getSeconds());      //  0-59
 console.log(date.getMilliseconds()); //  0-999
 
-// let time = date.getTime();
-// console.log(time);
+
+console.log(date.toDateString());  //  Sat Jan 04 2025
