@@ -33,8 +33,8 @@ let students = [
 ];
 
 // Age के अनुसार ascending
-students.sort(function(a, b) {
-  return a.age - b.age;
+students.sort(function(a, b) {      //  
+  return a.age - b.age;         // according to Age- sorting
 });
 
 console.log(students);
