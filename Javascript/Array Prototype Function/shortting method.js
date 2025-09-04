@@ -33,9 +33,26 @@ let students = [
 ];
 
 // Age के अनुसार ascending
-students.sort(function(a, b) {      //  
+students.sort(function(a, b) {      //  a: first element, b: second element
   return a.age - b.age;         // according to Age- sorting
 });
 
 console.log(students);
 
+// sort() normally arranges elements in alphabetical order (A → Z).
+
+// But here, we pass a compare function so it sorts by age.
+
+// 👉 Inside function:
+
+// a and b are two student objects being compared.
+
+// a.age - b.age gives the difference in ages:
+
+// If result is negative → a comes before b.
+
+// If result is positive → b comes before a.
+
+// If result is 0 → order doesn’t change.
+
+// So, the array is sorted by age in ascending order (smallest to largest).

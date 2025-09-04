@@ -48,7 +48,7 @@ let cart = [
   { item: "Bag", price: 500 }
 ];
 
-let totalPrice = cart.reduce((total, product) => total + product.price, 0);
+let totalPrice = cart.reduce((total, product) => total + product.price, 0);     // Total Price = 750  // 0 is initial value of total  
 
 console.log("Total Price = " + totalPrice);         // Total Price = 750
 
