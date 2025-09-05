@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Practic 02</title>
 </head>
-<body>
-    
+
+<body id = "main">
+    <h1 class="title">DOM (Document Object Model)</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam neque minima, eaque, deserunt, laboriosam
+        praesentium fugiat similique vitae exercitationem optio quasi animi voluptatem commodi quisquam explicabo soluta
+        aut accusantium vel.</p>
+    <h2>Welcome to JS DOM</h2>
+    <h5>Shailendra Kumar Pandey</h5>
+
+    <script>
+        let body = document.getElementById("main");
+        let title = document.getElementsByClassName("title");
+        let r = Math.round(Math.random() * (255 -0) + 0);
+        let g = Math.round(Math.random() * (255 -0) + 0);
+        let b = Math.round(Math.random() * (255 -0) + 0);
+        console.log(`R value is ${r} , G value is ${g} , B value is ${b}`);
+
+        body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        title[0].style.color = `rgb(${255 - r}, ${255 - g}, ${255 -b})`;
+        console.log(255 - r);
+        console.log(255 - g);
+        console.log(255 - b);
+    </script>
 </body>
+
 </html>
