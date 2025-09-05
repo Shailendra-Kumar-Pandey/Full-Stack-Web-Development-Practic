@@ -7,8 +7,34 @@
 </head>
 <body>
     <h2>DOM (Document Object Model)</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, veritatis omnis animi fugiat expedita autem excepturi impedit eum enim dolorem totam eius asperiores natus cumque provident. Dignissimos, tenetur. Mollitia, alias.</p>
+    <p id ="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi, veritatis omnis animi fugiat expedita autem excepturi impedit eum enim dolorem totam eius asperiores natus cumque provident. Dignissimos, tenetur. Mollitia, alias.</p>
     <h2>Hello</h2>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+    <p class="data">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.</p>
+
+    <script>
+        let allSelectH2 = document.getElementsByTagName("h2");      //  return always HTMLCollection
+        console.log(allSelectH2);       
+        
+        let selectorId = document.getElementById("para");       // return always single element because id is unique
+        console.log(selectorId);
+
+        let selectorClass = document.getElementsByClassName("data");     // return always HTMLCollection
+        console.log(selectorClass);
+
+        let selectorQuery = document.querySelector("h2");       // return always single element
+        console.log(selectorQuery);
+
+        let selectorQueryAll = document.querySelectorAll("h2");     // return always NodeList
+        console.log(selectorQueryAll);
+
+        selectorQueryAll.forEach(element => {
+            // console.log(element);           // forEach loop only works on NodeList
+            console.log(element.innerText);     // to get text from the element
+        });
+        
+        let date1 = document.getRootNode();      // return always Document
+        console.log(date1);
+        
+    </script>
 </body>
 </html>
