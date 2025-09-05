@@ -23,15 +23,15 @@ let sum = numbers.reduce(function(total, num) {
   return total + num;
 }, 0);
 
-console.log("Sum = " + sum);
+console.log("Sum = " + sum);    //  100
 
 
 
 let number = [2, 3, 4];
 
-let product = number.reduce((total, num) => total * num, 1);
+let product = numbers.reduce((total, num) => total * num, 1);
 
-console.log("Product = " + product);
+console.log("Product = " + product);    // 240000
 
 
 
