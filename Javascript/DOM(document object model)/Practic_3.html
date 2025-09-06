@@ -14,16 +14,34 @@
             height: 200px;
             background-color: lightcoral;
         }
+        button{
+            background-color: #fff;
+            color: #333;
+            padding: 2px;
+            margin-top: 2px;
+            border-radius: 10px ;
+        }
+        button:hover{
+            color: #fff;
+            background-color: #333;
+        }
     </style>
 </head>
 <body>
     <div id="box"></div>
-    <button onclick="randamColor()">Change Random Background Color</button> <!-- Event Handler   -->
+    <button onclick="randamColor()">Change Random Background Color</button> <!-- Event listener -->
     <script>
         const box = document.getElementById("box");
 
-        function randamColor(){
-            box.
+        function randamColor(){                 // Event handler function
+            box.style.background = rgbColor();
+        }
+
+        function rgbColor(){
+            let r = Math.round(Math.random() * (255 - 0) + 0)
+            let g = Math.round(Math.random() * (255 - 0) + 0)
+            let b = Math.round(Math.random() * (255 - 0) + 0)
+            return `rgb(${r}, ${g}, ${b})`
         }
     </script>
 </body>
