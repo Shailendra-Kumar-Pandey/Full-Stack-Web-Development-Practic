@@ -3,9 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>event</title>
 </head>
 <body>
-    
+
+    <h1>Different Types of Events in JavaScript</h1>
+
+        <!-- 🔹 1. Mouse Events -->
+    <button id="btn">Click Me</button>
+    <p id="demo"></p>
+
+    <script>
+    let btn = document.getElementById("btn");
+    let demo = document.getElementById("demo");
+
+    // Click event
+    btn.addEventListener("click", function() {
+        demo.innerText = "You clicked the button!";
+    });
+
+    // Mouse over
+    btn.addEventListener("mouseover", function() {
+        demo.innerText = "Mouse is over the button!";
+    });
+
+    // Mouse out
+    btn.addEventListener("mouseout", function() {
+        demo.innerText = "Mouse left the button!";
+    });
+    </script>
+
+        <!-- 🔹 2. Input Events -->
+        <input type="text" id="inputBox" placeholder="Type something">
+        <p id="show"></p>
+
+        <script>
+        let inputBox = document.getElementById("inputBox");
+        let show = document.getElementById("show");
+
+        // Key down
+        inputBox.addEventListener("keydown", function(event) {
+            show.innerText = "Key down: " + event.key;
+        });
+
+        // Key up
+        inputBox.addEventListener("keyup", function(event) {
+            show.innerText = "Key up: " + event.key;
+        });
+        </script>
+
+            <!-- 🔹 3. Form Events -->
+            <form id="myForm">
+            <input type="text" id="name" placeholder="Enter name"><br><br>
+            <button type="submit">Submit</button>
+            </form>
+            <p id="msg"></p>
+
+            <script>
+            let form = document.getElementById("myForm");
+            let msg = document.getElementById("msg");
+
+            // Input event
+            document.getElementById("name").addEventListener("input", function() {
+                msg.innerText = "Typing: " + this.value;
+            });
+
+            // Submit event
+            form.addEventListener("submit", function(event) {
+                event.preventDefault(); // stop page refresh
+                msg.innerText = "Form Submitted!";
+            });
+            </script>
+
+
+            <!-- 🔹 4. Window Events  -->
+            <script>
+            // Page load
+            window.addEventListener("load", function() {
+                alert("Page Loaded!");
+            });
+
+            // Resize
+            window.addEventListener("resize", function() {
+                console.log("Window resized: " + window.innerWidth + "x" + window.innerHeight);
+            });
+
+            // Scroll
+            window.addEventListener("scroll", function() {
+                console.log("You scrolled!");
+            });
+            </script>
+
+            <!-- 🔹 5. Clipboard Events -->
+            <input type="text" id="copyBox" value="Copy this text">
+                <script>
+                let copyBox = document.getElementById("copyBox");
+
+                copyBox.addEventListener("copy", function() {
+                    alert("Text copied!");
+                });
+
+                copyBox.addEventListener("paste", function() {
+                    alert("Text pasted!");
+                });
+                </script>
+<br><br>
+                <!-- 🔹 6. Media Events -->
+                <video id="myVideo" width="320" controls>
+                    <source src="sample.mp4" type="video/mp4">
+                    </video>
+
+                    <script>
+                    let video = document.getElementById("myVideo");
+
+                    video.addEventListener("play", function() {
+                        console.log("Video is playing");
+                    });
+
+                    video.addEventListener("pause", function() {
+                        console.log("Video is paused");
+                    });
+
+                    video.addEventListener("ended", function() {
+                        console.log("Video ended");
+                    });
+                    </script>
+
 </body>
 </html>
