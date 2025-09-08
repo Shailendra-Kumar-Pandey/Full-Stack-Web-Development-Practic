@@ -95,8 +95,10 @@
             </script>
 
             <!-- 🔹 5. Clipboard Events -->
+            <label for="copyBox">Copy Text:
             <input type="text" id="copyBox" value="Copy this text">
-                <script>
+            </label>
+            <script>
                 let copyBox = document.getElementById("copyBox");
 
                 copyBox.addEventListener("copy", function() {
