@@ -4,8 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practic 04</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            padding: 30px;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        button{
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- Create a box and a button. When the button is clicked, change the color of the box to a random color. -->
+    <!-- 3. onmouseover Event -->
+    <div id="box" onmouseover="changeColor()"></div>
+    <!-- 1. onclick Event -->
+    <!-- <button onclick="changeColor()">Change Color</button>      this is Event Listener--> 
+     <!-- 2. ondblclick Event -->
+    <!-- <button ondblclick="changeColor()">Change Color</button> -->
+    <script>
+
+        const changeColor = ()=>{           // This is function for change color {Event Handler}
+            let box = document.getElementById("box");
+            let r = Math.round(Math.random() * (255 - 0) + 0);
+            let g = Math.round(Math.random() * (255 - 0) + 0);
+            let b = Math.round(Math.random() * (255 - 0) + 0);
+            box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            console.log(box);
+            console.log(`rgb(${r}, ${g}, ${b})`);
+        }
+
+        
+    </script>
 </body>
 </html>
