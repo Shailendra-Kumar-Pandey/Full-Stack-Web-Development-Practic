@@ -12,7 +12,17 @@
     <button id="TogglePassword" onclick="togglePassword()">Show Password-Hide Password</button>
 
     <script>
-        
+        //
+        let value = document.getElementById("Password");
+        //
+        function togglePassword() {
+            if (value.type === "password") {        //
+                value.type = "text";
+            } else {
+                value.type = "password";
+            }
+            console.log(value.value)        //
+        }
     </script>
 
 </body>

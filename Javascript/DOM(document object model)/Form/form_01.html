@@ -15,26 +15,26 @@
     <button onclick="printData()">Submit</button>
 
     <script>
-
+        // Create Object
         const user ={
             firstName : null,
             lastName : null,
             email : null,
             password : null
         }
-        
+        //  this Funtion set value in object
         function setValue(prop, ele){
-            if(ele.trim()===""){
-                user[prop]= null;
+            if(ele.trim()===""){        // if input is empty then set null
+                user[prop]= null;       // set null
             }else{
-                user[prop] = ele;
+                user[prop] = ele;        // set value
             }
             // console.log(user)
         }
         
         const printData = () =>{
-            console.log(user)
-            console.log(JSON.parse(JSON.stringify(user)))
+            console.log(user)       // print Object
+            // console.log(JSON.parse(JSON.stringify(user)))       // Convert to Object/Array
         }
 
 
