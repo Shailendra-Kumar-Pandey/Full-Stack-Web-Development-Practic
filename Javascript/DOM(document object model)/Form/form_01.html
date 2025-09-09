@@ -8,11 +8,37 @@
 <body>
     <h1>User Form</h1>
 
-    <input type="text" id="firstName" placeholder="Enter First Name">
-    <input type="text" id="lastName" placeholder="Enter Last Name">
-    <input type="email" id="email" placeholder="Enter Your Email">
-    <input type="password" id="Password" placeholder="Enter Your Password">
+    <input type="text" id="firstName" placeholder="Enter First Name" onkeyup="setValue('firstName', this.value)"><br><br>
+    <input type="text" id="lastName" placeholder="Enter Last Name" onkeyup="setValue('lastName', this.value)"><br><br>
+    <input type="email" id="email" placeholder="Enter Your Email" onkeyup="setValue('email', this.value)"><br><br>
+    <input type="password" id="Password" placeholder="Enter Your Password" onkeyup="setValue('password', this.value)"><br><br>
     <button onclick="printData()">Submit</button>
+
+    <script>
+
+        const user ={
+            firstName : null,
+            lastName : null,
+            email : null,
+            password : null
+        }
+        
+        function setValue(prop, ele){
+            if(ele.trim()===""){
+                user[prop]= null;
+            }else{
+                user[prop] = ele;
+            }
+            // console.log(user)
+        }
+        
+        const printData = () =>{
+            console.log(user)
+            console.log(JSON.parse(JSON.stringify(user)))
+        }
+
+
+    </script>
     
 </body>
 </html>
