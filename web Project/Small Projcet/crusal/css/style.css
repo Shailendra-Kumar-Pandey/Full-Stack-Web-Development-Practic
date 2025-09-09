@@ -20,7 +20,7 @@ h1{
 }
 .image-container{
     display: flex;
-    transition: transform 0.5s ease;
+    transition: 0.5s all;
 }
 .image-container img{
     min-width: 100%;
