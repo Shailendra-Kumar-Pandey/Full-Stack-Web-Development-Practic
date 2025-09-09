@@ -12,16 +12,16 @@
     <button id="TogglePassword" onclick="togglePassword()">Show Password-Hide Password</button>
 
     <script>
-        //
+        // Get Password Input Field
         let value = document.getElementById("Password");
-        //
+        //This Function is used to toggle the password visibility
         function togglePassword() {
-            if (value.type === "password") {        //
+            if (value.type === "password") {        // Check the type of input field
                 value.type = "text";
             } else {
                 value.type = "password";
             }
-            console.log(value.value)        //
+            // console.log(value.value)        // Print the value of input field in console
         }
     </script>
 
