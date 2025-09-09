@@ -4,3 +4,43 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+h1{
+    text-align: center;
+    margin: 20px 0;
+    color: black;
+    background-color: rgb(214, 94, 94);
+    padding: 20px;
+}
+.container{
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.image-container{
+    display: flex;
+    transition: transform 0.5s ease;
+}
+.image-container img{
+    min-width: 100%;
+    border-radius: 10px;
+}
+.arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.041);
+    border: none;
+    height: 90vh;
+    width: 100px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.left-arrow{
+    left: 10px;
+}
+.right-arrow{
+    right: 10px;
+}
