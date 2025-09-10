@@ -38,3 +38,35 @@ nav ul li a{
 nav ul li a:hover{
     color: #007bff;
 }
+
+main{
+    padding: 20px 10%;
+}
+.container-fluid{
+    max-width: 1200px;
+    margin: auto;
+}
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+.card{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    background-color: #fff;
+}
+.card:hover{
+    transform: translateY(-5px);
+}
+.card{
+    width: 30%;
+    height: auto;
+}
+img{
+    width: 100%;
+    display: block;
+}
