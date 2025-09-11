@@ -9,7 +9,9 @@ let index = [];     // load index
 let isComplite = true;
 
 while (isComplite) {
-    if (!index.includes()) {
+    let randamNum = Math.round(Math.random() * ((arr.length-1) - 0) + 0);
+    
+    if (index.includes()) {
         
     }
     if () {
