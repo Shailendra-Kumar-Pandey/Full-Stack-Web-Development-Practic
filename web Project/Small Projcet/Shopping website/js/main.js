@@ -13,41 +13,55 @@
 
 
 
-let addCard = document.getElementById("addCard");
+function element(ele){
 
-let card = document.createElement("div");
-card.setAttribute("class", "card");
+   for (let i = 0; i < ele; i++) {
 
-let cardImg = document.createElement("div");
-cardImg.setAttribute("class", "card-img");
+    let addCard = document.getElementById("addCard");
 
-let img = document.createElement("img");
-img.src = "https://d2lo0tepqt73yr.cloudfront.net/migProductImages/RC1200%20004-1.jpg";
-img.title = "Casual Shoes";
 
-cardImg.appendChild(img);
-card.appendChild(cardImg);
+    let card = document.createElement("div");
+    card.setAttribute("class", "card");
 
-let cardContent = document.createElement("div");
-cardContent.setAttribute("class", "card-content");
+    let cardImg = document.createElement("div");
+    cardImg.setAttribute("class", "card-img");
 
-let h2 = document.createElement("h2");
-h2.innerText = "Red Chief";
+    let img = document.createElement("img");
+    img.src = "https://d2lo0tepqt73yr.cloudfront.net/migProductImages/RC1200%20004-1.jpg";
+    img.title = "Casual Shoes";
 
-let h3 = document.createElement("h3");
-h3.innerHTML = "₹ 3795 <span><strike> ₹ 4995</strike></span>";
+    cardImg.appendChild(img);
+    card.appendChild(cardImg);
 
-let p = document.createElement("p");
-p.innerText = "Red Chief Genuine Leather Mid Ankle Lace Up Casual Shoes For Men |RC1200 004";
+    let cardContent = document.createElement("div");
+    cardContent.setAttribute("class", "card-content");
 
-let button = document.createElement("button");
-button.innerText = "Add to Cart";
+    let h2 = document.createElement("h2");
+    h2.innerText = "Red Chief";
 
-cardContent.appendChild(h2);
-cardContent.appendChild(h3);
-cardContent.appendChild(p);
-cardContent.appendChild(button);
+    let h3 = document.createElement("h3");
+    h3.innerHTML = "₹ 3795 <span><strike> ₹ 4995</strike></span>";
 
-card.appendChild(cardContent);
+    let p = document.createElement("p");
+    p.innerText = "Red Chief Genuine Leather Mid Ankle Lace Up Casual Shoes For Men |RC1200 004";
 
-addCard.appendChild(card);
+    let button = document.createElement("button");
+    button.innerText = "Add to Cart";
+
+    cardContent.appendChild(h2);
+    cardContent.appendChild(h3);
+    cardContent.appendChild(p);
+    cardContent.appendChild(button);
+
+    card.appendChild(cardContent);
+
+
+
+    addCard.appendChild(card);
+
+};
+
+}
+
+
+element(100);
