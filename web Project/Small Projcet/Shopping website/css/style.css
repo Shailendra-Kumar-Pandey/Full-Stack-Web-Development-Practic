@@ -75,6 +75,7 @@ main{
 }
 img{
     width: 100%;
+    height: 300px;
     display: block;
 }
 .card-content{
@@ -109,9 +110,9 @@ img{
     
 }
 .card-content button:hover{
-    background-color: #e2e6ea;
-    color: #16181a;
-    font-weight: bolder;
+    background-color: #444749;
+    color: #e5e7e9;
+    /* font-weight: bolder; */
 }
 footer{
     background: #333;

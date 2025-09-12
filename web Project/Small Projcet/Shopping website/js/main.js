@@ -663,8 +663,8 @@
 
 
 let product = JSON.parse(localStorage.getItem("product")) || [];     //getting data from local storage
-console.log(product);
-console.log(product.length);
+// console.log(product);
+// console.log(product.length);
 
 
 
@@ -702,7 +702,7 @@ function element(ele){
     h3.innerHTML = `₹ ${ele.price} <span><strike> ₹ ${ele.price+1999}</strike></span>`;
 
     let p = document.createElement("p");
-    p.innerText = ele.desc;
+    p.innerText = ele.desc.slice(0, 50) + "...";
 
     let button = document.createElement("button");
     button.innerText = "Add to Cart";
