@@ -583,7 +583,7 @@ console.log(products.length);
 
 function element(ele){
 
-   for (let i = 0; i < ele.length-1; i++) {
+   ele.forEach(function(ele){
 
     let addCard = document.getElementById("addCard");
 
@@ -596,7 +596,7 @@ function element(ele){
 
     let img = document.createElement("img");
     img.src = ele.imgURL;
-    img.title = "Casual Shoes";
+    img.title = ele.title;
 
     cardImg.appendChild(img);
     card.appendChild(cardImg);
@@ -605,13 +605,13 @@ function element(ele){
     cardContent.setAttribute("class", "card-content");
 
     let h2 = document.createElement("h2");
-    h2.innerText = "Red Chief";
+    h2.innerText = ele.brand;
 
     let h3 = document.createElement("h3");
-    h3.innerHTML = "₹ 3795 <span><strike> ₹ 4995</strike></span>";
+    h3.innerHTML = `₹ ${ele.price} <span><strike> ₹ ${ele.price+1999}</strike></span>`;
 
     let p = document.createElement("p");
-    p.innerText = "Red Chief Genuine Leather Mid Ankle Lace Up Casual Shoes For Men |RC1200 004";
+    p.innerText = ele.desc;
 
     let button = document.createElement("button");
     button.innerText = "Add to Cart";
@@ -627,7 +627,7 @@ function element(ele){
 
     addCard.appendChild(card);
 
-};
+});
 console.log(ele)
 }
 
