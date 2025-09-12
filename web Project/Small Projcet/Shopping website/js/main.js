@@ -672,7 +672,7 @@ let product = JSON.parse(localStorage.getItem("product")) || [];     //getting d
 
 function element(ele){
 
-   ele.forEach(function(ele, i){
+   ele.forEach(function(ele){
 
     
 
