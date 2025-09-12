@@ -11,10 +11,14 @@ let isComplite = true;
 while (isComplite) {
     let randamNum = Math.round(Math.random() * ((arr.length-1) - 0) + 0);
     
-    if (index.includes()) {
-        
+    if (!index.includes(randamNum)) {
+        saffer.push(arr[randamNum]);
+        index.push(randamNum);
     }
-    if () {
-        
+    if (index.length === arr.length) {
+        isComplite = false;
     }
 }
+console.log(arr);
+console.log(index);
+console.log(saffer);
