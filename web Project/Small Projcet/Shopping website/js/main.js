@@ -11,7 +11,8 @@
             </div>
 */
 
-const products = [
+// Sample product data
+/*const products = [
   {
     "brand": "Red Chief",
     "price": 3795,
@@ -572,10 +573,18 @@ const products = [
     "descrip": "Running Shoes",
     "imgURL": "https://i.ebayimg.com/images/g/w2MAAOSwRxpkz-nJ/s-l400.jpg"
   }
-]
+]*/
 
-console.log(products);
-console.log(products.length);
+
+
+
+// localStorage.setItem("product",JSON.stringify(products));   //storing data in local storage
+
+
+
+let product = JSON.parse(localStorage.getItem("product")) || [];     //getting data from local storage
+console.log(product);
+console.log(product.length);
 
 
 
@@ -632,4 +641,4 @@ console.log(ele)
 }
 
 
-element(products);
+element(product);
