@@ -702,7 +702,8 @@ function element(ele){
     h3.innerHTML = `₹ ${ele.price} <span><strike> ₹ ${ele.price+1999}</strike></span>`;
 
     let p = document.createElement("p");
-    p.innerText = ele.desc.slice(0, 50) + "...";
+    let description = ele.desc || ele.descrip || "";
+    p.innerText = description.slice(0, 50) + "...";
 
     let button = document.createElement("button");
     button.innerText = "Add to Cart";
