@@ -1,6 +1,7 @@
 /*Write a Program to  Suffer array Logic  */ 
 
-const arr = [12, 31, 61, 71, 81, 99, 41, 53, 52, 74, 83, 94, 8, 5];
+const arr =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
 
 let saffer = [];    // load num
 
