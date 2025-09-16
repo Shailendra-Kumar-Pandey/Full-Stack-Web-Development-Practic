@@ -104,29 +104,25 @@ tr:hover {
 
 
 .modal{
-    width: 100vw;
-    height: 100vw;
+    width: 100%;
+    height: 100vh;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
-}
- .modal-box{
-    position: relative;
-
-    display: flex;
-    justify-content: center;
     align-items: center;
-} 
+}
 .modal-content{
-    /* position: relative;  */
-    position: absolute;
     width: 40%;
+    padding: 20px;
     background-color: white;
     border-radius: 10px;
-    padding: 20px;
+    position: relative;
+}
+
+.modal-content > h1{
+    font-size: 25px;
+    font-weight: bold;
 }
