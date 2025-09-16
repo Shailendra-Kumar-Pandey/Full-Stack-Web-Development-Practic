@@ -716,34 +716,53 @@ const newProduct ={
     desc : null,
 }
 
-function addnewproduct(prop, value) { 
-    newProduct.id = product.length + 1;
+function addnewproduct(prop, value) {       // dynamic object property add
     if(value.trim() === ""){
         newProduct[prop] = null;
-    }else{
-        
-        newProduct[prop] = value;
+    }else {
+        if(prop === "price"){
+            newProduct[prop] = Number(value);
+        }else{
+            newProduct[prop] = value;
+        }
     }
-    // console.log(newProduct)
     
+    // console.log(newProduct)
 }
 
 // add Product in localStorage
+// dynamic add to product
 
 function addProduct(){
-    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc ) {
+        //validation logic
+    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc ) {       
         alert("All Field is requred! Please fill all Field...");
         return ;
+    }       // validation logic end
+    
+    let elementId = 0
+
+    if (product.length > 0) {
+        elementId = product[product.length -1].id;
     }
+
+    newProduct.id = elementId + 1;
+    console.log(elementId)
 
     product.push(newProduct);
 
     localStorage.setItem("product",JSON.stringify(product));
 
-    displayLoadData(product);
-
-    openClose();
+    // displayLoadData(product);
+    
     console.log(newProduct)
+    
+    openClose();
+    
+    window.location.reload();   // reload page to see the changes
+
+    alert("Add Product Successfull...!")
+    
 
 }
 
