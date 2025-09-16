@@ -113,6 +113,7 @@ tr:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 .modal-content{
     width: 40%;

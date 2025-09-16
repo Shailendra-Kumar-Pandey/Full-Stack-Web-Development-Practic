@@ -667,19 +667,59 @@ let product = JSON.parse(localStorage.getItem("product")) || [];     //getting d
 // console.log(product.length);
 
 
-let tBody = document.getElementById("tBody");
+displayLoadData(product)
 
-tBody.innerHTML =`<tr>
-                        <td>1</td>
-                        <td>Red Cheaf</td>
-                        <td>Cashual Shoes</td>
-                        <td>₹ 4500</td>
+// function to display data in table
+
+function displayLoadData(arr) {
+    let allRow = "";
+     
+    arr.forEach((ele,idx) => {
+        let row = `<tr>
+                        <td>${idx+1}</td>
+                        <td>${ele.brand}</td>
+                        <td>${ele.title}</td>
+                        <td>₹ ${ele.price}</td>
                         <td>
                             <button class="action-btn edit-btn" onclick="editProduct()">Edit</button>
                             <button class="action-btn delete-btn" onclick="deleteProduct()">Delete</button>
                          </td>
                     </tr>`
-                    
+        allRow += row;
+    });
+    document.getElementById("tBody").innerHTML = allRow;
+}
+
+//Open Close Model Logic
+
+let modal = document.getElementById("modal");
+
+let isOpenClose = false;
+function openClose(){
+    if (isOpenClose === false) {
+        modal.style.display = "flex";
+        isOpenClose = true;
+    } else {
+        modal.style.display = "none";
+        isOpenClose = false;
+    }
+}
+
+
+// add Prodect Logic
+
+const addProduct ={
+    brand : null,
+    title : null,
+    price : null,
+    imgURL : null,
+    desc : null,
+}
+
+function addnewproduct(prop, value) { 
+    addProduct[prop] = value;
+    addProduct.id = product.length + 1;
+}
 
 
 

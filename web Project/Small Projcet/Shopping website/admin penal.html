@@ -11,7 +11,7 @@
         <div class="header">
             <h1>Admin Panel</h1>
         </div>
-        <button>Add Product</button>
+        <button onclick="openClose()">Add Product</button>
         <div class="table-container">
             <table>
                 <thead>
@@ -39,16 +39,16 @@
         </div>
     </div>
 
-    <div class="modal">
+    <div class="modal" id="modal">
         <div class="modal-content">
-            <button id="btn-close"> X </button>
+            <button id="btn-close" onclick="openClose()"> X </button>
             <h2>Add Product</h2>
             <div class="inner-content">
-                <input type="text" placeholder="Enter Brand Name" onkeyup="">
-                <input type="text" placeholder="Enter Title " onkeyup="">
-                <input type="number" placeholder="Enter Price " onkeyup="">
-                <input type="url" placeholder="Enter Brand Image URL" onkeyup="">
-                <textarea type="text" placeholder="Enter Desecription" onkeyup=""></textarea>
+                <input type="text" placeholder="Enter Brand Name" onkeyup="addnewproduct('brand', this.value)">
+                <input type="text" placeholder="Enter Title " onkeyup="addnewproduct('title', this.value)">
+                <input type="number" placeholder="Enter Price " onkeyup="addnewproduct('price', this.value)">
+                <input type="url" placeholder="Enter Brand Image URL" onkeyup="addnewproduct('imgURL', this.value)">
+                <textarea type="text" placeholder="Enter Desecription" onkeyup="addnewproduct('desc', this.value)"></textarea>
                     <button onclick="">Add Product</button>
             </div>
         </div>     
