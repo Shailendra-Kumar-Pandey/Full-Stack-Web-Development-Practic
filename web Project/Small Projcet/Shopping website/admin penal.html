@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
     <link rel="stylesheet" href="./css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
@@ -42,6 +43,14 @@
     <div class="modal">
         <div class="modal-content">
             <h2>Add Product</h2>
+            <div class="inner-content">
+                <input type="text" placeholder="Enter Brand Name" onkeyup="">
+                <input type="text" placeholder="Enter Title " onkeyup="">
+                <input type="number" placeholder="Enter Price " onkeyup="">
+                <input type="url" placeholder="Enter Brand Image URL" onkeyup="">
+                <textarea type="text" placeholder="Enter Desecription" onkeyup=""></textarea>
+                    <button onclick="">Add Product</button>
+            </div>
         </div>     
     </div>
     <script src="./js/admin.js"></script>
