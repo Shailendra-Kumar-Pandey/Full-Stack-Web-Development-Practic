@@ -667,14 +667,14 @@ let product = JSON.parse(localStorage.getItem("product")) || [];     //getting d
 // console.log(product.length);
 
 
-displayLoadData(product)
+displayLoadData(product)        // display data in table
 
 // function to display data in table
 
-function displayLoadData(arr) {
-    let allRow = "";
+function displayLoadData(arr) {     // display data in table
+    let allRow = "";        // all row variable
      
-    arr.forEach((ele,idx) => {
+    arr.forEach((ele,idx) => {     // loop to create row for each product 
         let row = `<tr>
                         <td>${idx+1}</td>
                         <td>${ele.brand}</td>
@@ -685,9 +685,9 @@ function displayLoadData(arr) {
                             <button class="action-btn delete-btn" onclick="deleteProduct()">Delete</button>
                          </td>
                     </tr>`
-        allRow += row;
+        allRow += row;      // append each row to allRow variable
     });
-    document.getElementById("tBody").innerHTML = allRow;
+    document.getElementById("tBody").innerHTML = allRow;        // display all row in table body
 }
 
 //Open Close Model Logic
@@ -695,20 +695,20 @@ function displayLoadData(arr) {
 let modal = document.getElementById("modal");
 
 let isOpenClose = false;
-function openClose(){
-    if (isOpenClose === false) {
+function openClose(){       // open close model
+    if (isOpenClose === false) {        // open model
         modal.style.display = "flex";
         isOpenClose = true;
-    } else {
+    } else {        // close model
         modal.style.display = "none";
         isOpenClose = false;
     }
 }
 
 
-// add Prodect Logic
+// add Product Logic
 
-const newProduct ={
+const newProduct ={         // object to store new product data
     brand : null,
     title : null,
     price : null,
@@ -717,13 +717,13 @@ const newProduct ={
 }
 
 function addnewproduct(prop, value) {       // dynamic object property add
-    if(value.trim() === ""){
+    if(value.trim() === ""){        // if input is empty then set null
         newProduct[prop] = null;
     }else {
-        if(prop === "price"){
-            newProduct[prop] = Number(value);
+        if(prop === "price"){       // if property is price then convert into number
+            newProduct[prop] = Number(value);       // convert string to number
         }else{
-            newProduct[prop] = value;
+            newProduct[prop] = value;    // else set value as it is
         }
     }
     
@@ -736,32 +736,32 @@ function addnewproduct(prop, value) {       // dynamic object property add
 function addProduct(){
         //validation logic
     if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc ) {       
-        alert("All Field is requred! Please fill all Field...");
-        return ;
+        alert("All Field is requred! Please fill all Field...");        // alert message if any field is empty
+        return ;        // return to stop further execution
     }       // validation logic end
     
-    let elementId = 0
+    let elementId = 0       // variable to store last element id
 
-    if (product.length > 0) {
-        elementId = product[product.length -1].id;
+    if (product.length > 0) {       // if product array is not empty then get last element id
+        elementId = product[product.length -1].id;      // get last element id
     }
 
-    newProduct.id = elementId + 1;
-    console.log(elementId)
+    newProduct.id = elementId + 1;      // set new id to new product
+    // console.log(elementId)
 
-    product.push(newProduct);
+    product.push(newProduct);       // add new product to product array
 
-    localStorage.setItem("product",JSON.stringify(product));
+    localStorage.setItem("product",JSON.stringify(product));        // add new product to local storage
 
     // displayLoadData(product);
     
-    console.log(newProduct)
+    // console.log(newProduct)     
     
-    openClose();
+    openClose();        // close model after adding product
     
     window.location.reload();   // reload page to see the changes
 
-    alert("Add Product Successfull...!")
+    alert("Add Product Successfull..!")     // alert message
     
 
 }
