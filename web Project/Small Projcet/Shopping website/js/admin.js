@@ -708,7 +708,7 @@ function openClose(){
 
 // add Prodect Logic
 
-const addProduct ={
+const newProduct ={
     brand : null,
     title : null,
     price : null,
@@ -717,9 +717,34 @@ const addProduct ={
 }
 
 function addnewproduct(prop, value) { 
-    addProduct[prop] = value;
-    addProduct.id = product.length + 1;
+    newProduct.id = product.length + 1;
+    if(value.trim() === ""){
+        newProduct[prop] = null;
+    }else{
+        
+        newProduct[prop] = value;
+    }
+    // console.log(newProduct)
+    
 }
 
+// add Product in localStorage
+
+function addProduct(){
+    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc ) {
+        alert("All Field is requred! Please fill all Field...");
+        return ;
+    }
+
+    product.push(newProduct);
+
+    localStorage.setItem("product",JSON.stringify(product));
+
+    displayLoadData(product);
+
+    openClose();
+    console.log(newProduct)
+
+}
 
 
