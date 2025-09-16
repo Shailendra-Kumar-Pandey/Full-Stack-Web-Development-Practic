@@ -681,8 +681,8 @@ function displayLoadData(arr) {     // display data in table
                         <td>${ele.title}</td>
                         <td>₹ ${ele.price}</td>
                         <td>
-                            <button class="action-btn edit-btn" onclick="editProduct()">Edit</button>
-                            <button class="action-btn delete-btn" onclick="deleteProduct()">Delete</button>
+                            <button class="action-btn edit-btn" onclick="editProduct('${ele.id}')">Edit</button>
+                            <button class="action-btn delete-btn" onclick="deleteProduct('${ele.id}')">Delete</button>
                          </td>
                     </tr>`
         allRow += row;      // append each row to allRow variable
@@ -765,5 +765,8 @@ function addProduct(){
     
 
 }
-
+// edit Product Logic
+function editProduct(e) {
+    console.log(e);    
+}
 
