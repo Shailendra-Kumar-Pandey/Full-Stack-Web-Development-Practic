@@ -770,3 +770,9 @@ function editProduct(e) {
     console.log(e);    
 }
 
+// delete Product Logic
+
+function deleteProduct(e){
+    console.log(e)
+}
+
