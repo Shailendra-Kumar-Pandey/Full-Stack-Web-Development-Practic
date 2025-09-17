@@ -708,7 +708,7 @@ function openClose(){       // open close model
 
 // add Product Logic
 
-const newProduct ={         // object to store new product data
+let newProduct ={         // object to store new product data
     brand : null,
     title : null,
     price : null,
@@ -743,13 +743,12 @@ function addProduct(){
     let elementId = 0       // variable to store last element id
 
     if (product.length > 0) {       // if product array is not empty then get last element id
-        elementId = product[product.length -1].id + 1;      // get last element id
-    }else{
-        elementId += 1;
+        elementId = product[product.length - 1].id + 1;      // get last element id
     }
     
     console.log(elementId)
     console.log(newProduct)     
+
     newProduct.id = elementId + 1;      // set new id to new product
 
     product.push(newProduct);       // add new product to product array
@@ -765,6 +764,20 @@ function addProduct(){
 
     alert("Add Product Successfull..!")     // alert message
     
+    
+    document.getElementById("brand").value = "";
+    document.getElementById("title").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("imgURL").value = "";
+    document.getElementById("desc").value = "";
+
+     newProduct ={         // object update
+        brand : null,
+        title : null,
+        price : null,
+        imgURL : null,
+        desc : null,
+    }
 
 }
 // edit Product Logic
