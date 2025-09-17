@@ -743,23 +743,25 @@ function addProduct(){
     let elementId = 0       // variable to store last element id
 
     if (product.length > 0) {       // if product array is not empty then get last element id
-        elementId = product[product.length -1].id;      // get last element id
+        elementId = product[product.length -1].id + 1;      // get last element id
+    }else{
+        elementId += 1;
     }
-
+    
+    console.log(elementId)
+    console.log(newProduct)     
     newProduct.id = elementId + 1;      // set new id to new product
-    // console.log(elementId)
 
     product.push(newProduct);       // add new product to product array
 
     localStorage.setItem("product",JSON.stringify(product));        // add new product to local storage
 
-    // displayLoadData(product);
     
-    // console.log(newProduct)     
     
     openClose();        // close model after adding product
+    displayLoadData(product);
     
-    window.location.reload();   // reload page to see the changes
+    // window.location.reload();   // reload page to see the changes
 
     alert("Add Product Successfull..!")     // alert message
     

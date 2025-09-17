@@ -44,11 +44,11 @@
             <button id="btn-close" onclick="openClose()"> X </button>
             <h2>Add Product</h2>
             <div class="inner-content">
-                <input type="text" placeholder="Enter Brand Name" onkeyup="addnewproduct('brand', this.value)">
-                <input type="text" placeholder="Enter Title " onkeyup="addnewproduct('title', this.value)">
-                <input type="number" placeholder="Enter Price " onkeyup="addnewproduct('price', this.value)">
-                <input type="url" placeholder="Enter Brand Image URL" onkeyup="addnewproduct('imgURL', this.value)">
-                <textarea type="text" placeholder="Enter Desecription" onkeyup="addnewproduct('desc', this.value)"></textarea>
+                <input type="text" placeholder="Enter Brand Name" onkeyup="addnewproduct('brand', this.value)" id="brand">
+                <input type="text" placeholder="Enter Title " onkeyup="addnewproduct('title', this.value)" id="title">
+                <input type="number" placeholder="Enter Price " onkeyup="addnewproduct('price', this.value)" id="price">
+                <input type="url" placeholder="Enter Brand Image URL" onkeyup="addnewproduct('imgURL', this.value)" id="imgURL">
+                <textarea type="text" placeholder="Enter Desecription" onkeyup="addnewproduct('desc', this.value)" id="desc"></textarea>
                     <button onclick="addProduct()">Add Product</button>
             </div>
         </div>     
