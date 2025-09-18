@@ -60,11 +60,11 @@
             <button id="btn-close" onclick="openClose('editModal')"> X </button>
             <h2>Update Product</h2>
             <div class="inner-content">
-                <input type="text" placeholder="Enter Brand Name" id="brandUpdate">
-                <input type="text" placeholder="Enter Title "  id="titleUpdate">
-                <input type="number" placeholder="Enter Price "  id="priceUpdate">
-                <input type="url" placeholder="Enter Brand Image URL" id="imgURLUpdate">
-                <textarea type="text" placeholder="Enter Desecription"  id="descUpdate"></textarea>
+                <input type="text" placeholder="Enter Brand Name" id="brandUpdate" onkeyup="updateProduct('brand', this.value)">
+                <input type="text" placeholder="Enter Title "  id="titleUpdate" onkeyup="updateProduct('title', this.value)">
+                <input type="number" placeholder="Enter Price "  id="priceUpdate" onkeyup="updateProduct('price', this.value)">
+                <input type="url" placeholder="Enter Brand Image URL" id="imgURLUpdate" onkeyup="updateProduct('imgURL', this.value)">
+                <textarea type="text"  placeholder="Enter Description" id="descUpdate" onkeyup="updateProduct('desc', this.value)"></textarea>
                 <button class="btn_style" onclick="UpdateProduct()">Update Product</button>
             </div>
         </div>     

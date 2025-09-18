@@ -807,6 +807,7 @@ function openClosedDeleteModal() {       // open close model
 }
 */
 
+// Delete Product Confirmation
 
 let isConfirm = false;
 let elementId = 0;
@@ -842,11 +843,11 @@ function deleteProductFromList(id) {
 
             displayLoadData(product)
 
-            // openClosedDeleteModal();
+            openClose("deleteModal")
 
             alert("Product will be Deleted Successfully...");
         } else {
-            // openClosedDeleteModal();
+            openClose("deleteModal");
 
             alert("Something error this code....")
         }
@@ -871,17 +872,36 @@ let updateElement = {
 
 function editProduct(eleId) {
     console.log(eleId);
-    console.log(updateElement)
-
+    
     updateElement = product.find((e)=>{
-       return Number(eleId) === Number(e.id)
+        return Number(eleId) === Number(e.id)
     })
     console.log(updateElement)
 
-    document.getElementById("brandUpdate").setAttribute("value", updateElement.brand);
-    document.getElementById("titleUpdate").setAttribute("value", updateElement.title);
-    document.getElementById("priceUpdate").setAttribute("value", updateElement.price);
-    document.getElementById("imgURLUpdate").setAttribute("value", updateElement.imgURL);
-    let desc = document.getElementById("descUpdate").setAttribute("value", updateElement.desc);
-    console.log(desc);
+    document.getElementById("brandUpdate").value= updateElement.brand;
+    document.getElementById("titleUpdate").value= updateElement.title;
+    document.getElementById("priceUpdate").value= updateElement.price;
+    document.getElementById("imgURLUpdate").value= updateElement.imgURL;
+    document.getElementById("descUpdate").value = updateElement.desc || updateElement.descrip;
+}
+function updateProduct(prop, value){
+    if (value.trim() === "") {        // if input is empty then set null
+        updateElement[prop] = null;
+    } else {
+        if (prop === "price") {       // if property is price then convert into number
+            updateElement[prop] = Number(value);       // convert string to number
+        } else {
+            updateElement[prop] = value;    // else set value as it is
+        }
+    }
+}
+
+function UpdateProduct(){
+ //validation logic
+    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc) {
+        alert("All Field is requred! Please fill all Field...");        // alert message if any field is empty
+        return;        // return to stop further execution
+    }       // validation logic end
+
+    
 }
