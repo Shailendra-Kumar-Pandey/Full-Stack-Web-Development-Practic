@@ -751,8 +751,8 @@ function addProduct() {
         elementId = 1;     // if product array is empty then set id to 1
     }
 
-    console.log(elementId)
-    console.log(newProduct)
+    // console.log(elementId)
+    // console.log(newProduct)
 
     newProduct.id = elementId;      // set new id to new product
 
@@ -761,10 +761,10 @@ function addProduct() {
     localStorage.setItem("product", JSON.stringify(product));        // add new product to local storage
 
 
+    displayLoadData(product);
 
     openClose('addModal');        // close model after adding product
 
-    displayLoadData(product);
 
     // window.location.reload();   // reload page to see the changes
 
@@ -814,7 +814,7 @@ let elementId = 0;
 
 function confirmValue() {   
     isConfirm = true;
-    console.log(isConfirm)
+    // console.log(isConfirm)
     deleteProductFromList(elementId);
 }
 
@@ -822,7 +822,7 @@ function confirmValue() {
 function deleteProduct(eleId) {
 
     // openClosedDeleteModal();        //
-    console.log(eleId)
+    // console.log(eleId)
     elementId = Number(eleId);
 
 }
@@ -834,7 +834,7 @@ function deleteProductFromList(id) {
             return e.id === id;       // return index if id matches
         });
 
-        console.log(deleteIndex);
+        // console.log(deleteIndex);
 
         if (deleteIndex !== -1) {
             product.splice(deleteIndex, 1);
@@ -869,20 +869,21 @@ let updateElement = {
     desc : null
 }
 
-
+let uniqueId;
 function editProduct(eleId) {
-    console.log(eleId);
+    uniqueId  = eleId;
     
     updateElement = product.find((e)=>{
         return Number(eleId) === Number(e.id)
     })
-    console.log(updateElement)
+    // console.log(updateElement)
 
     document.getElementById("brandUpdate").value= updateElement.brand;
     document.getElementById("titleUpdate").value= updateElement.title;
     document.getElementById("priceUpdate").value= updateElement.price;
     document.getElementById("imgURLUpdate").value= updateElement.imgURL;
     document.getElementById("descUpdate").value = updateElement.desc || updateElement.descrip;
+
 }
 function updateProduct(prop, value){
     if (value.trim() === "") {        // if input is empty then set null
@@ -897,11 +898,32 @@ function updateProduct(prop, value){
 }
 
 function UpdateProduct(){
- //validation logic
-    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc) {
+    //validation logic
+    if (!updateElement.brand || !updateElement.title || !updateElement.price || !updateElement.imgURL || !updateElement.desc) {
         alert("All Field is requred! Please fill all Field...");        // alert message if any field is empty
         return;        // return to stop further execution
-    }       // validation logic end
+    }
+     // validation logic end
+    if(product.id === Number(uniqueId)){
+        product.name = updateElement.name;
+        product.title = updateElement.title;
+        product.price = Number(updateElement.price);
+        product.imgURL = updateElement.imgURL;
+        product.desc = updateElement.desc;
+    }
 
-    
+    localStorage.setItem("product", JSON.stringify(product));
+
+    displayLoadData(product);
+
+    openClose("editModal")
+
+    updateElement = {
+    brand : null,
+    title : null,
+    price : null,
+    imgURL : null,
+    desc : null
+}
+
 }
