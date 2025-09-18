@@ -38,7 +38,7 @@
             </table>
         </div>
     </div>
-
+    <!-- Add Product Modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <button id="btn-close" onclick="openClose()"> X </button>
@@ -51,6 +51,38 @@
                 <textarea type="text" placeholder="Enter Desecription" onkeyup="addnewproduct('desc', this.value)" id="desc"></textarea>
                     <button onclick="addProduct()">Add Product</button>
             </div>
+        </div>     
+    </div>
+
+    <!-- Edit Product Modal -->
+     <div class="edit-modal" id="modal">
+        <div class="modal-content">
+            <button id="btn-close" onclick="openClose()"> X </button>
+            <h2>Edit Product</h2>
+            <!-- <div class="inner-content">
+                <input type="text" placeholder="Enter Brand Name" onkeyup="addnewproduct('brand', this.value)" id="brand">
+                <input type="text" placeholder="Enter Title " onkeyup="addnewproduct('title', this.value)" id="title">
+                <input type="number" placeholder="Enter Price " onkeyup="addnewproduct('price', this.value)" id="price">
+                <input type="url" placeholder="Enter Brand Image URL" onkeyup="addnewproduct('imgURL', this.value)" id="imgURL">
+                <textarea type="text" placeholder="Enter Desecription" onkeyup="addnewproduct('desc', this.value)" id="desc"></textarea>
+                    <button onclick="addProduct()">Add Product</button>
+            </div> -->
+        </div>     
+    </div>
+
+    <!-- Delete Product Modal -->
+     <div class="delete-modal" id="modal">
+        <div class="modal-content">
+            <button id="btn-close" onclick="openClose()"> X </button>
+            <h2>Add Product</h2>
+            <!-- <div class="inner-content">
+                <input type="text" placeholder="Enter Brand Name" onkeyup="addnewproduct('brand', this.value)" id="brand">
+                <input type="text" placeholder="Enter Title " onkeyup="addnewproduct('title', this.value)" id="title">
+                <input type="number" placeholder="Enter Price " onkeyup="addnewproduct('price', this.value)" id="price">
+                <input type="url" placeholder="Enter Brand Image URL" onkeyup="addnewproduct('imgURL', this.value)" id="imgURL">
+                <textarea type="text" placeholder="Enter Desecription" onkeyup="addnewproduct('desc', this.value)" id="desc"></textarea>
+                    <button onclick="addProduct()">Add Product</button>
+            </div> -->
         </div>     
     </div>
     <script src="./js/admin.js"></script>
