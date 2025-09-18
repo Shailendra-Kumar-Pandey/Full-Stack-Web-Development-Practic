@@ -804,15 +804,20 @@ function openClosedDeleteModal(){       // open close model
     }
 }
 
-let confirm = document.getElementById("confirm");
 
+let confirm = document.getElementById("confirm");
 function confirmValue(){
-    confirm.value = true;    
+    confirm = Boolean(confirm.value=true)
+    console.log(Boolean(confirm.value=true))
+    console.log(confirm)
 }
+
 
 function deleteProduct(eleId){
     openClosedDeleteModal();
     console.log(eleId)
+    if (confirm == true) {
+        
         let deleteIndex = product.findIndex((e)=>{      // find index of product to be deleted
             return e.id === Number(eleId);       // return index if id matches
         });
@@ -820,17 +825,21 @@ function deleteProduct(eleId){
         console.log(deleteIndex);  
 
         if (deleteIndex !== -1) {
-            confirmValue();
+            // confirmValue();
             product.splice(deleteIndex, 1);
             localStorage.setItem("product", JSON.stringify(product));
             displayLoadData(product)
+            openClosedDeleteModal();
             alert("Product will be Deleted Successfully...");
-            openClosedDeleteModal();
+            confirm = false
         } else {
-            alert("Something error this code....")
             openClosedDeleteModal();
+            alert("Something error this code....1")
         }
 
+    }else{
+        alert("Something error this code....2")
+    }
     // if(deleteIndex !== -1){       // if product is found then delete it
     //     if(document.getElementById("confirm").value === "true"){
     //         product.splice(deleteIndex,1);      // delete product from array
