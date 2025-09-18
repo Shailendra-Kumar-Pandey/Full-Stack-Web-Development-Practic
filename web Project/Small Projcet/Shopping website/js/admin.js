@@ -734,8 +734,7 @@ function addnewproduct(prop, value) {       // dynamic object property add
     // console.log(newProduct)
 }
 
-// add Product in localStorage
-// dynamic add to product
+// add Product in localStorage dynamic add to product
 
 function addProduct() {
     //validation logic
@@ -787,11 +786,7 @@ function addProduct() {
     }
 
 }
-// edit Product Logic
-function editProduct(e) {
-    console.log(e);
 
-}
 
 // delete Product Logic
 
@@ -860,4 +855,33 @@ function deleteProductFromList(id) {
         alert("code error....")
     }
 
+}
+
+
+
+// edit Product Logic
+let updateElement = {
+    brand : null,
+    title : null,
+    price : null,
+    imgURL : null,
+    desc : null
+}
+
+
+function editProduct(eleId) {
+    console.log(eleId);
+    console.log(updateElement)
+
+    updateElement = product.find((e)=>{
+       return Number(eleId) === Number(e.id)
+    })
+    console.log(updateElement)
+
+    document.getElementById("brandUpdate").setAttribute("value", updateElement.brand);
+    document.getElementById("titleUpdate").setAttribute("value", updateElement.title);
+    document.getElementById("priceUpdate").setAttribute("value", updateElement.price);
+    document.getElementById("imgURLUpdate").setAttribute("value", updateElement.imgURL);
+    let desc = document.getElementById("descUpdate").setAttribute("value", updateElement.desc);
+    console.log(desc);
 }
