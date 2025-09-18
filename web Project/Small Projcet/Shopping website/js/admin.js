@@ -785,11 +785,64 @@ function addProduct(){
 // edit Product Logic
 function editProduct(e) {
     console.log(e);    
+
 }
 
 // delete Product Logic
 
-function deleteProduct(e){
-    console.log(e)
+let deleteModal = document.getElementById("deleteModal");
+
+
+let isOpenClosesDelete = false;
+function openClosedDeleteModal(){       // open close model
+    if (isOpenClosesDelete === false) {        // open model
+        deleteModal.style.display = "flex";
+        isOpenClosesDelete = true;
+    } else {        // close model
+        deleteModal.style.display = "none";
+        isOpenClosesDelete = false;
+    }
+}
+
+let confirm = document.getElementById("confirm");
+
+function confirmValue(){
+    confirm.value = true;    
+}
+
+function deleteProduct(eleId){
+    openClosedDeleteModal();
+    console.log(eleId)
+        let deleteIndex = product.findIndex((e)=>{      // find index of product to be deleted
+            return e.id === Number(eleId);       // return index if id matches
+        });
+
+        console.log(deleteIndex);  
+
+        if (deleteIndex !== -1) {
+            confirmValue();
+            product.splice(deleteIndex, 1);
+            localStorage.setItem("product", JSON.stringify(product));
+            displayLoadData(product)
+            alert("Product will be Deleted Successfully...");
+            openClosedDeleteModal();
+        } else {
+            alert("Something error this code....")
+            openClosedDeleteModal();
+        }
+
+    // if(deleteIndex !== -1){       // if product is found then delete it
+    //     if(document.getElementById("confirm").value === "true"){
+    //         product.splice(deleteIndex,1);      // delete product from array
+    //         localStorage.setItem("product",JSON.stringify(product));        // update local storage
+    //         displayLoadData(product);
+    //         openClosedDeleteModal();     // close delete modal
+
+    
+
+    
+    
+
+
 }
 
