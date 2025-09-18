@@ -918,6 +918,8 @@ function UpdateProduct(){
 
     openClose("editModal")
 
+     alert("Product will be Update Successfully...");
+
     updateElement = {
     brand : null,
     title : null,
