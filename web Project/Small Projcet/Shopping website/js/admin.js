@@ -673,16 +673,16 @@ displayLoadData(product)        // display data in table
 
 function displayLoadData(arr) {     // display data in table
     let allRow = "";        // all row variable
-     
-    arr.forEach((ele,idx) => {     // loop to create row for each product 
+
+    arr.forEach((ele, idx) => {     // loop to create row for each product 
         let row = `<tr>
-                        <td>${idx+1}</td>
+                        <td>${idx + 1}</td>
                         <td>${ele.brand}</td>
                         <td>${ele.title}</td>
                         <td>₹ ${ele.price}</td>
                         <td>
-                            <button class="action-btn edit-btn" onclick="editProduct('${ele.id}')">Edit</button>
-                            <button class="action-btn delete-btn" onclick="deleteProduct('${ele.id}')">Delete</button>
+                            <button class="action-btn edit-btn" onclick="openClose('editModal'), editProduct('${ele.id}')">Edit</button>
+                            <button class="action-btn delete-btn" onclick="openClose('deleteModal'), deleteProduct('${ele.id}')">Delete</button>
                          </td>
                     </tr>`
         allRow += row;      // append each row to allRow variable
@@ -690,17 +690,21 @@ function displayLoadData(arr) {     // display data in table
     document.getElementById("tBody").innerHTML = allRow;        // display all row in table body
 }
 
-//Open Close Model Logic
+//Open Close Model add, edit, Delete Logic
 
-let modal = document.getElementById("modal");
 
 let isOpenClose = false;
-function openClose(){       // open close model
+
+function openClose(modal) {       // open close model
+    let ele = document.getElementById(modal);
+
+    // modal.style.display = isOpenClose ? "none" : "flex";
+
     if (isOpenClose === false) {        // open model
-        modal.style.display = "flex";
+        ele.style.display = "flex";
         isOpenClose = true;
     } else {        // close model
-        modal.style.display = "none";
+        ele.style.display = "none";
         isOpenClose = false;
     }
 }
@@ -708,93 +712,96 @@ function openClose(){       // open close model
 
 // add Product Logic
 
-let newProduct ={         // object to store new product data
-    brand : null,
-    title : null,
-    price : null,
-    imgURL : null,
-    desc : null,
+let newProduct = {         // object to store new product data
+    brand: null,
+    title: null,
+    price: null,
+    imgURL: null,
+    desc: null,
 }
 
 function addnewproduct(prop, value) {       // dynamic object property add
-    if(value.trim() === ""){        // if input is empty then set null
+    if (value.trim() === "") {        // if input is empty then set null
         newProduct[prop] = null;
-    }else {
-        if(prop === "price"){       // if property is price then convert into number
+    } else {
+        if (prop === "price") {       // if property is price then convert into number
             newProduct[prop] = Number(value);       // convert string to number
-        }else{
+        } else {
             newProduct[prop] = value;    // else set value as it is
         }
     }
-    
+
     // console.log(newProduct)
 }
 
 // add Product in localStorage
 // dynamic add to product
 
-function addProduct(){
-        //validation logic
-    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc ) {       
+function addProduct() {
+    //validation logic
+    if (!newProduct.brand || !newProduct.title || !newProduct.price || !newProduct.imgURL || !newProduct.desc) {
         alert("All Field is requred! Please fill all Field...");        // alert message if any field is empty
-        return ;        // return to stop further execution
+        return;        // return to stop further execution
     }       // validation logic end
-    
+
     let elementId = 0       // variable to store last element id
 
     if (product.length > 0) {       // if product array is not empty then get last element id
-        elementId = product[product.length -1].id + 1;      // get last element id
-    }else{
+        elementId = product[product.length - 1].id + 1;      // get last element id
+    } else {
         elementId = 1;     // if product array is empty then set id to 1
     }
-    
+
     console.log(elementId)
-    console.log(newProduct)     
+    console.log(newProduct)
 
     newProduct.id = elementId;      // set new id to new product
 
     product.push(newProduct);       // add new product to product array
 
-    localStorage.setItem("product",JSON.stringify(product));        // add new product to local storage
+    localStorage.setItem("product", JSON.stringify(product));        // add new product to local storage
 
-    
-    
-    openClose();        // close model after adding product
+
+
+    openClose('addModal');        // close model after adding product
+
     displayLoadData(product);
-    
+
     // window.location.reload();   // reload page to see the changes
 
     alert("Add Product Successfull..!")     // alert message
-    
-    
+
+
     document.getElementById("brand").value = "";
     document.getElementById("title").value = "";
     document.getElementById("price").value = "";
     document.getElementById("imgURL").value = "";
     document.getElementById("desc").value = "";
 
-     newProduct ={         // object update
-        brand : null,
-        title : null,
-        price : null,
-        imgURL : null,
-        desc : null,
+    newProduct = {         // object update
+        brand: null,
+        title: null,
+        price: null,
+        imgURL: null,
+        desc: null,
     }
 
 }
 // edit Product Logic
 function editProduct(e) {
-    console.log(e);    
+    console.log(e);
 
 }
 
 // delete Product Logic
 
-let deleteModal = document.getElementById("deleteModal");
 
-
+/*
 let isOpenClosesDelete = false;
-function openClosedDeleteModal(){       // open close model
+
+function openClosedDeleteModal() {       // open close model
+    let deleteModal = document.getElementById("deleteModal");
+
     if (isOpenClosesDelete === false) {        // open model
         deleteModal.style.display = "flex";
         isOpenClosesDelete = true;
@@ -803,55 +810,54 @@ function openClosedDeleteModal(){       // open close model
         isOpenClosesDelete = false;
     }
 }
+*/
 
 
-let confirm = document.getElementById("confirm");
-function confirmValue(){
-    confirm = Boolean(confirm.value=true)
-    console.log(Boolean(confirm.value=true))
-    console.log(confirm)
+let isConfirm = false;
+let elementId = 0;
+
+function confirmValue() {   
+    isConfirm = true;
+    console.log(isConfirm)
+    deleteProductFromList(elementId);
 }
 
 
-function deleteProduct(eleId){
-    openClosedDeleteModal();
+function deleteProduct(eleId) {
+
+    // openClosedDeleteModal();        //
     console.log(eleId)
-    if (confirm == true) {
-        
-        let deleteIndex = product.findIndex((e)=>{      // find index of product to be deleted
-            return e.id === Number(eleId);       // return index if id matches
+    elementId = Number(eleId);
+
+}
+
+function deleteProductFromList(id) {
+
+    if (isConfirm === true) {
+        let deleteIndex = product.findIndex((e) => {      // find index of product to be deleted
+            return e.id === id;       // return index if id matches
         });
 
-        console.log(deleteIndex);  
+        console.log(deleteIndex);
 
         if (deleteIndex !== -1) {
-            // confirmValue();
             product.splice(deleteIndex, 1);
+
             localStorage.setItem("product", JSON.stringify(product));
+
             displayLoadData(product)
-            openClosedDeleteModal();
+
+            // openClosedDeleteModal();
+
             alert("Product will be Deleted Successfully...");
-            confirm = false
         } else {
-            openClosedDeleteModal();
-            alert("Something error this code....1")
+            // openClosedDeleteModal();
+
+            alert("Something error this code....")
         }
-
-    }else{
-        alert("Something error this code....2")
+        isConfirm = false;
+    } else {
+        alert("code error....")
     }
-    // if(deleteIndex !== -1){       // if product is found then delete it
-    //     if(document.getElementById("confirm").value === "true"){
-    //         product.splice(deleteIndex,1);      // delete product from array
-    //         localStorage.setItem("product",JSON.stringify(product));        // update local storage
-    //         displayLoadData(product);
-    //         openClosedDeleteModal();     // close delete modal
-
-    
-
-    
-    
-
 
 }
-
