@@ -1,11 +1,11 @@
 //
 
 const users =[
-    {id : 1, name : "Jeetu", city: "Satna" },
-    {id : 2, name : "Gayatri", city: "Satna" },
-    {id : 3, name : "Ramakant", city: "Panna" },
-    {id : 4, name : "Kawade", city: "pune" },
-    {id : 5, name : "Sanjay", city: "Nagpur" }
+    {id : 1, name : "Jeetu", city: "Satna", age: 29},
+    {id : 2, name : "Gayatri", city: "Satna", age: 27},
+    {id : 3, name : "Ramakant", city: "Panna", age: 30 },
+    {id : 4, name : "Kawade", city: "pune", age: 62 },
+    {id : 5, name : "Sanjay", city: "Nagpur" , age: 49}
 ]
 
 
@@ -83,17 +83,34 @@ result = users.reduce(function (total, id){     // accumulator :- holt last resu
     return total + id.id;
 },0)
 
+// console.log(result)      // print hold single value
+// console.log(users)       // print full array
+
+
+// 5. map() function :-         this method used to create a new array not modifie in orignal array
+
+result = users.map((e)=>{
+    return e.id === 9
+})
 // console.log(result)
+
+// 6. filter() function :-   this method used to create a new array not modifie in orignal array, function will be return to condition true to store new array but condition false then skill this element.
+
+result = users.filter((e)=>{
+    return e.age > 30;          // condition chack to find element age grater then 30 and return and store result will be store result
+})
+// console.log(result);        // print finally result
+
+// 7. sort() function :-  this function change the orignal array using or very pawer method 
+
+users.sort((a,b)=>{
+    return b.name - a.name;
+})
+
 // console.log(users)
 
+//  8. reverse() function :-        this function will be whole array in reserse order
 
-// 5. map() function :-
+users.reverse();        // change whole array will be change order to reverse order
 
-
-// 6. filter() function :-   this function is
-
-
-// 7. sort() function :-
-
-
-//  8. 
+// console.log(users)      // print full array and reverse order
