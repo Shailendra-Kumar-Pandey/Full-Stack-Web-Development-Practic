@@ -109,8 +109,16 @@ users.sort((a,b)=>{
 
 // console.log(users)
 
-//  8. reverse() function :-        this function will be whole array in reserse order
+//  8. reverse() function :-       this array change in orignal array this function will be whole array in reserse order
 
 users.reverse();        // change whole array will be change order to reverse order
 
 // console.log(users)      // print full array and reverse order
+
+
+// 9. toreversed() function :- this functio will be return new array but not be change orginal array
+
+result = users.toReversed()         // this is reverse order return new array but not be change orignal array
+
+// console.log(result)         // this is print reverse order
+// console.log(users)          // not change orignal array
