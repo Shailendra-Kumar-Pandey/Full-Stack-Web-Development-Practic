@@ -122,3 +122,13 @@ result = users.toReversed()         // this is reverse order return new array bu
 
 // console.log(result)         // this is print reverse order
 // console.log(users)          // not change orignal array
+
+// 10 join() function :- this function will be return only string
+
+result = ["Shailendra", "Gayatri", "Jeetu", "Ramakant"]
+
+// console.log(result)
+let data =result.join();        // not change orignal array but return string value
+// console.log(data)
+// console.log(result)
+
