@@ -230,4 +230,14 @@ result = fullName.split(" ")
 
 // console.log(result)    // result = fullName.split(" ")  // [ 'Shailendra', 'Shaligram', 'Pandey' ]
 
-console.log(result)
+// console.log(result)
+
+function mySplit(str){
+    let splitArr = [];
+    
+    for(let i= 0; i< str.length; i++){
+        splitArr.push(str[i])
+    }
+     return splitArr;
+}
+console.log(mySplit(fullName))
