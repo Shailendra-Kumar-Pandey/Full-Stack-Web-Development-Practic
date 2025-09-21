@@ -106,4 +106,95 @@ function myToLowerCase(str) {
     return lowerCase;
 }
 
-console.log(myToLowerCase(fullName));
+// console.log(myToLowerCase(fullName));
+
+
+// 5. toUpperCase() method :- this function will be string convert to upper case 
+
+result = fullName.toUpperCase()
+
+// console.log(result)
+
+
+function myToUpperCase(str) {
+    let upperCase = ""
+    let holdLowerChar = " abcdefghijklmnopqrstuvwxyz";
+    let holdUpperChar = " ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let holdIndex;
+    for (let i = 0; i < str.length; i++) {
+        for(let j = 0; j < holdUpperChar.length; j++){
+            
+            if(str[i]===holdUpperChar[j]){
+                upperCase += str[i]
+                break
+            }else{
+                for (let c = 0; c < holdLowerChar.length; c++) {
+                    if(str[i] === holdLowerChar[c]){
+                        holdIndex = c;
+                        break
+                    }
+                }
+                if (holdIndex === j) {
+                    upperCase += holdUpperChar[j];
+                    holdIndex = null
+                    break
+                }
+            }
+        }
+    }    
+    return upperCase;    
+}
+
+// console.log(myToUpperCase(fullName))
+// console.log(myToUpperCase("kya haal h raja"))
+
+
+// 6. concat() method :- This function will be add to two string
+
+let firstName = "Shailendra"
+
+let lastName = " Pandey"
+
+result = firstName.concat(lastName)
+
+// console.log(result);
+
+
+function myConcat(startStr, addStr){
+    let fullStr = "";
+    for(let i = 0; i < startStr.length; i++){
+        fullStr += startStr[i]
+    }
+    for (let j = 0; j < addStr.length; j++) {
+        fullStr += addStr[j];
+    }
+    return fullStr;
+}
+
+// console.log(myConcat(firstName, lastName))
+// console.log(myConcat("Jeetu ", "Bhai"))
+
+
+// 7. repeat() method:- this function will be repeat string return 
+
+result = fullName.repeat(3);
+
+console.log(result)
+
+function myRepeat(str, time){
+    let finalResult = ""
+    count = time;
+    let j = 0;
+    while(j<time){
+        for (let i = 0; i < str.length; i++) {
+            finalResult += str[i]
+        }
+        j++
+    }
+    return finalResult;
+}
+
+console.log(myRepeat(fullName, 3))
+
+
+8.
