@@ -201,7 +201,7 @@ function myRepeat(str, time){
 
 result = fullName.replace("Shailendra", "Sandeep")
 
-console.log(result)
+// console.log(result)
 
 function myReplace(str, changeStr, updateStr){
     let updateString = ""
@@ -216,4 +216,18 @@ function myReplace(str, changeStr, updateStr){
     }
     return updateString
 }
-console.log(myReplace(fullName,"Shailendra","Sandeep"))
+// console.log(myReplace(fullName,"Shailendra","Sandeep"))
+
+// console.log(myReplace("Jeetu Bhai","Jeetu","Vi"))
+
+// 9. split() method :- this function will be return string to array 
+
+result = fullName.split(" ")
+
+// console.log(result)      // result = fullName.split()   // ['Shailendra Shaligram Padney']
+
+// console.log(result)  // result = fullName.split("")  // ['S','h','a','i','l','e','n','d','r','a',' ','S','h','a','l','i','g','r','a','m',' ','P','a','d','n','e','y']
+
+// console.log(result)    // result = fullName.split(" ")  // [ 'Shailendra', 'Shaligram', 'Pandey' ]
+
+console.log(result)
