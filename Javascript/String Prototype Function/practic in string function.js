@@ -179,7 +179,7 @@ function myConcat(startStr, addStr){
 
 result = fullName.repeat(3);
 
-console.log(result)
+// console.log(result)
 
 function myRepeat(str, time){
     let finalResult = ""
@@ -194,7 +194,26 @@ function myRepeat(str, time){
     return finalResult;
 }
 
-console.log(myRepeat(fullName, 3))
+// console.log(myRepeat(fullName, 3))
 
 
-8.
+// 8.replace() method :- this function will be change string using selected string
+
+result = fullName.replace("Shailendra", "Sandeep")
+
+console.log(result)
+
+function myReplace(str, changeStr, updateStr){
+    let updateString = ""
+    for(let i = 0; i < str.length; i++){
+        if (str[i]===changeStr[i]) {
+            if(updateStr.length > i){
+                updateString += updateStr[i]
+            }
+        }else{
+            updateString += str[i]
+        }
+    }
+    return updateString
+}
+console.log(myReplace(fullName,"Shailendra","Sandeep"))
