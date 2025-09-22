@@ -222,22 +222,36 @@ function myReplace(str, changeStr, updateStr){
 
 // 9. split() method :- this function will be return string to array 
 
-result = fullName.split(" ")
+result = fullName.split(' ')
 
 // console.log(result)      // result = fullName.split()   // ['Shailendra Shaligram Padney']
 
 // console.log(result)  // result = fullName.split("")  // ['S','h','a','i','l','e','n','d','r','a',' ','S','h','a','l','i','g','r','a','m',' ','P','a','d','n','e','y']
 
-// console.log(result)    // result = fullName.split(" ")  // [ 'Shailendra', 'Shaligram', 'Pandey' ]
+console.log(result)    // result = fullName.split(" ")  // [ 'Shailendra', 'Shaligram', 'Pandey' ]
 
 // console.log(result)
 
-function mySplit(str){
+function mySplit(str, split){
     let splitArr = [];
-    
+    if(split === undefined || split === null ){
+        splitArr[0] = str
+    }
     for(let i= 0; i< str.length; i++){
-        splitArr.push(str[i])
+        if(split === ""){
+            splitArr[i] = str[i]
+        }
+        if (split === " ") {
+            let strData = ""
+            if(str[i] === " "){
+                splitArr.push(strData);
+                strData = "";
+            }else{
+                strData += str[i]
+            }
+        }
     }
      return splitArr;
 }
-console.log(mySplit(fullName))
+
+console.log(mySplit(fullName, " "))
