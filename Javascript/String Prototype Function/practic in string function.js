@@ -199,9 +199,9 @@ function myRepeat(str, time){
 
 // 8.replace() method :- this function will be change string using selected string
 
-result = fullName.replace("Shailendra", "Sandeep")
+result = fullName.replace("S", "Sandeep")
 
-// console.log(result)
+console.log(result)
 
 function myReplace(str, changeStr, updateStr){
     let updateString = ""
@@ -216,13 +216,13 @@ function myReplace(str, changeStr, updateStr){
     }
     return updateString
 }
-// console.log(myReplace(fullName,"Shailendra","Sandeep"))
+console.log(myReplace(fullName,"Sha","Sandeep"))
 
 // console.log(myReplace("Jeetu Bhai","Jeetu","Vi"))
 
 // 9. split() method :- this function will be return string to array 
 
-result = fullName.split(' ')
+result = fullName.split('z ')
 
 // console.log(result)      // result = fullName.split()   // ['Shailendra Shaligram Padney']
 
@@ -239,45 +239,82 @@ function mySplit(str, split){
     }
     let startingWord = "";
     for(let i= 0; i< str.length; i++){
-        if(split === ""){
-            splitArr[i] = str[i]
-        }
-        if(split === " "){
-            if(str[i] !== " " ){
-                startingWord += str[i]
-                if (str.length-1 === i) {
+        if(split === "" || split === " "){
+            if(split === ""){
+                splitArr[i] = str[i]
+            }
+            if(split === " "){
+                if(str[i] !== " " ){
+                    startingWord += str[i]
+                    // if (str.length-1 === i) {
+                    //     splitArr.push(startingWord)
+                    // }
+                }else{
                     splitArr.push(startingWord)
+                    startingWord = ""
+                }             
+            }
+      }else{
+            if(str.includes(split) === true ){
+                if(str[i] !== split){
+                    startingWord += str[i]
+                }else{
+                    splitArr.push(startingWord)
+                    startingWord = ""
+                    continue;
                 }
             }else{
-                splitArr.push(startingWord)
-                startingWord = ""
-            }             
-        }
+                splitArr[0] = str
+            }
+      }
+    }
+    if(startingWord.length > 0){
+        splitArr.push(startingWord)
     }
     return splitArr;
 }
-// console.log(mySplit(fullName, " "))
+console.log(mySplit(fullName, ' '))
 
 
 // 10. trim() method :- this function will be return unuseable space clear and return string but only extra space will be delete left-end and right-end space
 
 let a = "     shailendra kumar pandey     "
 
-result = a.trim()
+// result = a.trim()
 
-console.log(result)
-console.log(a)
+// console.log(result)
+// console.log(a)
 
 function myTrim(str){
-    let trim = "";
+    let startTrim = "";
+    let lastTrim = "";
     for (let i = 0; i < str.length; i++) {
-        if(str[i] === " " ){
-            continue;
+        if(str[i] !== " "){
+            startTrim += str[i]
         }else{
-            trim += str[i]
+            if(startTrim.length > 0){
+                startTrim += str[i]
+            }
         }
     }
-    return trim;
+    for (let i = startTrim.length-1; i >= 0; i--) {
+        if(startTrim[i] !== " "){
+            lastTrim += startTrim[i]
+        }else{
+            if(lastTrim.length > 0){
+                lastTrim += startTrim[i]
+            }
+        }
+    }
+    let finalTrim = ""
+    for (let i = lastTrim.length-1; i >=0 ; i--) {
+        finalTrim += lastTrim[i]        
+    }
+
+    return finalTrim;
 }
 
-console.log(myTrim(a))
+// console.log(myTrim(a))
+
+
+
