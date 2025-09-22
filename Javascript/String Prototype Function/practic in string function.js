@@ -228,7 +228,7 @@ result = fullName.split(' ')
 
 // console.log(result)  // result = fullName.split("")  // ['S','h','a','i','l','e','n','d','r','a',' ','S','h','a','l','i','g','r','a','m',' ','P','a','d','n','e','y']
 
-console.log(result)    // result = fullName.split(" ")  // [ 'Shailendra', 'Shaligram', 'Pandey' ]
+// console.log(result)    // result = fullName.split(" ")  // [ 'Shailendra', 'Shaligram', 'Pandey' ]
 
 // console.log(result)
 
@@ -237,11 +237,44 @@ function mySplit(str, split){
     if(split === undefined || split === null ){
         splitArr[0] = str
     }
+    let startingWord = "";
     for(let i= 0; i< str.length; i++){
         if(split === ""){
             splitArr[i] = str[i]
         }
-        
+        if(split === " "){
+            if(str[i] !== " " ){
+                startingWord += str[i]
+                if (str.length-1 === i) {
+                    splitArr.push(startingWord)
+                }
+            }else{
+                splitArr.push(startingWord)
+                startingWord = ""
+            }             
+        }
+    }
     return splitArr;
 }
-console.log(mySplit(fullName, " "))
+// console.log(mySplit(fullName, " "))
+
+
+// 10. trim() method :- this function will be return unuseable space clear and return string but only extra space will be delete left-end and right-end space
+
+let a = "     shailendra kumar pandey     "
+
+result = a.trim()
+
+console.log(result)
+console.log(a)
+
+function myTrim(str){
+    let trim = "";
+    for (let i = 0; i < str.length; i++) {
+        if(str[i] === " " ){
+            continue;
+        }else{
+            
+        }
+    }
+}
