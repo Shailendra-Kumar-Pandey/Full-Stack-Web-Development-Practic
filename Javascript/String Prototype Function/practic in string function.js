@@ -274,7 +274,10 @@ function myTrim(str){
         if(str[i] === " " ){
             continue;
         }else{
-            
+            trim += str[i]
         }
     }
+    return trim;
 }
+
+console.log(myTrim(a))
