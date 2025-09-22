@@ -241,17 +241,7 @@ function mySplit(str, split){
         if(split === ""){
             splitArr[i] = str[i]
         }
-        if (split === " ") {
-            let strData = ""
-            if(str[i] === " "){
-                splitArr.push(strData);
-                strData = "";
-            }else{
-                strData += str[i]
-            }
-        }
-    }
-     return splitArr;
+        
+    return splitArr;
 }
-
 console.log(mySplit(fullName, " "))
