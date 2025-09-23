@@ -45,10 +45,10 @@ syntex:-    setTimeout(function(){
 </head>
 <body>
     <input type="text" placeholder="Enter your Full Name">
-    <button>Submit</button>
+    <button onclick="showMsg()">Submit</button>
 
     <div>
-        Thank You Shailendra Pandey, submit your Feedback.
+        <!-- Thank You Shailendra Pandey, submit your Feedback. -->
     </div>
 
     <script>
@@ -59,6 +59,17 @@ syntex:-    setTimeout(function(){
         },2000)
         console.log("hello")*/
 
+        let input = document.getElementsByTagName("input")[0];
+        // input[0].value
+        console.log(input)
+        function showMsg(){
+            document.getElementsByTagName("div")[0].innerText = `Thank You ${input.value}, submit your Feedback.`
+            document.getElementsByTagName("div")[0].style.right = "0px"
+        }
+
+        setTimeout(()=>{
+            document.getElementsByTagName("div")[0].style.right = "-300px"
+        },500)
 
 
     </script>
