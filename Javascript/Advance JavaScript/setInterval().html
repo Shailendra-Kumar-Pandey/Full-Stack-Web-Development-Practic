@@ -13,7 +13,13 @@
         button{
             padding: 10px 20px;
             font-size: 18px;
-
+        }
+        div{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            width: 81.875px;
+            height: 81.875px;
+            background-color: darkblue;
         }
     </style>
 </head>
@@ -26,6 +32,27 @@
     <button onclick="startStop()">Start/stop</button>
     
     <script>
+        let timerData;
+        let marginLeft = 0;
+        let isStop = false;
+
+        function startStop() {
+            if(isStop === true ){
+                clearInterval(timerData)
+                isStop = false;
+            }else{
+                
+                timerData = setInterval(()=>{
+                    document.getElementsByTagName("div")[0].style.marginLeft = marginLeft + 'px';
+                    marginLeft += 10;
+                    if( marginLeft >= window.innerWidth-85){
+                        marginLeft = 0;
+                }
+                }, 1)
+                isStop = true
+            }
+            
+        }
         // let isValue = false;
         // let timmer;
         // let data = "";
@@ -43,6 +70,8 @@
         //         isValue = false;
         //     }
         // }
+        
+
     </script>
 </body>
 </html>
