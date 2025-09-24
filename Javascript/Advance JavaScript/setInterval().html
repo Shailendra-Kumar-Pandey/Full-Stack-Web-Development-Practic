@@ -4,9 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>setInterval() Function</title>
+    <style>
+        *{
+            margin: 20;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 18px;
+
+        }
+    </style>
 </head>
 <body>
+    <h1>setInterval() Function</h1>
+    <div>
+
+    </div>
+
+    <button onclick="startStop()">Start/stop</button>
     
-    
+    <script>
+        // let isValue = false;
+        // let timmer;
+        // let data = "";
+        // console.log(clearInterval(timmer))
+        // function startStop() {
+        //     if (isValue === false) {
+        //         timer = setInterval(()=>{
+        //             document.getElementsByTagName("div")[0].innerText =  data +="Shailendra Kumar Pandey "
+        //         }, 1000)
+        //         isValue = true                
+        //     }else{
+        //         clearInterval(timmer)
+        // console.log(clearInterval(timmer))
+
+        //         isValue = false;
+        //     }
+        // }
+    </script>
 </body>
 </html>
+
+
+
+<!-- The setInterval() method in JavaScript repeatedly executes a function or code block at specified time intervals. It continues to run until it is explicitly stopped with the clearInterval() method. 
+How to use setInterval()
+The syntax requires a function to execute and the interval time in milliseconds.
+let intervalID = setInterval(function, delay); 
+Key parameters: 
+function: The function to be executed repeatedly. This can be a named or anonymous function.
+delay: The time in milliseconds (1000 milliseconds = 1 second) between each execution of the function.
+intervalID: A number returned by setInterval() that can be used later to stop the execution. 
+How to stop setInterval()
+To prevent a memory leak and stop the repeated execution, you must call clearInterval() and pass it the intervalID. 
+
+Example
+The following code demonstrates a digital clock that updates every second: 
+javascript
+const myInterval = setInterval(myTimer, 1000); [1.3.3]
+
+function myTimer() { [1.3.3]
+  const date = new Date(); [1.3.3]
+  document.getElementById("demo").innerHTML = date.toLocaleTimeString(); [1.3.3]
+}
+
+function myStopFunction() { [1.3.3]
+  clearInterval(myInterval); [1.3.3]
+}
+कोड का इस्तेमाल सावधानी से करें.
+
+एआई से मिले जवाबों में गलतियां हो सकती हैं. ज़्यादा जानें
+
+
+
+ -->
