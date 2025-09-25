@@ -1,1 +1,43 @@
 <!-- requestAnimationFrame() method -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>requestAnimationFrame() Method</title>
+    <style>
+        *{
+            margin: 20px;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: darkcyan;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+        <div></div>
+
+        <script>
+            //requestAnimationFrame() method :- this method using animation but this function like using recurtion concept working like that.
+            let div = document.getElementsByTagName("div")[0]
+            let marginLeft = 0;
+            function moveBox(){
+
+                div.style.marginLeft = marginLeft + 'px';
+                marginLeft ++;
+                if(window.innerWidth-180 === marginLeft){
+                    marginLeft = 0;
+                }
+                requestAnimationFrame(moveBox)
+            }
+
+            requestAnimationFrame(moveBox)
+
+        </script>
+</body>
+</html>
