@@ -7,6 +7,21 @@
     <title>API Request</title>
  </head>
  <body>
-   
+    <h1>
+        API (Application Programming Interface:- This is a set of rules and protocols for building and interacting with software applications.) Request
+    </h1>
+    
+    <script>
+
+        let http = new XMLHttpRequest(); // Create a new XMLHttpRequest object
+
+        // Configure it: GET-request for the URL /article/.../load
+        
+        http.open("GET", " https://automationexercise.com/api/brandsList", false);
+        
+        http.send(); // Send the request over the network
+
+        console.log(http);      // Log the XMLHttpRequest object to the console
+    </script>
  </body>
  </html>
