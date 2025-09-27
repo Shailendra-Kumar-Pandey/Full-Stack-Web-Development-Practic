@@ -11,3 +11,16 @@ users.forEach(function(user) {
     console.log(user.age);
 });
 
+
+function myForEach(callback) {
+    for (let i = 0; i < this.length; i++) {
+        callback(this[i], i, this);
+    }
+}
+
+Array.prototype.myForEach = myForEach;
+users.myForEach(function(user) {
+    console.log(user);
+    console.log(user.name);
+    console.log(user.age);
+});
