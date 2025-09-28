@@ -19,8 +19,10 @@ function myForEach(callback) {
 }
 
 Array.prototype.myForEach = myForEach;
-users.myForEach(function(user) {
+users.myForEach(function(user, index, arr) {
     console.log(user);
     console.log(user.name);
     console.log(user.age);
+    console.log(index);
+    console.log(arr);
 });
