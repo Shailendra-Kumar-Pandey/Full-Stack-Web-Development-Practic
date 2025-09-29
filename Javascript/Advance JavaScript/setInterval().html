@@ -32,15 +32,16 @@
     <button onclick="startStop()">Start/stop</button>
     
     <script>
-        let timerData;
-        let marginLeft = 0;
-        let isStop = false;
+        let timerData;      // global variable create store setInterval
+        let marginLeft = 0;     // global variable store marginleft
+        let isStop = false;     // global variable store boolean value
 
         function startStop() {
             if(isStop === true ){
-                clearInterval(timerData)
+                clearInterval(timerData)    //
                 isStop = false;
             }else{
+                // 
                 
                 timerData = setInterval(()=>{
                     document.getElementsByTagName("div")[0].style.marginLeft = marginLeft + 'px';
