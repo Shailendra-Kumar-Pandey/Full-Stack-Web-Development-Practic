@@ -62,6 +62,7 @@
         <tbody id ="table-body">
             <!-- Table rows will be dynamically inserted here -->
            
+           
         </tbody>
     </table>
     
@@ -78,39 +79,41 @@
 
         http.onreadystatechange = function(){
             if(this.readyState === 4 ){ // Check if the request is complete and was successful
+               
                 if (this.status === 200) {
                     
                     let response = http.response;
                     let data = JSON.parse(response); // Parse the JSON response
-                    console.log(data); // Log the parsed data to the console
+                    // console.log(data); // Log the parsed data to the console
                     // console.log(http.response)   // console log the object
                     
                     let tableRow = "";
                     data.users.forEach((user, index) => {
-                        console.log(user.firstName + " " + user.lastName); // Log each user's full name to the console
-                        let row = `
-                                    <tr>
-                                        <td>${user.index + 1}</td>
+                        // console.log(user.firstName + " " + user.lastName); // Log each user's full name to the console
+                        let row = ` <tr>
+                                        <td>${index + 1}</td>
                                         <td>${user.firstName} ${user.maidenName} ${user.lastName}</td>
                                         <td>${user.age}</td>
                                         <td>${user.gender}</td>
                                         <td>${user.phone}</td>
                                         <td>${user.email}</td>
-                                        <td>${user.address.address} ${user.address} ${user.address} ${user.address}</td>
+                                        <td>${user.address.address} ${user.address.city} ${user.address.state} ${user.address.postalCode} ${user.address.country}</td>
                                     </tr>
                         `
-                   
-                   
-                   
+                        tableRow += row; // Append the new row to the tableRow string
                     });
+
+                    document.getElementById("table-body").innerHTML = tableRow
                 }else{
                     alert("Error Occurred: " + http.status); // Alert if there was an error with the request
+                    document.getElementById("table-body").innerHTML = `  <tr>
+                                                                            <td colspan="7" style="border: 1px solid #ddd;padding: 8px 20px; text-align: left; text-align: center;"> Data not Found...!</td>   
+                                                                        </tr>`
                 }
-
             }
         }
         
-        console.log(http);      // Log the XMLHttpRequest object to the console
+        // console.log(http);      // Log the XMLHttpRequest object to the console
         http.send(); // Send the request over the network
 
     </script>
