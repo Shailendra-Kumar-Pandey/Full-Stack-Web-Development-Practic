@@ -5,24 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Request</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td{
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th{
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even){
+            background-color: #f9f9f9;
+        }
+        tr:hover{
+            background-color: #e9e9e9;
+        }
+    </style>
  </head>
  <body>
     <h1>
         API (Application Programming Interface:- This is a set of rules and protocols for building and interacting with software applications.) Request
     </h1>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Full Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody id ="table-body">
+            <!-- Table rows will be dynamically inserted here -->
+           
+        </tbody>
+    </table>
     
+
+
+
     <script>
 
         let http = new XMLHttpRequest(); // Create a new XMLHttpRequest object
 
         // Configure it: GET-request for the URL /article/.../load
         
-        http.open("GET", " https://automationexercise.com/api/brandsList", false);
-            
+        http.open("GET", "https://dummyjson.com/users", true);
+
+        http.onreadystatechange = function(){
+            if(this.readyState === 4 ){ // Check if the request is complete and was successful
+                if (this.status === 200) {
+                    
+                    let response = http.response;
+                    let data = JSON.parse(response); // Parse the JSON response
+                    console.log(data); // Log the parsed data to the console
+                    // console.log(http.response)   // console log the object
+                    
+                    let tableRow = "";
+                    data.users.forEach((user, index) => {
+                        console.log(user.firstName + " " + user.lastName); // Log each user's full name to the console
+                        let row = `
+                                    <tr>
+                                        <td>${user.index + 1}</td>
+                                        <td>${user.firstName} ${user.maidenName} ${user.lastName}</td>
+                                        <td>${user.age}</td>
+                                        <td>${user.gender}</td>
+                                        <td>${user.phone}</td>
+                                        <td>${user.email}</td>
+                                        <td>${user.address.address} ${user.address} ${user.address} ${user.address}</td>
+                                    </tr>
+                        `
+                   
+                   
+                   
+                    });
+                }else{
+                    alert("Error Occurred: " + http.status); // Alert if there was an error with the request
+                }
+
+            }
+        }
         
+        console.log(http);      // Log the XMLHttpRequest object to the console
         http.send(); // Send the request over the network
 
-        console.log(http);      // Log the XMLHttpRequest object to the console
     </script>
  </body>
  </html>
