@@ -16,6 +16,8 @@ function server(name, data) {
     data(2, 5);
 }
 
-server("Shailendra", function(num1, num2) {
+server("Shailendra",Addition);
+
+function Addition(num1, num2) {
     console.log(num1 + num2);
-});
+}
