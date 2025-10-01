@@ -4,12 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Call back Hell</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            margin: 10px;
+        }
+        h1{
+            text-align: center;
+            font-size: 3em;
+            color: #333;
+        }
+
+    </style>
 </head>
 <body>
     <h1>callBacks hell</h1>
 
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No.</th>
+                    <th>Full Name</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody id="user">
+                <tr>
+                    <td>1</td>
+                    <td>Jeetu</td>
+                    <td>Male</td>
+                    <td>29</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
     <script>
         
+        function API(reqURL, callBack){
+            let http = new XMLHttpRequest();
+
+            http.open("GET", reqURL, true)
+
+            http.onreadystatechange = function(){
+
+                if (http.readyState === 4) {
+
+                    if(http.status === 200){
+
+                        let respone = http.response
+
+                        let result = JSON.parse(respone);
+
+                        // console.log(result)
+                        callBack(result)
+                    }
+                    
+                }
+            }
+
+            http.send()
+        }
+
+        API("https://jsonplaceholder.typicode.com/users" , function(respone){
+            console.log("USERS:-", respone)
+        })
+
+
+        API("https://jsonplaceholder.typicode.com/posts" , function(respone){
+            console.log("POSTS:-", respone)
+        })
+
+        API("https://jsonplaceholder.typicode.com/comments" , function(respone){
+            console.log( "COMMENTS:-", respone)
+        })
+
     </script>
 </body>
 </html>
