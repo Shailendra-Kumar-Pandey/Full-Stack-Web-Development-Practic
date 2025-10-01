@@ -16,8 +16,7 @@ function server(name, callBack) {
     callBack(2, 5);
 }
 
-server("Shailendra",Addition);
+server("Shailendra",function(num1, num2){
+    console.log("Addition: ", num1 + num2)
+});
 
-function Addition(num1, num2) {
-    console.log(num1 + num2);
-}
