@@ -11,9 +11,9 @@ function doSomething (){
 // doSomething(
 
 //exmple callback and understand callback
-function server(name, data) {
+function server(name, callBack) {
     console.log(name);
-    data(2, 5);
+    callBack(2, 5);
 }
 
 server("Shailendra",Addition);
