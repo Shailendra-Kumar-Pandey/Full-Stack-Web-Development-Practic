@@ -79,23 +79,30 @@
         API("https://jsonplaceholder.typicode.com/users" , function(respone, err){
             if (err === null) {
                 console.log("USERS:-", respone)
-                    API("https://jsonplaceholder.typicode.com/posts" , function(respone, err){
+                    API("https://jsonplaceholder.typicode.com/photos", function(respone,err){
                         if (err === null) {
-                            console.log("POSTS:-", respone)
-                                API("https://jsonplaceholder.typicode.om/comments" , function(respone, err){
-                                    if(err === null){
-                                        console.log( "COMMENTS:-", respone)
+                            console.log("PHOTO:- ", respone)
+                                API("https://jsonplaceholder.typicode.com/posts" , function(respone, err){
+                                    if (err === null) {
+                                        console.log("POSTS:-", respone)
+                                            API("https://jsonplaceholder.typicode.com/comments" , function(respone, err){
+                                                if(err === null){
+                                                    console.log( "COMMENTS:-", respone)
+                                                }else{
+                                                    console.log("COMMENTS:- ", err)
+                                                }
+                                            })
                                     }else{
-                                        console.log("COMMENTS:- ", err)
+                                        console.log("POSTS:-", err)
                                     }
-                                })
-                    }else{
-                        console.log("POSTS:-", err)
-                    }
-                })
-            }else{
-                console.log("Users:- ", err)
-            }
+                                })            
+                        }else{
+                            console.log("PHOTO:- ", err)
+                        }
+                    })
+                }else{ 
+                    console.log("Users:- ", err)
+                }
         })
 
     </script>
