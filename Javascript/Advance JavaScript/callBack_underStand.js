@@ -8,7 +8,7 @@ function doSomething (){
     console.log("Hello")
 }
 
-// doSomething(
+doSomething()
 
 //exmple callback and understand callback
 function server(name, callBack) {
@@ -20,3 +20,18 @@ server("Shailendra",function(num1, num2){
     console.log("Addition: ", num1 + num2)
 });
 
+
+// 2nd type of callback function
+
+function testing(information, callBackFunction){
+    console.log(information);
+    callBackFunction(5)
+    console.log(callBackFunction(5))
+}
+
+function data(num1){
+    console.log( "This is a callBack....")
+    return num1 + " return";
+}
+
+testing("Gayatri", data)
