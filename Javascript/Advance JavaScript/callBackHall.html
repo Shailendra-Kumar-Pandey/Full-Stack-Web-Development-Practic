@@ -65,7 +65,9 @@
                         let result = JSON.parse(respone);
 
                         // console.log(result)
-                        callBack(result)
+                        callBack(result, null)
+                    }else{
+                        callBack( null ,"Something wrong API")
                     }
                     
                 }
@@ -74,18 +76,34 @@
             http.send()
         }
 
-        API("https://jsonplaceholder.typicode.com/users" , function(respone){
-            console.log("USERS:-", respone)
+        API("https://jsonplaceholder.typicode.com/users" , function(respone, err){
+            if (err === null) {
+                
+                console.log("USERS:-", respone)
+
+                API("https://jsonplaceholder.typicode.com/posts" , function(respone){
+                    
+                    if (err === null) {
+                        
+                        console.log("POSTS:-", respone)
+
+                    }else{
+
+                        console.log("POSTS:-", err)
+                    }
+                })
+            }else{
+
+                console.log("Users:- ", err)
+
+            }
         })
 
 
-        API("https://jsonplaceholder.typicode.com/posts" , function(respone){
-            console.log("POSTS:-", respone)
-        })
 
-        API("https://jsonplaceholder.typicode.com/comments" , function(respone){
-            console.log( "COMMENTS:-", respone)
-        })
+        // API("https://jsonplaceholder.typicode.com/comments" , function(respone){
+        //     console.log( "COMMENTS:-", respone)
+        // })
 
     </script>
 </body>
