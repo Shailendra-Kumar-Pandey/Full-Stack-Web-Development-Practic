@@ -49,4 +49,4 @@ users.myReverse((user)=>{
     console.log(user)
 })
 
-console.log(users)
+// console.log(users)
