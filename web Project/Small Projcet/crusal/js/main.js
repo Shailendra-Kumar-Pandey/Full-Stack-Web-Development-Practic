@@ -9,19 +9,19 @@ function rightSlide() {
     if (currentIndex === 7) {
         currentIndex = 0;
         console.log(imageContainer.children[currentIndex]);
-        // imageContainer.children[currentIndex].src;
-        
+        imageContainer.children[currentIndex].style.display = "block";
+
     } else {
-        
-        console.log(imageContainer.children[currentIndex += 1]);
-        // imageContainer.children[currentIndex += 1].src;
-        // imageContainer.children[currentIndex += 1].style.transition = "all 10s ease-in-out";
-        // for (let i = 0; i < imageContainer.children.length; i++) {
-        //     imageContainer.children[i].style.tr = "none";
-        // }
-        // imageContainer.children[currentIndex].style.display = "block";
+        // console.log(imageContainer.children[currentIndex += 1]);
+        imageContainer.children[currentIndex].style.display = "none";
+        imageContainer.children[currentIndex += 1].style.display = "block";
     }
  }
-function leftSlide() {
-
- }
+// function leftSlide() {
+//     if (currentIndex === 0) {
+//         currentIndex = 7;
+//         console.log(imageContainer.children[currentIndex-=1]);
+//     } else {
+//          console.log(imageContainer.children[currentIndex -= 1]);
+//     }
+//  }
