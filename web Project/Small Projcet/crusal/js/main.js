@@ -8,11 +8,11 @@ let currentIndex = 0;
 function rightSlide() {
     if (currentIndex === 7) {
         currentIndex = 0;
-        console.log(imageContainer.children[currentIndex]);
+        // console.log(imageContainer.children[currentIndex]);
         imageContainer.children[currentIndex].style.display = "block";
 
     } else {
-        // console.log(imageContainer.children[currentIndex += 1]);
+        // console.log(imageContainer.children[currentIndex]);
         imageContainer.children[currentIndex].style.display = "none";
         imageContainer.children[currentIndex += 1].style.display = "block";
     }
