@@ -179,7 +179,7 @@
             // map
 
         result = arr.map((ele)=>{
-           return ele.city
+           return ele.city + " - " + ele.name
         })
 
         console.log(result)
