@@ -18,6 +18,16 @@ function rightSlide() {
 
     }
  }
+
+
+ function autoSlide() {
+  setInterval(()=>{
+         rightSlide();
+     }, 3000);
+ }
+  autoSlide();
+
+
 // function leftSlide() {
 //     if (currentIndex === 0) {
 //         imageContainer.children[currentIndex].style.display = "none";
