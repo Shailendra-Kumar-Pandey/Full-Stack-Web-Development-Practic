@@ -63,25 +63,26 @@
         
         //using real API
 
-        function network(reqURL) {
-            return new Promise((response, reject)=>{
+        function network(reqURL) {              //  function for API call
+            return new Promise((response, reject)=>{        // create Promise object
 
-                let http = new XMLHttpRequest();
+                let http = new XMLHttpRequest();        // create XMLHttpRequest object
 
-                http.open("GET", reqURL, true);
+                http.open("GET", reqURL, true);     // true means Asynchronous request, false means Synchronous request 
 
-                http.onreadystatechange = function(){
-                    if (http.readyState === 4) {
-                        if (http.status === 200) {
-                            let result = JSON.parse(http.response)
-                            response(result);
-                        }else{
-                            reject("Something went wrong...!", reqURL)
+                http.onreadystatechange = function(){           // when readyState change this function will call
+                    if (http.readyState === 4) {        // 4 means request is done
+                        // console.log(http)
+                        if (http.status === 200) {      // 200 means OK
+                            // console.log(http.response)     //  JSON data
+                            let result = JSON.parse(http.response)      // convert JSON data into javascript object
+                            response(result);                       //  successfull
+                        }else{      //  other than 200 means error
+                            reject("Something went wrong...!", reqURL)      //  error handling
                         }
                     }
                 }
-
-                http.send();
+                http.send();        // send request
             });
         }
 
@@ -107,21 +108,19 @@
 
         // 2:- Second way using this function API call get Promise chaining and catch error handling code readable
         
-        network("https://jsonplaceholder.typicode.com/users")
-        .then((res)=>{
-            console.log(res)
-            return network("https://jsonplaceholder.typicode.com/posts")
-        }).then((res)=>{
-            console.log(res)
-            return network("https://jsonplaceholder.typicode.com/comments")
-        }).then((res)=>{
-            console.log(res)
-        }).catch((err)=>{
-            console.log(err)
+        network("https://jsonplaceholder.typicode.com/users")       // first API call
+        .then((res)=>{                 // if first API call successfull then this .then() will call 
+            console.log(res)            // print first API data
+            return network("https://jsonplaceholder.typicode.com/posts")        // second API call
+        }).then((res)=>{        // if second API call successfull then this .then() will call
+            console.log(res)        // print second API data
+            return network("https://jsonplaceholder.typicode.com/comments")     // third API call
+        }).then((res)=>{        // if third API call successfull then this .then() will call
+            console.log(res)        // print third API data
+        }).catch((err)=>{       // if any API call get error then this .catch() will call
+            console.log(err)        // print error message
          })
 
-
-       
     </script>
     
 </body>
