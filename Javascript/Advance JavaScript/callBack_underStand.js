@@ -4,34 +4,37 @@
 
 // write the function follow the step 1:- Addition, 2:- Subtraction; 3:- Multiplication; 4:- Divition
 
-function doSomething (){
-    console.log("Hello")
-}
+// function doSomething (){
+//     console.log("Hello")
+// }
 
-doSomething()
+// doSomething()
 
-//exmple callback and understand callback
-function server(name, callBack) {
-    console.log(name);
-    callBack(2, 5);
-}
+// //exmple callback and understand callback
+// function server(name, callBack) {
+//     console.log(name);
+//     callBack(2, 5);
+// }
 
-server("Shailendra",function(num1, num2){
-    console.log("Addition: ", num1 + num2)
-});
+// server("Shailendra",function(num1, num2){
+//     console.log("Addition: ", num1 + num2)
+// });
 
 
 // 2nd type of callback function
 
 function testing(information, callBackFunction){
     console.log(information);
-    callBackFunction(5)
+    callBackFunction("shailendra")
     console.log(callBackFunction(5))
 }
 
-function data(num1){
+// function data(num1){
+//     console.log( "This is a callBack....")
+//     return num1 + " return";
+// }
+
+testing("Gayatri", function(num1){
     console.log( "This is a callBack....")
     return num1 + " return";
-}
-
-testing("Gayatri", data)
+})

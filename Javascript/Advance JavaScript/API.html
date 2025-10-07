@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api</title>
+</head>
+<body>
+    <script>
+
+        function networkCall(url, dell){
+
+            let khanSir = new XMLHttpRequest();
+
+            khanSir.open("GET", url, true);
+
+            khanSir.onreadystatechange = function(){
+
+
+                if(khanSir.readyState === 4){
+
+                    if(khanSir.status === 200){
+
+                        let pandeyJi = JSON.parse(khanSir.response)
+
+                        // console.log(pandeyJi)
+
+                        dell(pandeyJi, null);
+
+                    }else{
+
+                        dell(null, `Something went wrong...! ${url}`)
+                    }
+                }
+            }
+            khanSir.send();
+        }
+
+
+        networkCall("https://jsonplaceholder.typicode.com/users", function(response, error){
+                if(error === null){
+                    console.log(response)
+                    networkCall("https://jsonplaceholder.typicode.om/posts", function(response, error){
+                        if(error === null){
+                            console.log(response)
+                            networkCall("https://jsonplaceholder.typicode.com/comments", function(response, error){
+                                if(error === null){
+                                    console.log(response)
+                                }else{
+                                   console.log(error)
+                                 }
+                             });
+                        }else{
+                            console.log(error)
+                        }
+                     });
+                }else{
+                    console.log(error)
+                }
+        });
+
+
+        
+
+       
+
+
+
+        // networkCall("https://jsonplaceholder.typicode.com/posts");
+        // networkCall("https://jsonplaceholder.typicode.com/comments");
+
+
+
+
+    </script>
+    
+</body>
+</html>
