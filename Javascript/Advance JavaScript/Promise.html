@@ -15,7 +15,7 @@
         let promise = new Promise((response, reject)=>{
 
             let isAPInetwork = true;
-
+            // netwok task
             if(isAPInetwork){
                 response("Yes, this is Perfect respone then I will get Promise...")
             }else{
@@ -35,6 +35,7 @@
         function API() {
             return new Promise((respone, reject)=>{
                 let isAPInetwork = true;
+                // Network task
                 if (isAPInetwork) {
                     respone("Yes, Promise get Successfull...!")
                 }else{
@@ -59,9 +60,68 @@
         })
         */
 
+        
+        //using real API
+
+        function network(reqURL) {
+            return new Promise((response, reject)=>{
+
+                let http = new XMLHttpRequest();
+
+                http.open("GET", reqURL, true);
+
+                http.onreadystatechange = function(){
+                    if (http.readyState === 4) {
+                        if (http.status === 200) {
+                            let result = JSON.parse(http.response)
+                            response(result);
+                        }else{
+                            reject("Something went wrong...!", reqURL)
+                        }
+                    }
+                }
+
+                http.send();
+            });
+        }
+
+        /*
+        // 1:- First way using this function API call get Promise
+        // network("https://jsonplaceholder.typicode.com/users")
+        network("https://jsonplaceholder.typicode.com/users")
+        .then((res)=>{
+            console.log(res)
+            network("https://jsonplaceholder.typicode.com/posts")
+            .then((res)=>{
+                console.log(res)
+                network("https://jsonplaceholder.typicode.com/comments")
+                .then((res)=>{
+                    console.log(res)
+                })
+            })
+        }).catch((err)=>{
+            console.log(err)
+        })
+        */
 
 
+        // 2:- Second way using this function API call get Promise chaining and catch error handling code readable
+        
+        network("https://jsonplaceholder.typicode.com/users")
+        .then((res)=>{
+            console.log(res)
+            return network("https://jsonplaceholder.typicode.com/posts")
+        }).then((res)=>{
+            console.log(res)
+            return network("https://jsonplaceholder.typicode.com/comments")
+        }).then((res)=>{
+            console.log(res)
+        }).catch((err)=>{
+            console.log(err)
+         })
 
+
+       
     </script>
     
 </body>
