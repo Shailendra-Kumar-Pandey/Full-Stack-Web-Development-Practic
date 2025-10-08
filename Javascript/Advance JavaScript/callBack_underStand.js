@@ -29,12 +29,9 @@ function testing(information, callBackFunction){
     console.log(callBackFunction(5))
 }
 
-// function data(num1){
-//     console.log( "This is a callBack....")
-//     return num1 + " return";
-// }
-
-testing("Gayatri", function(num1){
-    console.log( "This is a callBack....")
+function data(num1){
+    console.log( "This is a callBack....", num1)
     return num1 + " return";
-})
+}
+
+testing("Gayatri", data)
