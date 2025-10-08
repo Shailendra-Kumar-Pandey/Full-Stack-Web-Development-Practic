@@ -40,7 +40,7 @@
         networkCall("https://jsonplaceholder.typicode.com/users", function(response, error){
                 if(error === null){
                     console.log(response)
-                    networkCall("https://jsonplaceholder.typicode.om/posts", function(response, error){
+                    networkCall("https://jsonplaceholder.typicode.com/posts", function(response, error){
                         if(error === null){
                             console.log(response)
                             networkCall("https://jsonplaceholder.typicode.com/comments", function(response, error){
@@ -60,18 +60,9 @@
         });
 
 
-        
-
-       
-
-
-
         // networkCall("https://jsonplaceholder.typicode.com/posts");
         // networkCall("https://jsonplaceholder.typicode.com/comments");
-
-
-
-
+    
     </script>
     
 </body>
