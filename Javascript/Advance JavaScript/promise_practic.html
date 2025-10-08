@@ -11,9 +11,39 @@
 
     <script>
 
-        function apiCall(){
-            
+        function apiCall(reqURL){
+            return new Promise((response, reject)=>{
+                let http = new XMLHttpRequest();
+                http.open("GET", reqURL, true);
+                http.onreadystatechange = function () {
+                    if(http.readyState === 4){
+                        if(http.status === 200){
+                            let result = JSON.parse(http.response);
+                            response(result)
+                        }else{
+                            reject(`Something went Wrong...! ${reqURL}`);
+                        }
+                    }
+                }
+                http.send();
+            })
         }
+
+        apiCall("https://jsonplaceholder.typicode.com/users")
+        .then((res)=>{
+            console.log(res);
+            return apiCall("https://jsonplaceholder.typicode.com/posts");
+        })
+        .then((res)=>{
+            console.log(res);
+            return apiCall("https://jsonplaceholder.typicode.com/comments");
+        })
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
 
     </script>
 </body>
