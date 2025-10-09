@@ -23,7 +23,7 @@ function rightSlide() {
  function autoSlide() {
   setInterval(()=>{
          rightSlide();
-     }, 3000);
+     }, 2000);
  }
   autoSlide();
 
