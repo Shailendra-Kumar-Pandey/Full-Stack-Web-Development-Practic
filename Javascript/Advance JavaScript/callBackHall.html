@@ -13,6 +13,7 @@
         }
         body{
             margin: 10px;
+            background-color: rgb(209, 228, 235);
         }
         h1{
             text-align: center;
@@ -49,6 +50,43 @@
 
     <script>
         
+        function networkAPI(reqURL, callBack) {
+            const http = new XMLHttpRequest()
+            http.open("GET", reqURL, true);
+            http.onreadystatechange = function (){
+                if(http.readyState === 4){
+                    if(http.status === 200){
+                        let result = JSON.parse(http.response);
+                        callBack(result, null);
+                    }else{
+                        callBack(null ,`Something went wrong...! ${reqURL}`)
+                    }
+                }
+            }
+            http.send();
+        }
+
+        networkAPI("https://jsonplaceholder.typicode.com/users", function (response, error) {
+            if (error === null) {
+                console.log(response);
+                networkAPI("https://jsonplaceholder.typicode.com/posts", function(response, error){
+                    if (error === null) {
+                        console.log(response)
+                        networkAPI( "https://jsonplaceholder.typicode.com/comments",function(response, error){
+                            if(error === null){
+                                console.log(response)
+                            }else{
+                                console.log(error)
+                            }
+                        })
+                    }else{
+                        console.log(error)
+                    }
+                })
+            }else{
+                console.log(error);
+            }
+        });
         
 
     </script>
