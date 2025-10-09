@@ -38,18 +38,35 @@
         }
         networkCall();
         */
-        let reqUrl = "https://jsonplaceholder.typicode.com/users"
-        function networkCall() {
-            const data = fetch(reqUrl, {method:"GET"})
-            data.then((res)=>{
+        
+        function networkCall(reqUrl) {
+            return fetch(reqUrl, {method:"GET"})
+        }
+        
+            networkCall("https://jsonplaceholder.typicode.com/users")
+            .then((res)=>{
                 return res.json()
-            }).then((response)=>{
+            })
+            .then((response)=>{
                 console.log(response);
-            }).catch((error)=>{
+                return networkCall("https://jsonplaceholder.typicode.com/posts");
+            })
+            .then((res)=>{
+                return res.json()
+            })
+            .then((response)=>{
+                console.log(response)
+                return networkCall("https://jsonplaceholder.typicode.com/comments");
+            })
+            .then((res)=>{
+                return res.json();
+            })
+            .then((response)=>{
+                console.log(response);
+            })
+            .catch((error)=>{
                 console.log(error)
             })
-        }
-        networkCall();
     </script>
 </body>
 </html>
