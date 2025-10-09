@@ -39,6 +39,9 @@
         networkCall();
         */
         
+        
+        // Multicall-API call
+        /*
         function networkCall(reqUrl) {
             return fetch(reqUrl, {method:"GET"})
         }
@@ -67,6 +70,23 @@
             .catch((error)=>{
                 console.log(error)
             })
+           */ 
+          
+           
+           // POST :- add new 
+
+           function addNewElement(){
+            const user ={
+                
+            }
+            fetch("", {
+                method:"POST",
+                headers:{
+                    "Content-type":"application/json"
+                },
+                body: JSON.stringify(user)
+            })
+           }
     </script>
 </body>
 </html>
