@@ -1,15 +1,28 @@
+:root{
+    --cloudy: url("./Components/clouds.jpg");
+    --sunny: url("./Components/sunny.jpg");
+    --rainy: url("./Components/Thander.png");
+    --textColor : azure;
+    --boxColor : rgba(0, 0, 0, 0.281);
+    --boxShadow : 0px 0px 20px 0px rgba(27, 27, 27, 0.582);
+
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
+    background-image: var(--rainy);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:saturation;
     background-color: rgba(0, 0, 0, 0.281);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 header{
     width: 100%;
-    margin: 15px auto;
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     align-items:  center;
@@ -23,15 +36,18 @@ header p{
     color: azure;
 }
 .search{
-    width:100%;
     display: flex;
-    flex-direction: column;
+    /* margin: 20px auto; */
+    /* width:80%; */
+    /* flex-direction: row; */
     align-items: center;
-
+    justify-content:center;
+    /* gap: 10px; */
+    
 }
 .searchBox{
     color: azure;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 10px 20px;
     border-radius: 10px;
     display: flex;
@@ -39,17 +55,18 @@ header p{
     align-items: center;
     font-size: 20px;
     font-family: system-ui;
-    width: 70%;
+    width: 50%;
     background-color: transparent;
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.555);
     box-shadow: 0px 0px 20px 0px rgba(125, 188, 243, 0.582);
 }
 #searchBtn{
+    margin: 10px auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 30%;
     padding: 15px 35px;
     font-size: 25px;
     border-radius: 10px;
@@ -61,4 +78,115 @@ header p{
 }
 #searchBtn:hover{
     background-color: rgb(97, 155, 204);
+}
+
+.container{
+    background-color: rgba(0, 0, 0, 0.281);
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 20px 0px rgba(125, 188, 243, 0.582); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    min-height: 300px;
+    color: azure;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: system-ui;
+
+}
+
+.inside-container{
+    /* background-color: aliceblue; */
+    width: 100%;
+    height: 350px;   
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 20px 0px rgba(125, 188, 243, 0.582); */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    min-height: 300px;
+    color: var(--textColor);
+    font-size: 25px;
+    font-weight: 600;
+    font-family: system-ui;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+}
+
+.city{
+    position: absolute;
+    top: 20px;
+    left: 20px;    
+    background-color: transparent;
+    padding: 10px 20px;
+    width: 70%;
+    height: 60%;
+    background-image: url("./Components/clouds.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode:saturation;
+    font-size: 40px;
+    font-weight: 700;
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(125, 188, 243, 0.582);
+}
+.temp, .min-temp, .max-temp, .humidity, .pressure, .wind-speed, .state, .country{
+    font-size: 30px;
+    font-weight: 700;
+    font-family: cursive;
+    color: rgb(0, 0, 0);
+    /* background-color: red; */
+    background-color: transparent;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px rgba(125, 188, 243, 0.582);
+    border:1px transparent solid;
+}
+.temp{
+    position: absolute;
+    left: 20px;
+    bottom: 30px;
+}
+.min-temp{
+    position: absolute;
+    left: 280px;
+    bottom: 30px;
+}
+.max-temp{
+    position: absolute;
+    left: 500px;
+    bottom: 30px;
+}
+.humidity{
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+}
+.pressure{
+    position: absolute;
+    right: 280px;
+    bottom: 30px;
+}
+.country{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.wind-speed{
+    position: absolute;
+    right: 20px;
+    bottom: 110px;
+}
+.state{
+    position: absolute;
+    right: 20px;
+    top: 100px;
 }
