@@ -8,26 +8,27 @@
 </head>
 <body>
     <header>
-       <p> Nagpur Wether Report </p>
+       <p id="heading">Nagpur Wether Report </p>
     </header>
     <div class="search">
         <input id="city" class="searchBox" type="text" placeholder="Enter City Name">
-        <button id="searchBtn">Search</button>
+        <button id="searchBtn" onclick="fetchWetherReport()">Search</button>
     </div>
-    <div class="container">
-        <div class="inside-container">
-
-            <div class="city">Nagpur</div>
-            <div class="temp">Temperature</div>
-            <div class="min-temp">Min-Temp</div>
-            <div class="max-temp">Max-Temp</div>
-            <div class="humidity">Humidity</div>
-            <div class="pressure">Pressure</div>
-            <div class="wind-speed">Wind-Speed</div>
-            <div class="state">Madhya Pradesh</div>
-            <div class="country">Country</div>  
-        </div>
-        
+    <div id="load">
+        <!-- <div class="container">
+            <div class="inside-container">
+    
+                <div class="city">Nagpur</div>
+                <div class="temp">Temperature</div>
+                <div class="min-temp">Min-Temp</div>
+                <div class="max-temp">Max-Temp</div>
+                <div class="humidity">Humidity</div>
+                <div class="pressure">Pressure</div>
+                <div class="wind-speed">Wind-Speed</div>
+                <div class="state">Madhya Pradesh</div>
+                <div class="country">Country</div>  
+            </div>    
+        </div> -->
     </div>
 
     <script src="./main.js"></script>
