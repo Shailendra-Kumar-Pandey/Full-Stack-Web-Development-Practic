@@ -57,10 +57,14 @@ header p{
     font-size: 20px;
     font-family: system-ui;
     width: 50%;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.562);
     border-radius: 10px;
     border: 1px solid rgba(0, 0, 0, 0.555);
     box-shadow: var(--boxWindowShadow)
+}
+.searchBox:hover{
+    border: 1px solid var(--textColor);
+    cursor: pointer;
 }
 #searchBtn{
     margin: 10px auto;
@@ -128,23 +132,30 @@ header p{
     top: 20px;
     left: 20px;    
     background-color: transparent;
-    padding: 10px 20px;
+    /* padding: 60px 20px; */
     width: 70%;
-    height: 60%;
+    height: 65%;
     /* background-image: url("./Components/clouds.jpg"); */
     background-size: cover;
     background-position: center;
     background-blend-mode:saturation;
-    font-size: 40px;
+    font-size: 4rem;
     font-weight: 700;
     font-family: cursive;
     color: var(--textColor);
     border-radius: 10px;
     box-shadow: var(--boxWindowShadow);
-    text-align: right;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.city p{
+    font-size: 2.5rem;
 }
 .temp, .min-temp, .max-temp, .humidity, .pressure, .wind-speed, .state, .country{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     font-family: cursive;
     color: var(--textColor);
@@ -158,27 +169,27 @@ header p{
 .temp{
     position: absolute;
     left: 20px;
-    bottom: 30px;
+    bottom: 20px;
 }
 .min-temp{
     position: absolute;
     left: 280px;
-    bottom: 30px;
+    bottom: 20px;
 }
 .max-temp{
     position: absolute;
-    left: 500px;
-    bottom: 30px;
+    left: 350px;
+    bottom: 20px;
 }
 .humidity{
     position: absolute;
     right: 20px;
-    bottom: 30px;
+    bottom: 20px;
 }
 .pressure{
     position: absolute;
     right: 280px;
-    bottom: 30px;
+    bottom: 20px;
 }
 .country{
     position: absolute;
@@ -194,4 +205,5 @@ header p{
     position: absolute;
     right: 20px;
     top: 100px;
+    /* background-image: url(./Components/sunny.jpg); */
 }
