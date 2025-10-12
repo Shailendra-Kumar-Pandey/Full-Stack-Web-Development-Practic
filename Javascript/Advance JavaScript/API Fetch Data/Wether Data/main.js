@@ -15,7 +15,7 @@ function fetchWetherReport() {
         load(result)
     })
     .catch((err)=>{
-        errorHandle(err);
+        errorHandle();
     })
     
 }
@@ -55,7 +55,7 @@ function load(res) {
 
 let isDisplay = true;
 function errorHandle() {
-    if(isDisplay === true ){
+    if(isDisplay === true || isDisplay === false){
         document.getElementById("deleteModal").style.display = "flex";
         setTimeout(()=>{
             document.getElementById("deleteModal").style.display = "none";
@@ -66,15 +66,5 @@ function errorHandle() {
         document.getElementById("load").innerHTML = ""
         document.getElementById("heading").innerText = ""
 
-    }else{
-        document.getElementById("deleteModal").style.display = "flex";
-        setTimeout(()=>{
-            document.getElementById("deleteModal").style.display = "none";
-        }, 2000);
-        isDisplay = true
-        document.body.style.backgroundImage = "url('./Components/Thander.png')";
-        city.value = ""
-        document.getElementById("load").innerHTML = ""
-        document.getElementById("heading").innerText = ""
     }
 }
