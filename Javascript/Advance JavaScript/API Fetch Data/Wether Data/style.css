@@ -154,7 +154,7 @@ header p{
 .city p{
     font-size: 2.5rem;
 }
-.temp, .min-temp, .max-temp, .humidity, .pressure, .wind-speed, .state, .country{
+.temp, .wind-chill, .humidity, .pressure, .wind-speed, .state, .country{
     font-size: 25px;
     font-weight: 700;
     font-family: cursive;
@@ -171,12 +171,7 @@ header p{
     left: 20px;
     bottom: 20px;
 }
-.min-temp{
-    position: absolute;
-    left: 280px;
-    bottom: 20px;
-}
-.max-temp{
+.wind-chill{
     position: absolute;
     left: 350px;
     bottom: 20px;
@@ -206,4 +201,33 @@ header p{
     right: 20px;
     top: 100px;
     /* background-image: url(./Components/sunny.jpg); */
+}
+#deleteModal{
+     width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.349);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modal-content{
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.modal-content > h2{
+    font-size: 25px;
+    font-weight: bold;
+}
+.modal .modal-content> p{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px 0;
 }
