@@ -8,24 +8,24 @@
 </head>
 <body>
     <header>
-        <h3>Latest Top Headlines News in INDIA</h3>
+        <h3>Latest Top <span id="title" ></span> Headlines News in INDIA</h3>
     </header>
     <nav>
-        <button id="home">General</button>
-        <button id="World">World</button>
-        <button id="nation">Nation</button>
-        <button id="business">Business</button>
-        <button id="technology">Technology</button>
-        <button id="entertainment">Entertainment</button>
-        <button id="sport">Sports</button>
-        <button id="science">Science</button>
-        <button id="health">Health</button>
+        <button onclick="fetchNews(this.value)" id="home" value="general">General</button>
+        <button onclick="fetchNews(this.value)" id="World" value="world">World</button>
+        <button onclick="fetchNews(this.value)" id="nation" value="nation">Nation</button>
+        <button onclick="fetchNews(this.value)" id="business"value="business">Business</button>
+        <button onclick="fetchNews(this.value)" id="technology"value="technology">Technology</button>
+        <button onclick="fetchNews(this.value)" id="entertainment" value="entertainment">Entertainment</button>
+        <button onclick="fetchNews(this.value)" id="sports" value="sports">Sports</button>
+        <button onclick="fetchNews(this.value)" id="science" value="science">Science</button>
+        <button onclick="fetchNews(this.value)" id="health" value="health">Health</button>
     </nav>
 
     <section>
         <div class="container" id="newsAccordian">
             <!-- News Cards -->
-            <div class="card">
+            <!-- <div class="card">
                 <div class="img">
                     <img src="./Thander.png" alt="img">
                 </div>
@@ -34,14 +34,14 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae sint, provident magnam officiis non, recusandae quisquam odit id repellendus beatae facilis pariatur aliquam illum eius aspernatur harum deserunt, ea earum.</p>
                     <button href="#">Read more...</button>
                 </div>
-            </div>
+            </div> -->
             <!-- News Cards Ends -->
         </div>
     </section>
-    <div class="nextPage">
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
-    </div>
+    <!-- <div class="nextPage">
+        <button id="prev" onclick="previousPage()">Previous</button>
+        <button id="next" onclick="nextPage()">Next</button>
+    </div> -->
     <footer>
         <p>Copyright &copy; 2025 | All Rights Reserved</p>
     </footer>
