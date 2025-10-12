@@ -231,3 +231,120 @@ header p{
     margin: 20px 0;
     padding: 10px 0;
 }
+@media (max-width: 768px){
+    header p{
+        font-size: 30px;
+    }
+    .searchBox{   
+        width: 65%;
+        font-size: 18px;
+    }
+    #searchBtn{
+        width: 30%;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    .inside-container{
+        height: auto;
+        min-height: 500px;
+    }
+    .city{
+        position: static;
+        width: 90%;
+        height: auto;
+        font-size: 2rem;
+        padding: 20px 10px;
+    }
+    .city p{
+        font-size: 1rem;
+    }
+    .temp, .wind-chill, .humidity, .pressure, .wind-speed, .state, .country{
+        font-size: 18px;
+        padding: 8px 15px;
+    }
+    .temp{
+        position: static;
+        margin: 10px 0;
+    }
+    .wind-chill{
+        position: static;
+        margin: 10px 0;
+    }
+    .humidity{
+        position: static;
+        margin: 10px 0;
+    }
+    .pressure{
+        position: static;
+        margin: 10px 0;
+    }
+    .country{
+        position: static;
+        margin: 10px 0;
+    }
+    .wind-speed{
+        position: static;
+        margin: 10px 0;
+    }
+    .state{
+        position: static;
+        margin: 10px 0;
+    }
+    .modal{
+        width: 100%;
+        height: 100vh;
+    }
+    .modal-content{
+        width: 80%;
+        height: auto;
+    }
+    
+}
+@media(max-width: 1300px) and (min-width: 769px){
+    .inside-container{
+        height: auto;
+        min-height: 500px;
+    }
+    .city{
+        position: static;
+        width: 90%;
+        height: auto;
+        font-size: 3rem;
+        padding: 20px 10px;
+    }
+    .city p{
+        font-size: 1.5rem;
+    }
+    .temp, .wind-chill, .humidity, .pressure, .wind-speed, .state, .country{
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+    .temp{
+        position: static;
+        margin: 10px 0;
+    }
+    .wind-chill{
+        position: static;
+        margin: 10px 0;
+    }
+    .humidity{
+        position: static;
+        margin: 10px 0;
+    }
+    .pressure{
+        position: static;
+        margin: 10px 0;
+    }
+    .country{
+        position: static;
+        margin: 10px 0;
+    }
+    .wind-speed{
+        position: static;
+        margin: 10px 0;
+    }
+    .state{
+        position: static;
+        margin: 10px 0;
+    }
+}
