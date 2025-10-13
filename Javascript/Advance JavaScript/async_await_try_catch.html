@@ -49,9 +49,11 @@
         doSomething()
         */
 
+
+
+   
         // using all ways try and catch statement then inside async-await function
 
-        console.log("Start")
         async function doSomething(url) {
         try {
                 let res = await fetch(url, {
@@ -59,7 +61,6 @@
                 })
                 let response = await res.json();
                 console.log(response)
-                console.log("End")
             } catch (error) {
                 console.log(error)
 
@@ -67,17 +68,9 @@
             }
         }
 
-        console.log("Finish")
-
         doSomething("https://jsonplaceholder.typicode.com/users")
-
-        console.log("Last")
         doSomething("https://jsonplaceholder.typicode.com/posts")
-        console.log("Completed")
         doSomething("https://jsonplaceholder.typicode.com/comments")
-        console.log("All Done")
-
-
     </script>
 </body>
 </html>
