@@ -131,7 +131,7 @@ header p{
     position: absolute;
     top: 20px;
     left: 20px;    
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.267);
     /* padding: 60px 20px; */
     width: 70%;
     height: 65%;
@@ -139,7 +139,7 @@ header p{
     background-size: cover;
     background-position: center;
     background-blend-mode:saturation;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     font-family: cursive;
     color: var(--textColor);
