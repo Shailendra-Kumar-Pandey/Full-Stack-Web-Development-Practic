@@ -16,8 +16,7 @@ function fetchWetherReport() {
     })
     .catch((err)=>{
         errorHandle();
-    })
-    
+    })    
 }
 function load(res) {
     document.getElementById("heading").innerText = `${res.location.name}, ${res.location.region}, ${res.location.country} `
@@ -55,12 +54,11 @@ function load(res) {
         document.body.style.backgroundImage = "url('./Components/sunny.jpg')";
         backImage.style.backgroundImage = "url('./Components/sunny.jpg')";
     }
-    
-
     city.value = "";
 }
 
 let isDisplay = true;
+
 function errorHandle() {
     if(isDisplay === true || isDisplay === false){
         document.getElementById("deleteModal").style.display = "flex";
