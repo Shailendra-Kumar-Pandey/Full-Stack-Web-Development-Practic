@@ -3,3 +3,7 @@
 function addNewItem() {
     
 }
+
+function closeNote(){
+    // window.close();
+}
