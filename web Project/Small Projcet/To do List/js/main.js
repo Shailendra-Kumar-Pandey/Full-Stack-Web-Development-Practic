@@ -1,4 +1,5 @@
 
+
     const notes = [];
     
     let todoList = document.getElementById("todo-list")
@@ -24,7 +25,14 @@
             todoStore["text"] = value
         }     
         console.log(value)   
+
     }
+
+    // function displaySavedNote(){
+    //     notes.push(todoStore)
+    //     console.log(notes)
+    // }
+    // displaySavedNote();
 
     function closeNote(target){
         todoList.removeChild(target);
