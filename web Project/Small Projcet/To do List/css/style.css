@@ -33,6 +33,7 @@ header button{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 header button:hover, .container button:hover{
     background-color: rgba(0, 0, 0, 0.726);
@@ -74,6 +75,7 @@ section{
     align-items: center;
     align-self:flex-end;
     margin: 5px;
+    cursor: pointer;
 }
 .container textarea{
     padding: 0px 10px;
