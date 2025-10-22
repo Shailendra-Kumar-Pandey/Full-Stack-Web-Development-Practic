@@ -1,9 +1,9 @@
 
-    // const todoNote = [];
+    const notes = [];
     
     let todoList = document.getElementById("todo-list")
     let todoNote = `<div class="container">
-                        <button onclick="closeNote()">X</button>
+                        <button onclick="closeNote(this.parentElement)">X</button>
                         <div class="inner-container">
                             <textarea id="todo-text" onkeyup="addNote(this.value)" placeholder="Type a new task..."></textarea>
                         </div>
@@ -13,9 +13,22 @@
     function addNewItem(){
         todoList.innerHTML += todoNote;
     }
-
-    function addNote(){
-
-        console.log(document.getElementById("todo-text").value)
-
+    
+    const todoStore = {
+        text : null
     }
+    function addNote(value){
+        if(value === ""){
+            return;
+        }else{
+            todoStore["text"] = value
+        }     
+        console.log(value)   
+    }
+
+    function closeNote(target){
+        todoList.removeChild(target);
+        console.log(target)
+    }
+    // notes.push(todoStore)
+    // console.log(notes)
