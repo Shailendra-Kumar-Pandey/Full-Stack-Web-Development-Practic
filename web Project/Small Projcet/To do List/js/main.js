@@ -28,11 +28,11 @@
 
     }
 
-    // function displaySavedNote(){
-    //     notes.push(todoStore)
-    //     console.log(notes)
-    // }
-    // displaySavedNote();
+    function displaySavedNote(){
+        notes.push(todoStore)
+        console.log(notes)
+    }
+    displaySavedNote();
 
     function closeNote(target){
         todoList.removeChild(target);
