@@ -6,6 +6,8 @@ for (let value of arr) {
     console.log(value)
 }
 
+// modifying the array value
+
 for (let value of arr) {
     value += 10;
     console.log(value)
