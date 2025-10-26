@@ -24,19 +24,16 @@
         }else{
             todoStore["text"] = value
         }     
-        console.log(value)   
 
     }
 
     function displaySavedNote(){
         notes.push(todoStore)
-        console.log(notes)
     }
     displaySavedNote();
 
     function closeNote(target){
         todoList.removeChild(target);
-        console.log(target)
     }
     // notes.push(todoStore)
     // console.log(notes)
