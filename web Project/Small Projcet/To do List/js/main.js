@@ -15,7 +15,7 @@ function displayLoadData(){
         let row = `<div class="container">
                         <button onclick="closeNote(${index})">X</button>
                         <div class="inner-container">
-                            <textarea id="todo-text" onkeyup="addNote(${index},this.value)" placeholder="Type a new task...">${ele.text}</textarea>
+                            <textarea id="todo-text" onkeyup="addNote(this.value)" placeholder="Type a new task...">${ele.text}</textarea>
                         </div>
                     </div>`
         totaleRows += row;
@@ -24,14 +24,25 @@ function displayLoadData(){
 }
 
 function addNewItem() {
-    notes.push("");
-    savedata()
+    notes.push();
+    // savedata()
     displayLoadData();
 }
 
-function addNote(index, value) {
-    notes[index] =  value;
+let n ={
+    text : null
+}
+
+function addNote( value) {
+    if(value===""){
+        return
+    }else{
+        n["text"] = value;
+    }
     savedata();
+    n = {
+        text : null
+    }
 }
 
 function closeNote(index) {
@@ -42,8 +53,8 @@ function closeNote(index) {
 
 
 function savedata() {
+    notes.push(n);
     localStorage.setItem("notes", JSON.stringify(notes));
 }
 
-    displayLoadData();
     
