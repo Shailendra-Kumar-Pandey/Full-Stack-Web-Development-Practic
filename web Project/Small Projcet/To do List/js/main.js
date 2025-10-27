@@ -1,13 +1,11 @@
 const notes = JSON.parse(localStorage.getItem("notes")) || [];
 
+if (notes.length === 0) {
+    notes.push({text : ""});
+}
+
 let todoList = document.getElementById("todo-list");
-let row = `<div class="container">
-                        <button onclick="closeNote(this.parentElement)">X</button>
-                        <div class="inner-container">
-                            <textarea id="todo-text" onkeyup="addNote(this.value)" placeholder="Type a new task..."></textarea>
-                        </div>
-                    </div>`
-todoList.innerHTML += row;
+
 
 function displayLoadData(){
     let totaleRows = "";
@@ -15,7 +13,7 @@ function displayLoadData(){
         let row = `<div class="container">
                         <button onclick="closeNote(${index})">X</button>
                         <div class="inner-container">
-                            <textarea id="todo-text" onkeyup="addNote(this.value)" placeholder="Type a new task...">${ele.text}</textarea>
+                            <textarea id="todo-text" onkeyup="addNote(${index}, this.value)" placeholder="Type a new task...">${ele.text}</textarea>
                         </div>
                     </div>`
         totaleRows += row;
@@ -24,24 +22,20 @@ function displayLoadData(){
 }
 
 function addNewItem() {
-    notes.push();
-    // savedata()
+    notes.push({text : ""});
     displayLoadData();
 }
 
-let n ={
-    text : null
-}
 
-function addNote( value) {
+function addNote( index, value) {
+    let n ={
+        text : null
+    }
     if(value===""){
         return
     }else{
-        n["text"] = value;
-    }
-    savedata();
-    n = {
-        text : null
+        notes[index].text = value;
+        savedata();
     }
 }
 
@@ -53,8 +47,10 @@ function closeNote(index) {
 
 
 function savedata() {
-    notes.push(n);
     localStorage.setItem("notes", JSON.stringify(notes));
 }
+
+
+    displayLoadData();
 
     
