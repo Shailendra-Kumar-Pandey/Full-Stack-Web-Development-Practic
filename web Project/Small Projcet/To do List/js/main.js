@@ -1,12 +1,8 @@
 const notes = JSON.parse(localStorage.getItem("notes")) || [];
-
 if (notes.length === 0) {
     notes.push({text : ""});
 }
-
 let todoList = document.getElementById("todo-list");
-
-
 function displayLoadData(){
     let totaleRows = "";
     notes.forEach((ele,index) => {
@@ -20,13 +16,10 @@ function displayLoadData(){
     })
     todoList.innerHTML = totaleRows;
 }
-
 function addNewItem() {
     notes.push({text : ""});
     displayLoadData();
 }
-
-
 function addNote( index, value) {
     let n ={
         text : null
@@ -38,19 +31,12 @@ function addNote( index, value) {
         savedata();
     }
 }
-
 function closeNote(index) {
     notes.splice(index, 1);
     savedata();
     displayLoadData();
 }
-
-
 function savedata() {
     localStorage.setItem("notes", JSON.stringify(notes));
 }
-
-
     displayLoadData();
-
-    
