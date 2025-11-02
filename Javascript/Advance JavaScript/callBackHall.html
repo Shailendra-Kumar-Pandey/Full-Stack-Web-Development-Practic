@@ -88,7 +88,25 @@
             }
         });
         
+        // callback hell:- multiple nested callbacks making code hard to read and maintain.
+        // callback functions are often used for asynchronous operations, such as network requests, timers, and event handling.
+        // callback hell can lead to code that is difficult to read, understand, and maintain.
+        // To avoid callback hell, you can use techniques such as:
+        // callback functions:- what is call back fuction?
+        // A callback function is a function that is passed as an argument to another function and is executed after some operation is completed.
+        // Solution: Use Promises or Async/Await
 
+
+        // example of callback:-
+        function greet(name, callback) {
+            console.log('Hello ' + name);
+            callback();
+        }
+        function sayGoodbye() {
+            console.log('Goodbye!');
+        }
+        greet('Alice', sayGoodbye);
+        
     </script>
 </body>
 </html>
