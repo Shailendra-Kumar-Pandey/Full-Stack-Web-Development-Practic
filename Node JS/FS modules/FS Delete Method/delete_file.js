@@ -2,4 +2,4 @@
 
 const fileSystem = require('fs')
 
-// fileSystem.unlinkSync("./demo.txt")
+fileSystem.unlinkSync("./demo.txt")
