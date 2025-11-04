@@ -2,4 +2,12 @@
 
 const fileSystem = require('fs')
 
-fileSystem.unlinkSync("./demo.txt")
+// this function is synchronous function usong delete file
+// fileSystem.unlinkSync("./demo.txt")       
+
+fileSystem.unlink('./data.txt',(err)=>{
+    if(!err){
+        console.log("This file has been Deleted!")
+    }
+})
+
