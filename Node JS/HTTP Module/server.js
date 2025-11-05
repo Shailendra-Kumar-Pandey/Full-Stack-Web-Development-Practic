@@ -3,9 +3,21 @@
 const http = require('http')
 
 const server = http.createServer((req, res)=>{
-    
-    res.writeHead(200, {"content-type": "plain/text"});
-    res.end("Hey My Name is Shailendra Kumar Pandey!")
+    console.log(req.method)
+    console.log(req.url)
+
+    if(req.url === '/getusers' && req.method === 'GET'){
+
+        res.writeHead(200, {"content-type": "plain/text"});
+
+        res.end("Hey My Name is Shailendra Kumar Pandey!")
+
+    }else{
+        res.writeHead(404, {"content-type": "plain/text"});
+
+        res.end("Page Not Found!")
+
+    }
 })
 
 server.listen(8000, ()=>{
