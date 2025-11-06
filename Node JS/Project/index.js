@@ -3,6 +3,10 @@ const fs = require ('fs');
 
 const server = http.createServer((req, res)=>{
 
+    let data = '';
+    if(req.url === "/getallusers" && req.method === "GET"){
+        
+    }
     req.on("data", (chunk)=>{
         console.log(chunk)
     })
