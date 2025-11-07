@@ -1,11 +1,14 @@
 const http = require('http');
 const fileSystem = require('fs');
-const reqUrl = require('url');
-const { json } = require('stream/consumers');
-const { error } = require('console');
+const url = require('url')
+
 
 
 const server = http.createServer((req, res)=>{
+
+    console.log(req.url)
+    let baseUrl = url.parse(req.url, true) 
+    console.log(baseUrl)
 
 
     let studentData = JSON.parse(fileSystem.readFileSync("./student.json", {encoding : "utf-8"})) || [];
@@ -24,12 +27,12 @@ const server = http.createServer((req, res)=>{
 
         let data = ''
 
-        res.on('data', (chunk)=>{
+        req.on('data', (chunk)=>{
             data += chunk;
-            console(data)
+            console.log(data)
         })
 
-        res.on('end', ()=>{
+        req.on('end', ()=>{
             console.log(JSON.parse(data))
 
             let lastStudent = JSON.parse(data);
@@ -40,23 +43,52 @@ const server = http.createServer((req, res)=>{
     
             fileSystem.writeFileSync('./student.json', JSON.stringify(studentData));
     
-            res.writeHead(200 , {'content-type':'application/json'});
+            res.writeHead(201 , {'content-type':'application/json'});
     
             res.end(JSON.stringify({
-                result : lastStudent.id,
+                result : studentData[studentData.length-1].id,
                 massage : "Add Student Successfully...!"
             }))
         })
 
-    }else{
-        res.writeHead(404 , {'content-type':'application/json'});
-        res.end(JSON.stringify(
-            {
-                error : error,
-                massage : "Somthing went wrong...!"
+    }else      
+        
+        // Get All Student GET-API
+        if(req.url === '/getAllStudent' && req.method === 'GET'){     
+
+            res.writeHead(200, {'content-type' : 'application/json'});
+
+            res.end(JSON.stringify(studentData))
+
+        }else
+            // Find Single Student Data
+            if(baseUrl.pathname === '/singleStudent' && req.method === 'GET'){
+
+                let userId = baseUrl.query.id
+
+                if(!userId){
+                    res.writeHead(401, {'content-type' : 'application/json'})
+                    return res.end(JSON.stringify({
+                        massage : "Please Provide ID...!"
+                    }))
+                }
+
+                let singleStudent = studentData.find((ele) => Number(ele.id) === Number(userId))
+                if(!singleStudent){
+                    res.writeHead(401, {'content-type' : 'application/json'})
+                    return res.end(JSON.stringify({
+                        massage : "Invalid Student ID...!"
+                    }))
+                }
+
+                res.writeHead(200, {'content-type' : 'application/json'})
+                return res.end(JSON.stringify({
+                        result : singleStudent,
+
+                        massage : `${singleStudent.name} find student successfully....`
+                    }))
+
             }
-        ))
-    }
 })
 
 server.listen(9000, ()=>{
