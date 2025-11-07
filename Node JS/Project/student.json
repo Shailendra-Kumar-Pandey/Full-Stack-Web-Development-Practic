@@ -1,1 +1,27 @@
-[]
+[   
+    {
+      "id": 1,
+      "name": "Amit Sharma",
+      "age": 20
+    },
+    {
+      "id": 2,
+      "name": "Priya Singh",
+      "age": 19,
+    },
+    {
+      "id": 3,
+      "name": "Rohit Verma",
+      "age": 21,
+    },
+    {
+      "id": 4,
+      "name": "Sneha Gupta",
+      "age": 20,
+    },
+    {
+      "id": 5,
+      "name": "Arjun Patel",
+      "age": 22,
+    }
+]
