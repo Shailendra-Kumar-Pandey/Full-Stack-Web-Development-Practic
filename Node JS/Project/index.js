@@ -52,6 +52,13 @@ const server = http.createServer((req, res)=>{
         
         // })
 
+        res.writeHead(200, {"content-type": "application/json"})
+        res.end("working function")
+
+    }else{
+
+        res.writeHead(404 , {"content-type" : "application/json"});
+        res.end("Somthing went wrong...!")
     }
 })
 
