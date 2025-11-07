@@ -5,7 +5,7 @@ const fileSystem = require ('fs');
 const server = http.createServer((req, res)=>{
 
     // Get All user API:- /getallusers
-    if(req.url === "/getallusers" && req.method === "GET"){
+    if(req.url === "/shailendra" && req.method === "GET"){
                 
         res.writeHead(200, {'content-type':'application/json'});
         
