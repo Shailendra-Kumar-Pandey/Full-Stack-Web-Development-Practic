@@ -6,14 +6,11 @@ const server = http.createServer((req, res)=>{
 
     // Get All user API:- /getallusers
     if(req.url === "/getallusers" && req.method === "GET"){
-        
-        
-        
+                
         res.writeHead(200, {'content-type':'application/json'});
         
         let data =  fileSystem.readFileSync("./student.json",{encoding : "utf-8"})
 
-    
         res.end(JSON.parse(JSON.stringify(data)))
 
     }else{
@@ -26,7 +23,7 @@ const server = http.createServer((req, res)=>{
 
 
     //POST Method:- Add New studnet "/addnewstudent"
-
+/*
     if (req.url === "/addnewstudent" && req.method === "POST") {
         
         let data = fileSystem.readFileSync("./student.json", {"encoding" : "utf-8"}) || [];
@@ -60,6 +57,7 @@ const server = http.createServer((req, res)=>{
         res.writeHead(404 , {"content-type" : "application/json"});
         res.end("Somthing went wrong...!")
     }
+        */
 })
 
 
