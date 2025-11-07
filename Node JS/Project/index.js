@@ -25,17 +25,37 @@ const server = http.createServer((req, res)=>{
     }
 
 
-    //POST Method:- 
+    //POST Method:- Add New studnet "/addnewstudent"
+
+    if (req.url === "/addnewstudent" && req.method === "POST") {
+        
+        let data = fileSystem.readFileSync("./student.json", {"encoding" : "utf-8"}) || [];
+
+        let id = 1;
+
+        if(data.length > 0){
+            
+            id = (data.length - 1) + 1;
+        }
+
+
+        // let student = {
+            
+        // }
+
+        // req.on("data", (chunk)=>{
+        //     console.log(chunk)
+
+        // })
+        
+        // req.on("end", ()=>{
+        
+        // })
+
+    }
 })
 
 
-    // req.on("data", (chunk)=>{
-    //     console.log(chunk)
-    // })
-
-    // req.on("end", ()=>{
-
-    // })
 
 
     
