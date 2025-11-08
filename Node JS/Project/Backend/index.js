@@ -5,10 +5,8 @@ const reqURL = require('url');
 const server =http.createServer((req, res)=>{
 
     let studentData = JSON.parse(fileSystem.readFileSync('./student.json', {encoding : 'utf-8'})) || [];
-    console.log(studentData)
 
-    let URL = reqURL.parse(req.url, true)
-    // console.log(URL);
+    let URL = reqURL.parse(req.url, true);
 
     // Base URL:- http://localhost:2000
     // Bast URL:- http://127.0.0.1:2000
@@ -31,13 +29,9 @@ const server =http.createServer((req, res)=>{
             req.on('end', ()=>{
     
                 let newStudent = JSON.parse(data)
-    
-                console.log(newStudent)
-    
+
                 newStudent['id'] = id;
-    
-                console.log(newStudent)
-    
+        
                 studentData.push(newStudent)
     
                 fileSystem.writeFileSync('./student.json', JSON.stringify(studentData))
@@ -128,8 +122,6 @@ const server =http.createServer((req, res)=>{
                                     }))
                                 }
 
-
-                            
                                 let data = '';
     
                                 req.on('data', (chunk)=>{
