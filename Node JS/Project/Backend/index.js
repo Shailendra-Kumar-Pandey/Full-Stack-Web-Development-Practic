@@ -10,6 +10,8 @@ const server =http.createServer((req, res)=>{
     let URL = reqURL.parse(req.url, true)
     // console.log(URL);
 
+    // Base URL:- http://localhost:2000
+    // Bast URL:- http://127.0.0.1:2000
     // Create add new student using POST method
     if(req.url === '/addNewStudent' && req.method === 'POST'){
         //Create Uniqe ID
