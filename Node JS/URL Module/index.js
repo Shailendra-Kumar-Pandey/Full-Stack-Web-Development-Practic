@@ -6,6 +6,11 @@ const url = require('url');
 
 const server = http.createServer((req, res)=>{
 
+
+    const parseURL = url.parse(req.url, true)
+
+    console.log(parseURL)
+
     if(req.url === "/user" && req.method === "GET"){
         const data = {
             name :"shailendra Kumar Pandey",
