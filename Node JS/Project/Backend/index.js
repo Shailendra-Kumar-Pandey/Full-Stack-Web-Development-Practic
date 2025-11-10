@@ -10,6 +10,7 @@ const server =http.createServer((req, res)=>{
 
     // Base URL:- http://localhost:2000
     // Bast URL:- http://127.0.0.1:2000
+    
     try {
         // Create add new student using POST method
         if(req.url === '/addNewStudent' && req.method === 'POST'){
