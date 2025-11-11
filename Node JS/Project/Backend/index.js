@@ -8,6 +8,20 @@ const server =http.createServer((req, res)=>{
 
     let URL = reqURL.parse(req.url, true);
 
+    // Set CORS Policy
+    
+    res.setHeader('Access-Control-Allow-Origin', "*")       // Allow to all origin
+    res.setHeader('Access-Control-Allow-Headers', "*")      // Allow to all headers
+    res.setHeader('Access-Control-Allow-Methods', "GET, POST, PUT, DELETE, OPTIONS");       // Allow to all methods
+    res.setHeader('Access-Control-Request-Headers', "*")    // Allow to all request headers
+
+    // Handle OPTIONS method
+    if(req.method === 'OPTIONS'){
+        res.writeHead(204);
+        return res.end();
+    }
+
+
     // Base URL:- http://localhost:2000
     // Bast URL:- http://127.0.0.1:2000
     
