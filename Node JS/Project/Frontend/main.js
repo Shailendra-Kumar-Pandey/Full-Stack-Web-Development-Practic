@@ -7,14 +7,16 @@ const URLaddNewStudent = "/addNewStudent";
 const URLupdateStudentdata = "/updateStudentdata";
 const URLsingleStudentData = "/singleStudentData";
 
-const studentData = []
+let studentData = []
+    // displayAllData();
 
-function displayAllData(){
-
+function displayAllData(arr){
+    console.log(arr);
+    
     let totleRow = '';
 
-    studentData.forEach((ele, i)=>{
-
+    arr.forEach((ele, i)=>{
+        console.log(ele)
         let row = `<tr>
                             <td>${i+1}</td>
                             <td>${ele.name}</td>
@@ -47,16 +49,15 @@ function openClose(modalType) {
 // Get All Student API function
 function getAllStudents(){
     fetch(`${baseURL}${URLgetAllStudents}`, {method : 'GET'})
-    .then((res)=>{
-        return res.json;
-    })
+    .then((res) =>  res.json())
     .then((response)=>{
-        studentData = response;
+        studentData = response.result;
+        console.log(studentData);
     })
     .catch((err)=>{
         console.log(err, `${URLgetAllStudents}`);
     })
-    // Display All Stundet Data Show in Screen
-    displayAllData();
+    // Display All Student Data Show in Screen
+    displayAllData(studentData);
 }
 
