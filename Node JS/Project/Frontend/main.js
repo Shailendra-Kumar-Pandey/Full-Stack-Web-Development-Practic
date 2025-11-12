@@ -56,7 +56,7 @@ function displayAllData(arr){
                             <td>${ele.name}</td>
                             <td>${ele.email}</td>
                             <td>${ele.class}</td>
-                            <td>${ele.mobile_no}</td>
+                            <td>${ele.mobile}</td>
                             <td>
                                 <button class="action-btn edit-btn" onclick="openClose('editModal')">Edit</button>
                                 <button class="action-btn delete-btn" onclick="openClose('deleteModal')">Delete</button>
