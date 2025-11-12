@@ -34,8 +34,7 @@ function getAllStudents(){
     .then((res) =>  res.json())
     .then((response)=>{
         
-        studentData = response.result
-        console.log(studentData)
+        studentData = response.result;
         displayAllData(studentData)
     })
     .catch((err)=>{
@@ -45,12 +44,11 @@ function getAllStudents(){
 
 
 function displayAllData(arr){
-    console.log(arr);
     
     let totleRow = '';
 
     arr.forEach((ele, i)=>{
-        console.log(ele)
+        // console.log(ele)
         let row = `<tr>
                             <td>${i+1}</td>
                             <td>${ele.name}</td>
@@ -66,3 +64,5 @@ function displayAllData(arr){
     })
     document.getElementById('tBody').innerHTML = totleRow;
 }
+
+
