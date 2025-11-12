@@ -9,12 +9,6 @@ const URLsingleStudentData = "/singleStudentData";
 
 let studentData = [];
 
-// Call Get All Student API function
-
-
-
-
-
 // Open Close Modal
 let modal = false;
 function openClose(modalType) {
@@ -56,7 +50,7 @@ function displayAllData(arr){
                             <td>${ele.class}</td>
                             <td>${ele.mobile}</td>
                             <td>
-                                <button class="action-btn edit-btn" onclick="editStudent(${ele.id}), openClose('editModal')">Edit</button>
+                                <button class="action-btn edit-btn" onclick="editStudentData(${ele.id}), openClose('editModal')">Edit</button>
                                 <button class="action-btn delete-btn" onclick="deleteStudent(${ele.id}), openClose('deleteModal')">Delete</button>
                             </td>
                     </tr>`;
@@ -65,10 +59,84 @@ function displayAllData(arr){
     document.getElementById('tBody').innerHTML = totleRow;
 }
 
-function editStudent(id) {
-    
+let uniqeID;
+function editStudentData(id) {
     console.log(id)
+    uniqeID = Number(id);
+    
+    let updateData = studentData.find((e)=> Number(e.id) === uniqeID);
+
+    document.getElementById('nameUpdate').value = updateData.name;
+    document.getElementById('emailUpdate').value = updateData.email;
+    document.getElementById('classUpdate').value = updateData.class;
+    document.getElementById('mobileUpdate').value = updateData.mobile;
 }
+let student= {
+    name : null,
+    email : null,
+    class : null,
+    mobile : null
+}
+function updateStudent(prop, value){
+    if(value.trim() === ""){
+        student[prop] = null;        
+    }else 
+        if(prop === "mobile"){
+        student[prop] = Number(value)
+        }else{
+            student[prop] = value;
+        }
+    
+    if(student.name === null){
+        student.name = document.getElementById('nameUpdate').value;
+    }
+    if(student.email === null){
+        student.email = document.getElementById('emailUpdate').value;
+    }
+    if(student.class === null){
+        student.class = document.getElementById('classUpdate').value;
+    }
+    if(student.mobile === null){
+        student.mobile = document.getElementById('mobileUpdate').value;
+    }
+}
+function updateStudentData(){
+    if(!student.name || !student.email || !student.class || !student.mobile){
+        alert("All Field is requred! Please fill all Field...")
+        return; 
+    }
+    if(studentData.id === uniqeID){
+        studentData.name = student.name;
+        studentData.email = student.email;
+        studentData.class = student.class;
+        studentData.mobile = student.mobile
+    }
+    // edit Student Data Update
+    fetch(`${baseURL}${URLupdateStudentdata}?id=${uniqeID}`, {
+        method: "PUT",
+        headers : {
+            "Content-Type":"application/json",
+        },
+        body: JSON.stringify(student)
+    })
+    .then(res => res.json())
+    .then( response => console.log(response))
+    .catch( err => console.log(err));
+    
+    openClose(editModal);
+
+    displayAllData(studentData);
+
+    alert("Student Data Successfully Updated...!")
+
+    student = {
+        name : null,
+        email : null,
+        class : null,
+        mobile : null
+    }
+}
+
 
 function deleteStudent(id) {
     console.log(id)
