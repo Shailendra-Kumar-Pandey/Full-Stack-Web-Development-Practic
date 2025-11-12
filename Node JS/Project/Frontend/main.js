@@ -56,8 +56,8 @@ function displayAllData(arr){
                             <td>${ele.class}</td>
                             <td>${ele.mobile}</td>
                             <td>
-                                <button class="action-btn edit-btn" onclick="openClose('editModal')">Edit</button>
-                                <button class="action-btn delete-btn" onclick="openClose('deleteModal')">Delete</button>
+                                <button class="action-btn edit-btn" onclick="editStudent(${ele.id}), openClose('editModal')">Edit</button>
+                                <button class="action-btn delete-btn" onclick="deleteStudent(${ele.id}), openClose('deleteModal')">Delete</button>
                             </td>
                     </tr>`;
         totleRow += row;
@@ -65,4 +65,11 @@ function displayAllData(arr){
     document.getElementById('tBody').innerHTML = totleRow;
 }
 
+function editStudent(id) {
+    
+    console.log(id)
+}
 
+function deleteStudent(id) {
+    console.log(id)
+}

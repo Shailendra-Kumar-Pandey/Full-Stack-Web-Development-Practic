@@ -48,13 +48,13 @@
     <div class="modal" id="addModal">
         <div class="modal-content">
             <button id="btn-close" onclick="openClose('addModal')"> X </button>
-            <h2>Add Student</h2>
+            <h2>Add New Student</h2>
             <div class="inner-content">
                 <input type="text" placeholder="Enter Student Name" onkeyup="addnewproduct('name', this.value)" id="name">
                 <input type="email" placeholder="Enter Email" onkeyup="addnewproduct('email', this.value)" id="email">
                 <input type="text" placeholder="Enter Class" onkeyup="addnewproduct('class', this.value)" id="class">
                 <input type="tel" placeholder="Enter Mobile No" onkeyup="addnewproduct('mobile', this.value)" id="mobile">
-                <button class="btn_style" onclick="addProduct()">Add Student</button>
+                <button class="btn_style" onclick="addNewStudent()">Add New Student</button>
             </div>
         </div>     
     </div>
@@ -63,14 +63,13 @@
      <div class="modal" id="editModal">
         <div class="modal-content">
             <button id="btn-close" onclick="openClose('editModal')"> X </button>
-            <h2>Update Product</h2>
+            <h2>Update Student Data</h2>
             <div class="inner-content">
-                <input type="text" placeholder="Enter Brand Name" id="brandUpdate" onkeyup="updateProduct('brand', this.value)">
-                <input type="text" placeholder="Enter Title "  id="titleUpdate" onkeyup="updateProduct('title', this.value)">
-                <input type="number" placeholder="Enter Price "  id="priceUpdate" onkeyup="updateProduct('price', this.value)">
-                <input type="url" placeholder="Enter Brand Image URL" id="imgURLUpdate" onkeyup="updateProduct('imgURL', this.value)">
-                <textarea type="text"  placeholder="Enter Description" id="descUpdate" onkeyup="updateProduct('desc', this.value)"></textarea>
-                <button class="btn_style" onclick="UpdateProduct()">Update Product</button>
+                <input type="text" placeholder="Enter Student Name" id="nameUpdate" onkeyup="updateProduct('name', this.value)">
+                <input type="email" placeholder="Enter Email" id="emailUpdate" onkeyup="updateProduct('email', this.value)">
+                <input type="text" placeholder="Enter Class" id="classUpdate" onkeyup="updateProduct('class', this.value)">
+                <input type="tel" placeholder="Enter Mobile No" id="mobileUpdate" onkeyup="updateProduct('mobile', this.value)">
+                <button class="btn_style" onclick="UpdateProduct()">Update Student Data</button>
             </div>
         </div>     
     </div>
@@ -79,8 +78,8 @@
      <div class="modal" id="deleteModal">
         <div class="modal-content">
             <button id="btn-close" onclick="openClose('deleteModal')"> X </button>
-            <h2>Delete Product</h2>
-            <p>Are you sure you want to delete this product?</p>
+            <h2>Delete Student</h2>
+            <p>Are you sure you want to delete this Student?</p>
             <button onclick="confirmValue()" class="btn_style" id="confirm"> Yes </button>
             <button class="btn_style" value="false" onclick="openClose('deleteModal')"> Cancel </button>
         </div>     
