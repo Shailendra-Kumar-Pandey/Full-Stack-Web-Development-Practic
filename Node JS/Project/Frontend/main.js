@@ -60,11 +60,14 @@ function displayAllData(arr){
 }
 
 let uniqeID;
+let editStudentIndex;
 function editStudentData(id) {
     console.log(id)
     uniqeID = Number(id);
     
     let updateData = studentData.find((e)=> Number(e.id) === uniqeID);
+
+    editStudentIndex = studentData.findIndex((e)=> Number(e.id) === uniqeID)
 
     document.getElementById('nameUpdate').value = updateData.name;
     document.getElementById('emailUpdate').value = updateData.email;
@@ -105,12 +108,8 @@ function updateStudentData(){
         alert("All Field is requred! Please fill all Field...")
         return; 
     }
-    if(studentData.id === uniqeID){
-        studentData.name = student.name;
-        studentData.email = student.email;
-        studentData.class = student.class;
-        studentData.mobile = student.mobile
-    }
+    student['id'] = uniqeID;
+    studentData[editStudentIndex] = student;
     // edit Student Data Update
     fetch(`${baseURL}${URLupdateStudentdata}?id=${uniqeID}`, {
         method: "PUT",
