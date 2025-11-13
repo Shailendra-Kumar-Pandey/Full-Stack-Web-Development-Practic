@@ -122,9 +122,9 @@ function updateStudentData(){
     .then( response => console.log(response))
     .catch( err => console.log(err));
     
-    openClose(editModal);
-
     displayAllData(studentData);
+    
+    openClose(editModal);
 
     alert("Student Data Successfully Updated...!")
 
