@@ -11,8 +11,8 @@
         <div class="header">
             <h1>Student Data</h1>
 
-            <input class="search-bar" type="text" placeholder="Search Student" id="searchInput" onkeyup="searchStudent()">
-            <button onclick="searchStudent()">Search</button>
+            <input class="search-bar" type="text" placeholder="Search Student" id="searchInput" onkeyup="">
+            <button onclick="">Search</button>
         </div>
         <button onclick="getAllStudents()">Get All Students</button>
         <button onclick="openClose('addModal')">Add Student</button>
@@ -50,16 +50,16 @@
             <button id="btn-close" onclick="openClose('addModal')"> X </button>
             <h2>Add New Student</h2>
             <div class="inner-content">
-                <input type="text" placeholder="Enter Student Name" onkeyup="addnewproduct('name', this.value)" id="name">
-                <input type="email" placeholder="Enter Email" onkeyup="addnewproduct('email', this.value)" id="email">
-                <input type="text" placeholder="Enter Class" onkeyup="addnewproduct('class', this.value)" id="class">
-                <input type="tel" placeholder="Enter Mobile No" onkeyup="addnewproduct('mobile', this.value)" id="mobile">
+                <input type="text" placeholder="Enter Student Name" onkeyup="addNewStudentData('name', this.value)" id="name">
+                <input type="email" placeholder="Enter Email" onkeyup="addNewStudentData('email', this.value)" id="email">
+                <input type="text" placeholder="Enter Class" onkeyup="addNewStudentData('class', this.value)" id="class">
+                <input type="tel" placeholder="Enter Mobile No" onkeyup="addNewStudentData('mobile', this.value)" id="mobile">
                 <button class="btn_style" onclick="addNewStudent()">Add New Student</button>
             </div>
         </div>     
     </div>
 
-    <!-- Edit Product Modal -->
+    <!-- Edit Student Modal -->
      <div class="modal" id="editModal">
         <div class="modal-content">
             <button id="btn-close" onclick="openClose('editModal')"> X </button>
@@ -74,13 +74,13 @@
         </div>     
     </div>
 
-    <!-- Delete Product Modal -->
+    <!-- Delete Student Modal -->
      <div class="modal" id="deleteModal">
         <div class="modal-content">
             <button id="btn-close" onclick="openClose('deleteModal')"> X </button>
             <h2>Delete Student</h2>
             <p>Are you sure you want to delete this Student?</p>
-            <button onclick="confirmValue()" class="btn_style" id="confirm"> Yes </button>
+            <button onclick="confirmStudent()" class="btn_style" id="confirm"> Yes </button>
             <button class="btn_style" value="false" onclick="openClose('deleteModal')"> Cancel </button>
         </div>     
     </div>

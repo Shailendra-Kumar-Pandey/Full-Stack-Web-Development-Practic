@@ -59,6 +59,14 @@ function displayAllData(arr){
     document.getElementById('tBody').innerHTML = totleRow;
 }
 
+// Update Student Data and using Put Method using this API
+let student= {
+    name : null,
+    email : null,
+    class : null,
+    mobile : null
+} 
+
 let uniqeID;
 let editStudentIndex;
 function editStudentData(id) {
@@ -74,12 +82,7 @@ function editStudentData(id) {
     document.getElementById('classUpdate').value = updateData.class;
     document.getElementById('mobileUpdate').value = updateData.mobile;
 }
-let student= {
-    name : null,
-    email : null,
-    class : null,
-    mobile : null
-}
+
 function updateStudent(prop, value){
     if(value.trim() === ""){
         student[prop] = null;        
@@ -110,7 +113,7 @@ function updateStudentData(){
     }
     student['id'] = uniqeID;
     studentData[editStudentIndex] = student;
-    // edit Student Data Update
+    // edit Student Data Update Update API Call
     fetch(`${baseURL}${URLupdateStudentdata}?id=${uniqeID}`, {
         method: "PUT",
         headers : {
@@ -119,24 +122,90 @@ function updateStudentData(){
         body: JSON.stringify(student)
     })
     .then(res => res.json())
-    .then( response => console.log(response))
+    .then( (response) => {
+        console.log(response);
+        displayAllData(studentData);
+    })
     .catch( err => console.log(err));
     
-    displayAllData(studentData);
     
-    openClose(editModal);
-
-    alert("Student Data Successfully Updated...!")
-
+    
+    // alert("Student Data Successfully Updated...!")
+    
     student = {
         name : null,
         email : null,
         class : null,
         mobile : null
     }
+    openClose('editModal');
 }
 
 
+
+// Detete API :-
 function deleteStudent(id) {
     console.log(id)
+    uniqeID = id;
+
+    editStudentIndex = studentData.findIndex((e)=> Number(e.id) === Number(uniqeID))
 }
+function confirmStudent(){
+
+        studentData.splice(editStudentIndex, 1);
+
+        fetch(`${baseURL}${URLdeleteStudent}?id=${uniqeID}`, {
+            method : "DELETE"
+        })
+        .then((res)=> res.json())
+        .then((response)=>{
+            console.log(response)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    
+        displayAllData(studentData);
+        
+        openClose('deleteModal')
+}
+
+
+// Add New Student Data 
+
+function addNewStudentData(prop, value){
+    if(value.trim() === ""){
+        student[prop] = null;
+    }else{
+        student[prop] = value;
+    }
+}
+
+function addNewStudent(){
+    if(!student.name || !student.email || !student.class || !student.mobile){
+        alert("All Field is requred! Please fill all Field...")
+        return;
+    }
+
+    fetch(`${baseURL}${URLaddNewStudent}`,{
+        method : 'POST',
+        headers : {
+            'Content-Type':'application/json'
+        },
+        body: JSON.stringify(student)
+    })
+    .then((res)=> res.json())
+    .then((response)=>{
+        let res = Number(response.result);
+        student['id'] = res;
+        studentData.push(student)
+        displayAllData(studentData);
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+    
+    openClose('addModal');
+
+}
+

@@ -32,7 +32,7 @@ const server =http.createServer((req, res)=>{
             let id = 1;
             if(studentData.length > 0){
                 const lastId = studentData[studentData.length-1].id;
-                id = lastId + 1;
+                id = Number(lastId) + 1;
             }
     
             // Get clint data in store variable
