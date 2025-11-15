@@ -1,5 +1,12 @@
 // frontend logic
 
+const baseURL = "http://localhost:2000";
+const URLgetAllStudents = "/getAllStudents";
+const URLdeleteStudent = "/deleteStudent";
+const URLaddNewStudent = "/addNewStudent";
+const URLupdateStudentdata = "/updateStudentdata";
+const URLsingleStudentData = "/singleStudentData";
+
 //get api
 
 let studentData = [];
@@ -10,7 +17,9 @@ getAllStudents();
 
 function getAllStudents(){
     fetch("http://localhost:2000/getAllStudents", {method : 'GET'})
-    .then((res) =>  res.json())
+    .then((res) => { 
+        return res.json()
+    })
     .then((response)=>{
         studentData = response.result;
         displayAllData(studentData)
@@ -26,7 +35,7 @@ function displayAllData(arr){
     let totleRow = '';
 
     arr.forEach((ele, i)=>{
-        // console.log(ele)
+    
         let row = `<tr>
                             <td>${i+1}</td>
                             <td>${ele.name}</td>
@@ -90,9 +99,10 @@ function addNewStudent(){
         },
         body : JSON.stringify(student)
     })
-    .then( res => res.json())
+    .then( (res) =>{ 
+        return res.json()
+    })
     .then((response)=>{
-        // console.log(response.result)
         let id = response.result;
         student['id'] = Number(id);
         studentData.push(student);
@@ -116,13 +126,11 @@ let uniqeId;
 let privesData;
 let studentIndex;
 function editStudentData(id){
-    console.log(id)
     uniqeId = id;
     privesData = studentData.find((e)=> e.id === id);
 
     studentIndex = studentData.findIndex((e)=> e.id === id)
 
-    console.log(privesData)
     document.getElementById('name').value = `${privesData.name}`;
     document.getElementById('email').value = privesData.email;
     document.getElementById('class').value = privesData.class;
@@ -164,7 +172,9 @@ function updateStudentData(){
         },
         body:JSON.stringify(student)
     })
-    .then(res=>res.json())
+    .then((res)=>{
+        return res.json()
+    })
     .then((res)=>{
         console.log(res)
     })
@@ -202,7 +212,9 @@ function confirmStudent(){
     fetch(`http://localhost:2000/deleteStudent?id=${uniqeId}`,{
         method : 'DELETE'
     })
-    .then(res=>res.json())
+    .then((res)=>{ 
+        return res.json()
+    })
     .then((response)=>{
         console.log(response);
     })
