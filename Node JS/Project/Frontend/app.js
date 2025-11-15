@@ -13,16 +13,16 @@ let studentData = [];
 
 getAllStudents();
 
-// displayAllData(studentData);
 
 function getAllStudents(){
-    fetch("http://localhost:2000/getAllStudents", {method : 'GET'})
+    fetch(`${baseURL}${URLgetAllStudents}`, {method : 'GET'})
     .then((res) => { 
         return res.json()
     })
     .then((response)=>{
         studentData = response.result;
         displayAllData(studentData)
+        console.log(studentData)
     })
     .catch((err)=>{
         console.log(err, " Something went wrong...");
@@ -92,7 +92,7 @@ function addNewStudent(){
     }
 
     // addNewStudent API:-
-    fetch('http://localhost:2000/addNewStudent', {
+    fetch(`${baseURL}${URLaddNewStudent}`, {
         method : 'POST',
         headers : {
             'Content-Type':'application/json'
@@ -126,12 +126,12 @@ let uniqeId;
 let privesData;
 let studentIndex;
 function editStudentData(id){
-    uniqeId = id;
-    privesData = studentData.find((e)=> e.id === id);
+    uniqeId = Number(id);
+    privesData = studentData.find((e)=> Number(e.id) === Number(id));
 
-    studentIndex = studentData.findIndex((e)=> e.id === id)
+    studentIndex = studentData.findIndex((e)=> Number(e.id) === Number(id))
 
-    document.getElementById('name').value = `${privesData.name}`;
+    document.getElementById('name').value = privesData.name;
     document.getElementById('email').value = privesData.email;
     document.getElementById('class').value = privesData.class;
     document.getElementById('mobile').value = privesData.mobile;
@@ -165,7 +165,7 @@ function updateStudentData(){
         return;
     }
 
-    fetch(`http://localhost:2000/updateStudentdata?id=${uniqeId}`, {
+    fetch(`${baseURL}${URLupdateStudentdata}?id=${uniqeId}`, {
         method : 'PUT',
         headers: {
             'Content-Type' : 'application/json'
@@ -201,15 +201,15 @@ function updateStudentData(){
 // Delete Student Data Logic:-
 
 function deleteStudent(id){
-    uniqeId = id;
-    studentIndex = studentData.findIndex((e)=> e.id === id)
+    uniqeId = Number(id);
+    studentIndex = studentData.findIndex((e)=> Number(e.id) === Number(id))
 }
 
 function confirmStudent(){
 
     studentData.splice(studentIndex, 1);
 
-    fetch(`http://localhost:2000/deleteStudent?id=${uniqeId}`,{
+    fetch(`${baseURL}${URLdeleteStudent}?id=${uniqeId}`,{
         method : 'DELETE'
     })
     .then((res)=>{ 
