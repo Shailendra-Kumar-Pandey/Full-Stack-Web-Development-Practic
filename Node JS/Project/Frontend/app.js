@@ -45,7 +45,7 @@ function displayAllData(arr){
                             <td>
                                 <button class="action-btn edit-btn" onclick="editStudentData(${ele.id}), openClose('editModal')">Edit</button>
                                 <button class="action-btn delete-btn" onclick="deleteStudent(${ele.id}), openClose('deleteModal')">Delete</button>
-                                <i class="fa-solid fa-eye-slash" title="${ele.name}" style="color: #B197FC;"></i>
+                                <i class="fa-solid fa-eye-slash" title="${ele.name}" onclick=" showStudentData(${ele.id}), openClose('personalModel')" style="color: #B197FC;"></i>
                             </td>
                     </tr>`;
         totleRow += row;
@@ -228,4 +228,9 @@ function confirmStudent(){
     openClose('deleteModal')
 
     alert(`Delete Student Successfully...`);
+}
+
+
+function showStudentData(id){
+    console.log(id)
 }
