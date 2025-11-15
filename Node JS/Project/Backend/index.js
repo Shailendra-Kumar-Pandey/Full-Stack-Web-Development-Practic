@@ -87,7 +87,7 @@ const server =http.createServer((req, res)=>{
     
                     res.writeHead(200, {'content-type' : 'application/json'});
                     return res.end(JSON.stringify({
-                            reult : singleStudent,
+                            result : singleStudent,
                             massage : `${singleStudent.name} ID ${singleStudent.id} Fetch Successfully...`
                         }))
                 }else       

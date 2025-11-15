@@ -230,7 +230,21 @@ function confirmStudent(){
     alert(`Delete Student Successfully...`);
 }
 
-
+// Single Student Data Find and Show
 function showStudentData(id){
-    console.log(id)
+    // console.log(id)
+    fetch(`${baseURL}${URLsingleStudentData}?id=${id}`, {method:'GET'})
+    .then((res)=>{
+        return res.json();
+    })
+    .then((response)=>{
+        let data = response.result
+        document.getElementById('studentHead').innerHTML = `<span>${data.name} Data</span>`
+        document.getElementById('singleData').innerHTML = `<span>During the admission process, ${data.name} from Class ${data.class} submitted this email ${data.email}
+                                                                and mobile number ${data.mobile}</span>`
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
 }
