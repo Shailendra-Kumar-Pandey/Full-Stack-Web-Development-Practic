@@ -248,3 +248,27 @@ function showStudentData(id){
     })
 
 }
+
+
+// Find student in Search Bar
+
+let find = ''
+
+function findStudent(word){
+    if(word.trim() === ""){
+        find = ""
+    }else{
+        find += word;
+    }
+}
+
+function findData(){
+    if(find === ''){
+        alert('Please Enter Student Name...');
+        return;
+    }
+
+    let filter = studentData.filter((e) => e.name.includes(find));
+
+    console.log(filter);
+}
