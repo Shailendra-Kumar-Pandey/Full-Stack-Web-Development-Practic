@@ -266,10 +266,14 @@ function findData(){
         alert('Please Enter Student Name...');
         return;
     }
+    openClose('studentModel')
     searchData = studentData.filter((e) => e.name.includes(find));
     if(searchData.length === 0){
         document.getElementById('noData').innerHTML = `<span style="color:red">Not Record Found</span>`
+        searchDataStudent(searchData)
+
     }else{
+        document.getElementById('noData').innerHTML = `<span style="color:green">Search Student Data</span>`
         searchDataStudent(searchData)
     }
     find = '';
