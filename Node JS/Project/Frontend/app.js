@@ -22,7 +22,6 @@ function getAllStudents(){
     .then((response)=>{
         studentData = response.result;
         displayAllData(studentData)
-        console.log(studentData)
     })
     .catch((err)=>{
         console.log(err, " Something went wrong...");
@@ -232,7 +231,6 @@ function confirmStudent(){
 
 // Single Student Data Find and Show
 function showStudentData(id){
-    // console.log(id)
     fetch(`${baseURL}${URLsingleStudentData}?id=${id}`, {method:'GET'})
     .then((res)=>{
         return res.json();
@@ -268,9 +266,7 @@ function findData(){
         alert('Please Enter Student Name...');
         return;
     }
-    console.log(find)
     searchData = studentData.filter((e) => e.name.includes(find));
-    console.log(searchData)
     if(searchData.length === 0){
         document.getElementById('noData').innerHTML = `<span style="color:red">Not Record Found</span>`
     }else{
