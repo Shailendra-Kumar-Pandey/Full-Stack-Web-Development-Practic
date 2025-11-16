@@ -13,7 +13,7 @@
             <h1>Student Data</h1>
 
             <input class="search-bar" type="text" placeholder="Search Student" id="searchInput" onkeyup="findStudent(this.value)">
-            <button onclick="findData()">Search</button>
+            <button onclick="findData(),openClose('studentModel')">Search</button>
         </div>
         <button onclick="getAllStudents()">Get All Students</button>
         <button onclick="openClose('addModal')">Add Student</button>
@@ -96,6 +96,41 @@
             <button class="btn_style" value="false" onclick="openClose('personalModel')"> Ok </button>
         </div>     
     </div>
+
+    <!-- Show the Search Student Modal -->
+     <div class="modal" id="studentModel">
+        <div class="modal-content search-modal" >
+            <button id="btn-close" onclick="openClose('studentModel')"> X </button>
+            <h2 id="noData">Search Student Data</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No.</th>
+                        <th>Student Name</th>
+                        <th>Email</th>
+                        <th>Class</th>
+                        <th>Mobile No</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="SBody">
+                    <!-- <tr>
+                            <td>1</td>
+                            <td>Shailendera Kumar Pandey</td>
+                            <td>shailendera@gmail.com</td>
+                            <td>MBA</td>
+                            <td>9806638963</td>
+                            <td>
+                                <i class="fa-solid fa-eye-slash" style="color: #B197FC;"></i>
+                            </td>
+                    </tr>  -->
+                </tbody>
+            </table>
+        </div>     
+    </div>
+
     <script src="./app.js"></script>
+
+
 </body>
 </html>

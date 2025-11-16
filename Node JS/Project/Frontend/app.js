@@ -258,19 +258,45 @@ function findStudent(word){
     if(word.trim() === ""){
         find = ""
     }else{
-        find += word;
+        // find += word;
+        find = document.getElementById('searchInput').value
     }
 }
-
+let searchData = [];
 function findData(){
     if(find === ''){
         alert('Please Enter Student Name...');
         return;
     }
     console.log(find)
-    let result = studentData.filter((e) => e.name.includes(find));
-
-    console.log(result);
+    searchData = studentData.filter((e) => e.name.includes(find));
+    console.log(searchData)
+    if(searchData.length === 0){
+        document.getElementById('noData').innerHTML = `<span style="color:red">Not Record Found</span>`
+    }else{
+        searchDataStudent(searchData)
+    }
     find = '';
 
+    document.getElementById('searchInput').value = ''
+
+}
+
+function searchDataStudent(arr){
+    let totalRow = '';
+    arr.forEach((e,i) => {
+        let row = ` <tr>
+                            <td>${i+1}</td>
+                            <td>${e.name}</td>
+                            <td>${e.email}</td>
+                            <td>${e.class}</td>
+                            <td>${e.mobile}</td>
+                            <td>
+                                <i class="fa-solid fa-eye-slash" title="${e.name}" onclick=" showStudentData(${e.id}), openClose('studentModel'), openClose('personalModel')" style="color: #B197FC;"></i>
+                            </td>
+                    </tr>        
+        `
+        totalRow += row
+    });
+    document.getElementById('SBody').innerHTML = totalRow;
 }

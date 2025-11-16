@@ -230,3 +230,6 @@ i{
     cursor: pointer;
 }
 
+.search-modal {
+    width: 70%;
+}
