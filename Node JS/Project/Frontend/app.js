@@ -252,7 +252,7 @@ function showStudentData(id){
 
 // Find student in Search Bar
 
-let find = ''
+let find = '';
 
 function findStudent(word){
     if(word.trim() === ""){
@@ -267,8 +267,10 @@ function findData(){
         alert('Please Enter Student Name...');
         return;
     }
+    console.log(find)
+    let result = studentData.filter((e) => e.name.includes(find));
 
-    let filter = studentData.filter((e) => e.name.includes(find));
+    console.log(result);
+    find = '';
 
-    console.log(filter);
 }
