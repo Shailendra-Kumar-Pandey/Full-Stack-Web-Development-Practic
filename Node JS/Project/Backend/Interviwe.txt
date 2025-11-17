@@ -1,0 +1,6 @@
+1. what is this key word
+2. what is hosting.
+3. what closers
+4. let,var, const
+5 function and allow function difrence
+
