@@ -10,6 +10,14 @@ function delayedGreeting(name) {
 }
 delayedGreeting("Alice"); // After 2 seconds, outputs: Hello, Alice!
 
+// Explanation:
+// In this example, the function delayedGreeting takes a name as an argument and sets a timeout to log a greeting after 2 seconds. The inner function passed to setTimeout forms a closure over the name parameter, allowing it to access the name variable even after delayedGreeting has finished executing. After 2 seconds, it correctly logs "Hello, Alice!".
+// Explanation: 
+// Closures are a fundamental concept in JavaScript that allow functions to retain access to their lexical scope, even when executed outside that scope. This is particularly useful in asynchronous programming, such as with setTimeout, where the inner function needs to access variables from its outer function's scope after a delay.
+// Understanding closures is essential for effective JavaScript programming, especially when dealing with callbacks, event handlers, and asynchronous operations.   
+// Closures enable data encapsulation and help create private variables, making them a powerful tool for developers.
+// They are widely used in various programming patterns and are a key feature of JavaScript's functional programming capabilities.
+// Note: You can run this code in a JavaScript environment to see the closure in action.
 
 
 // Closure in JavaScript
