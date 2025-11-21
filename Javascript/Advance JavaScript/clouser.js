@@ -1,3 +1,17 @@
+/* What is Closure? 
+Closure:- Closure is a feature in JavaScript where an inner function has access to the outer (enclosing) function's variables and scope chain, even after the outer function has finished executing.
+This allows the inner function to "remember" the environment in which it was created, enabling data encapsulation and the creation of private variables.
+*/
+// Example of Closure with setTimeout
+function delayedGreeting(name) {
+    setTimeout(function() {
+        console.log("Hello, " + name + "!");
+    }, 2000);
+}
+delayedGreeting("Alice"); // After 2 seconds, outputs: Hello, Alice!
+
+
+
 // Closure in JavaScript
 
         function outerFunction() {
