@@ -12,7 +12,7 @@
 */
 
 // Sample product data
-/*const products =[
+const products =[
     {
         "brand": "Red Chief",
         "price": 3895,
@@ -653,12 +653,12 @@
         "imgURL": "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/a2d5c7fa497e4fbc8eb0a905b87c04ad_9366/X_PLRPHASE_Shoes_Black_ID2715_04_standard.jpg",
         "id": 60
     }
-]*/
+]
 
 
 
 
-// localStorage.setItem("product",JSON.stringify(products));   //storing data in local storage
+localStorage.setItem("product",JSON.stringify(products));   //storing data in local storage
 
 
 
