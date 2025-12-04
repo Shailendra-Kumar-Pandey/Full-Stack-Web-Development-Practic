@@ -751,8 +751,6 @@ function addProduct() {
         elementId = 1;     // if product array is empty then set id to 1
     }
 
-    // console.log(elementId)
-    // console.log(newProduct)
 
     newProduct.id = elementId;      // set new id to new product
 
