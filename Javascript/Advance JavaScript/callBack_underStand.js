@@ -23,15 +23,15 @@
 
 // 2nd type of callback function
 
-function testing(information, callBackFunction){
-    console.log(information);
-    callBackFunction("shailendra")
-    console.log(callBackFunction(5))
+function testing(uzaif, pandey){//
+    console.log(uzaif);//
+    pandey(uzaif)
+    console.log(pandey(5))
 }
 
-function data(num1){
-    console.log( "This is a callBack....", num1)
-    return num1 + " return";
+function data(num1){//
+    console.log( "This is a callBack....", num1) //
+    return num1 + " return";//
 }
 
-testing("Gayatri", data)
+testing("khan", data)//
