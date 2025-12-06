@@ -106,3 +106,8 @@ for(let i = fullname.length-1; i >=0; i--){
 }
 
 console.log(reversFullName)
+
+// 8️⃣ Check if a string is a palindrome.
+
+// MADAM, LEVEL, 
+
