@@ -81,3 +81,28 @@ console.log(sum)
 
 // 6️⃣ Find how many vowels are in a string.
 
+let fullname = "SHAILENDRA KUMAR PANDEY";
+
+let vowel = 'AEIOU'
+
+let count = 0
+
+for(let i = 0; i < fullname.length; i ++){
+    for(j=0; j < vowel.length; j++){
+        if(fullname[i] === vowel[j]){
+            count++
+        }
+    }
+}
+console.log("This String Total Vowels are ",count)
+
+
+// 7️⃣ Reverse a string without using built-in functions.
+
+let reversFullName = "";
+
+for(let i = fullname.length-1; i >=0; i--){
+    reversFullName += fullname[i]
+}
+
+console.log(reversFullName)
