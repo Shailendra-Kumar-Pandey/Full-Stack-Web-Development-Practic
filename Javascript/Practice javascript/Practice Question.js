@@ -125,3 +125,18 @@ function chackPalindrom(word){
 
 chackPalindrom("levels")
 
+// 9️⃣ Find maximum and minimum number in an array.
+
+const data = [12, 11, 10, 4, 8, 29, 33];
+let big = 0;
+let small = 0;
+for(let i = 0 ; i < data.length; i ++){
+    if(big < data[i]){
+        big = data[i]
+    }
+    if(small < data[i]){
+        small = data[i];
+    }
+}
+console.log(big)
+console.log(small)
