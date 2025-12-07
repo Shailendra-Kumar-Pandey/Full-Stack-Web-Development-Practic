@@ -111,3 +111,17 @@ console.log(reversFullName)
 
 // MADAM, LEVEL, 
 
+function chackPalindrom(word){
+    let data = "";
+    for(let i = word.length-1; i >= 0; i--){
+         data += word[i];
+    }
+    if(data === word){
+        console.log("This word is Palindrome!");
+    }else{
+        console.log("This word is not Palindrome!")
+    }
+}
+
+chackPalindrom("levels")
+
