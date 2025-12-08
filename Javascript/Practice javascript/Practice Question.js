@@ -142,3 +142,17 @@ console.log(big)
 console.log(small)
 
 // 🔟 Count how many times a value appears in an array.
+
+function findReapetValue(arr, value){
+    let count = 0;
+    for(let i= 0 ; i < arr.length; i++){
+        if(arr[i] === value){
+            count++;
+        }
+    }
+    console.log(`${value} is Reapet Time `, count)
+}
+
+let array = [1, 2, 3, 4, 3, 2, 1, 3, 4, 2, 1, 0]
+
+findReapetValue(array, 0);
