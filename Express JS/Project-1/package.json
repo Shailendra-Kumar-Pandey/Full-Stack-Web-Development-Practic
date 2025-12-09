@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Shailedra Kumar Padney",
-  "license": "ISC"
+  "author": "Shailendra Kumar Padney",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
