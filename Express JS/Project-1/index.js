@@ -9,6 +9,16 @@ server.get("/getStudents", (req, res)=>{
 
 })
 
+server.post("/addStudent", (req, res)=>{
+    const data = req.body
+
+    console.log(data)
+
+    res.send(massage, "Data Receved...")
+})
+
 server.listen(4000, ()=>{
     console.log("Server is Running...")
 })
+
+
