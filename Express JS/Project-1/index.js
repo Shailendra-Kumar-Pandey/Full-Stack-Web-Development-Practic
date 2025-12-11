@@ -1,45 +1,25 @@
 const express = require('express');
+const server = express();
 
-const server = express()
 
-// middleware - just like watchman
 
-// 1. Application level Middleware
+//Get APi
+server.get('/getUsers', (req, res)=>{
+    res.send([{name:"uzaif", age : 26},{name:'shailendra', age: 30}])
+})
 
-server.use((req, res, next)=>{
+// Build in Middileware
+server.use(express.json())
 
-    let isAuthorizedUser = true;
-    if(isAuthorizedUser){
-        next();
-    }else{
-        res.send({massage:"Unauthorized"});
-    }
+// post api
 
+server.post('/adduser',(req, res)=>{
+    const data =  req.body;
+    console.log(data);
+    res.send({massage: "data recive..."})
 })
 
 
-
-// Get API
-
-server.get("/getStudents", (req, res)=>{
-    
-    res.send({massage : "Student Data successfully archive...",
-            data: [{name:"shailendra", age:30},{name:"gayatri",age:28}]})
-
-})
-
-// Post API 
-
-server.post("/addStudent", (req, res)=>{
-    const data = req.body
-
-    console.log(data)
-
-    res.send({massage : "Data Receved..."})
-})
-
-server.listen(4000, ()=>{
+server.listen(2000, ()=>{
     console.log("Server is Running...")
 })
-
-
