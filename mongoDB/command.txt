@@ -1,0 +1,12 @@
+what is a MongoDB?
+MongoDB is a NoSQL database that uses a document-oriented data model. It stores data in flexible, JSON-like documents, which allows for easy scalability and performance. MongoDB is designed to handle large volumes of data and is commonly used for applications that require high availability, horizontal scaling, and fast read/write operations. It supports a wide range of features, including indexing, replication, and aggregation, making it a popular choice for modern web applications and big data solutions.
+
+====================query mongoDB=========================
+
+1) Show all database using command
+    show dbs || show databases
+
+2) Create a new database | switch database using this query 
+    use <database_name>
+
+3)
