@@ -9,4 +9,20 @@ MongoDB is a NoSQL database that uses a document-oriented data model. It stores 
 2) Create a new database | switch database using this query 
     use <database_name>
 
-3)
+3) Create a collection use query
+    db.createCollection("<collection_name>")
+
+4) show the collections use query
+    show collections
+
+5) insert One document - create single document insert in collection
+    db.<collection_name>.insertOne({prop:value, prop: value....})
+
+6) see the collection document using query
+    db.<collection_name>.find()
+
+7) create many document single query in use
+    db.<collection_name>.insertMany([{prop:value, prop:value},{prop:value, prop:value},{prop:value, prop:value}....])
+
+8) Delete document using this query
+    db.<collection_name>.deleteOne({prop:value})  // will be use delete this document deleted
