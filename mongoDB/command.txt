@@ -26,3 +26,5 @@ MongoDB is a NoSQL database that uses a document-oriented data model. It stores 
 
 8) Delete document using this query
     db.<collection_name>.deleteOne({prop:value})  // will be use delete this document deleted
+
+9) 
