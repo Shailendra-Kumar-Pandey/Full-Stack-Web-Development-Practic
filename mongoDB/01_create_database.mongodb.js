@@ -8,6 +8,8 @@ const collection = "Students"       // use this type create a new collection
 
 use(database)       // 
 
+// createCollection():- using this query create new collection
+
 db.createCollection(collection)
 
 db.createCollection('teachers')

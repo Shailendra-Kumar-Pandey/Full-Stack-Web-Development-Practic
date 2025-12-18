@@ -3,7 +3,7 @@
 use('College')
 
 
-// insert One document using this query
+// insertOne():- insert One document using this query
 
     db.Students.insertOne({
         name:"Shailendra Kumar Pandey",
@@ -13,11 +13,11 @@ use('College')
     })
  
 
-//  using this command show the data base
+// find():- using this command show the data base
 
         db.Students.find()
 
-// insert many document single using this query
+// insertMany():- insert many document single using this query
 
 
 db.Students.insertMany([

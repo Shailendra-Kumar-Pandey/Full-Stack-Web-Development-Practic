@@ -1,7 +1,7 @@
 
 use('College')
 
-// Show Students collection inside Student data will be show using this query
+// find():- Show Students collection inside Student data will be show using this query
 
     db.Students.find()
 
@@ -11,7 +11,7 @@ use('College')
 
 
 
-//  using the query find any document will be use  find function inside condition then show the document find({prop:value})
+// find({prop:value}):-  using the query find any document will be use  find function inside condition then show the document find({prop:value})
 
     db.teachers.find({age:38})
 
