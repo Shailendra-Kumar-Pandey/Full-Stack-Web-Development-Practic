@@ -1,6 +1,6 @@
 
 
-// How to Create Data Base and Create Database
+// How to Create Data Base and Create collections- using follow the code that will be create and using data base best query
 
 const database = "College";         // use this type store the variable in a dataBase
 
