@@ -9,3 +9,10 @@ use('College')
 
     db.teachers.find()
 
+
+
+//  using the query find any document will be use  find function inside condition then show the document find({prop:value})
+
+    db.teachers.find({age:38})
+
+    db.Students.find({age:30})  // show full document
