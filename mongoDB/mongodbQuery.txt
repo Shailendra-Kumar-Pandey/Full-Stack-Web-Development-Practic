@@ -1,0 +1,90 @@
+1. To see all the databases
+	- show dbs
+	- show databases
+
+2. To create database | To switch any db
+	- use <dbName>
+
+3. To create collection in the db
+	- db.createCollection('<collectionName>')
+
+4. To check all the collection in the dbs
+	- show collections
+
+5. To create new document 
+	- db.<collectionName>.inseret({prop:value, prop: value,...})
+
+6. To check all the documents in the collection 
+	- db.<collectionName>.find()
+
+7. To insert multiple documents 
+	- db.<collectionName>.insertMany([{prop:value, prop: value,...}, {prop:value, prop: 	value,...}])
+
+8. To delete single document
+	- db.<collectionName>.deleteOne({prop:value}) // condition
+
+9. To find single document based on the Condition
+	-db.<collectionName>.find({prop:value}) // condition
+
+
+Comparison operators
+
+gt, lt, gte, lte, ne, in, 
+
+
+10. gt
+	-db.<collectionName>.find({prop: {$<opName>: value}}) 
+
+11. in
+	-db.<collectionName>.find({prop:{$in: [value, value,...]}})
+
+
+
+Logical Op
+
+and, or, not
+
+12. and
+	-db.<collectionName>.find({$and: [{prop: value}, {prop: value}]})
+
+
+
+update query
+
+13. To update data
+	-db.<collectionName>.updateOne({prop:value}, {$set: {prop: value}})
+
+14. To Update all documents
+	-db.<collectionName>.updateMany({}, {$set: {prop: value}})
+
+
+
+
+
+Delete query
+
+15. To delete single document
+	-db.<collectionName>.deleteOne({prop:value})
+
+16. To delete multiple documents
+	-db.<collectionName>.deleteMany({prop:value})
+
+
+17. To sort documents - limit, skip
+	-db.<collectionName>.find().sort({prop:1}) // 1 for ascending order and -1 for descending order
+
+18. To select fields
+	-db.<collectionName>.aggregate([{$project: {prop: -1}}]) 
+
+
+Count Query
+
+19. To get the documents count
+	-db.<collectionName>.countDocuments()
+
+
+20. To delete the collection
+	-db.<collectionName>.drop()
+
+21. To delete the database
+	-db.dropDatabase()
