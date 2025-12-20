@@ -92,6 +92,22 @@ MongoDB aggregation pipeline has around 10 commonly used stages, and more than 2
 
 */
 // 1. $match: Filters the documents to pass only the documents that match the specified condition(s) to the next pipeline stage.
-db.students.aggregate([
-  { $match: { age: { $gt: 20 } } }
-]);
+// db.students.aggregate([
+//   { $match: { age: { $gt: 20 } } }
+// ]);
+
+
+// 2. $group: Groups input documents by the specified _id expression and applies the accumulator expressions to each group.
+// db.students.aggregate([
+//   { $group: { _id: "$course", totalMarks: { $sum: "$marks" } } }
+// ]);
+
+db.Students.aggregate([
+  { $match: { course: "MBA" } },
+  {
+    $group: {
+      _id: "$course",
+      marks: { $avg: "$marks" }
+    }
+  }
+])
