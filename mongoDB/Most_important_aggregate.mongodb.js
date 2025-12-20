@@ -1,6 +1,6 @@
 use('College');
 
-// Aggregate():- Aggregate function is used to perform operations on the data and return computed results.
+// Aggregate():- An aggregate function in MongoDB is used to process data records and return calculated results.
 
 // 1. $match: Filters the documents to pass only the documents that match the specified condition(s) to the next pipeline stage.
 db.students.aggregate([
