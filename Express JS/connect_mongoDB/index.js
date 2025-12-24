@@ -31,7 +31,7 @@ app.use(express.json())
 // Create a MongoDb new Collection 
 const Students = mongoose.model('student', studentSchema)
 
-// POST API 
+// POST API - create new Student
 app.post('/addStudent', async (req,res)=>{
     
     const payload = await Students.create(req.body)
@@ -43,6 +43,26 @@ app.post('/addStudent', async (req,res)=>{
 })
 
 
+// get all Student - GET API
+
+app.get('/getAllStudents', async (req, res)=>{
+
+    const data = await Students.find()
+
+    res.send({
+        massage : "Get All Student Successfully...",
+        result : data
+    })
+})
+
+// update user - PUT API
+
+app.put('/updateSudent/:id', async (req, res)=>{
+
+     const updateData = await Students.findByIdAndUpdate(req.params.id, res.body)  // Somthing Wrong this line
+        res.send({result: updateData})
+
+})
 
 app.listen(5050, ()=>{
     console.log("Server is Running...");
