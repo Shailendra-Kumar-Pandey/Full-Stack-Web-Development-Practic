@@ -75,13 +75,17 @@ app.put('/updateSudent/:id', async (req, res)=>{
 
 // Delete Student :- DELETE API
 app.delete('/deleteStudent', async (req, res)=>{
-    const deleteStudent = await Students.findByIdAndDelete(
-        req.params.id
-    )
-    res.send({
-        massage: "Student Deleted Successfully...",
-        result: deleteStudent
-    })
+    try {
+        const deleteStudent = await Students.findByIdAndDelete(
+            req.params.id
+        )
+        res.send({
+            massage: "Student Deleted Successfully...",
+            result: deleteStudent
+        })
+    } catch (error) {
+        res.send({error:"Somthing went wrong..."})
+    }
 })
 
 
