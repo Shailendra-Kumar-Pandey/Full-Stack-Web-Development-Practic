@@ -59,14 +59,14 @@ try {
 })
 
 // update user - PUT API
-app.put('/updateSudent/:id', async (req, res)=>{
+app.put("/updateStudent/:id", async (req, res)=>{
     try {
         const updateData = await Students.findByIdAndUpdate(
            req.params.id,
            req.body,
            { new: true }   // return update data
         ) 
-        res.send({result: updateData})
+        res.send({result: req.params.id})
     } catch (error) {
         res.send({error : "Update Failed"});        
     }
@@ -74,7 +74,7 @@ app.put('/updateSudent/:id', async (req, res)=>{
 
 
 // Delete Student :- DELETE API
-app.delete('/deleteStudent', async (req, res)=>{
+app.delete('/deleteStudent/:id', async (req, res)=>{
     try {
         const deleteStudent = await Students.findByIdAndDelete(
             req.params.id
