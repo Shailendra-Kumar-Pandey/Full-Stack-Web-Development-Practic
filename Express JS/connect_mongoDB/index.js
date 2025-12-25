@@ -33,36 +33,58 @@ const Students = mongoose.model('student', studentSchema)
 
 // POST API - create new Student
 app.post('/addStudent', async (req,res)=>{
-    
-    const payload = await Students.create(req.body)
-
-    res.send({
-        massage: "Student Add Create ",
-        result: payload
-    })
+    try {
+        const payload = await Students.create(req.body)
+        res.send({
+            massage: "Student Add Create ",
+            result: payload
+        })
+    } catch (error) {
+        res.send({error:"Somthing went wrong..."})
+    }
 })
 
 
 // get all Student - GET API
-
 app.get('/getAllStudents', async (req, res)=>{
-
+try {
     const data = await Students.find()
-
     res.send({
         massage : "Get All Student Successfully...",
         result : data
     })
+} catch (error) {
+    res.send({error:"Somthing went wrong..."})
+}
 })
 
 // update user - PUT API
-
 app.put('/updateSudent/:id', async (req, res)=>{
-
-     const updateData = await Students.findByIdAndUpdate(req.params.id, res.body)  // Somthing Wrong this line
+    try {
+        const updateData = await Students.findByIdAndUpdate(
+           req.params.id,
+           req.body,
+           { new: true }   // return update data
+        ) 
         res.send({result: updateData})
-
+    } catch (error) {
+        res.send({error : "Update Failed"});        
+    }
 })
+
+
+// Delete Student :- DELETE API
+app.delete('/deleteStudent', async (req, res)=>{
+    const deleteStudent = await Students.findByIdAndDelete(
+        req.params.id
+    )
+    res.send({
+        massage: "Student Deleted Successfully...",
+        result: deleteStudent
+    })
+})
+
+
 
 app.listen(5050, ()=>{
     console.log("Server is Running...");
