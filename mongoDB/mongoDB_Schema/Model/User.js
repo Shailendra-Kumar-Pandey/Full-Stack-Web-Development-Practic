@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             minLenght: 2,
-            trim: true,
+            trim: true
         },
         lName: {
             type: String,
@@ -18,11 +18,29 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             trim: true,
+            unique: true,
+            lowercase: true
         },
         phone: {
             type : String,
             required: true,
-            
+            trim: true
+        },
+        role: {
+            type: String,
+            enum: ["candidate", "recruter", "admin"],
+            required: true,
+            default: "candidate"
+        },
+        address: {
+            type: String,
+            required: true,
+            trim: true
+        },
+        password: {
+            type: String,
+            required: true,
+            minLenght: 8
         }
     },
     {
