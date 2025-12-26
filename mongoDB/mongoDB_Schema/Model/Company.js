@@ -23,8 +23,24 @@ const companySchema = new mongoose.Schema(
         phone: {
             type : String,
             required: true,
+            trim: true
+        },
+        website: {
+            type: String,
             trim: true,
-            
+        },
+        description: {
+            type: String,
+            trim: true,
+        },
+        industry: {
+            type: String,
+            trim: true,
+        },
+        recruter_id: {
+            type : mongoose.Schema.Types.ObjectId,
+            ref: "user",
+            required: true 
         }
     },
     {
