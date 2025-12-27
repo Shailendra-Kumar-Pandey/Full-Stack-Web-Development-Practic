@@ -6,7 +6,7 @@ const companySchema = new mongoose.Schema(
             type: String,
             trim: true,
             required: true,
-            minlenght: 2,
+            minlength: 2,
         },
         address : {
             type : String,
