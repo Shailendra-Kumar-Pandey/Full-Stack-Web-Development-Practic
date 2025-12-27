@@ -1,11 +1,8 @@
 import express from "express";
-
+import mongoDB from './db.js'
 const app = express();
 
-
-
-
-
+mongoDB()
 
 
 app.listen(3000, ()=>{
