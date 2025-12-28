@@ -14,6 +14,7 @@ const staffSchema = new mongoose.Schema(
     },
     department: {
         type: String,
+        enum: ['security', 'cleaning', 'management'],
         required: true,
         trim: true
     },
