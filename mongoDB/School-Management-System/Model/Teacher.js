@@ -23,6 +23,11 @@ const teacherSchema = new mongoose.Schema(
             enum :['math', 'science', 'socal-science', 'english', 'hindi', 'sanskrit', 'camistry', 'biology', 'physices'],
             trim: true,
         },
+        imgURL:{
+            type: String,
+            required: true,
+            trim: true
+        }
     },
     {
         timestamps: true
