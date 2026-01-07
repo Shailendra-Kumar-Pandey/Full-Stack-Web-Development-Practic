@@ -1,16 +1,19 @@
+import { useEffect, useState } from "react";
 
-function Clock({data}){
+function Clock({color}) {
+    const [time, setTime] = useState('0')
 
-    
+    useEffect(()=>{
+        setInterval(()=>{
+            setTime(new Date().toLocaleTimeString()); 
+        }, 1000)
+    }, [])
 
-        return (
+    return(
         <>
-            <div>
-                    <span>{data}</span> : <span>{data}</span> : <span>{data}</span>
-            </div>
+            <h1 style={{color:color}}>{time}</h1>
         </>
-    );
+    ); 
 }
-
 
 export default Clock;

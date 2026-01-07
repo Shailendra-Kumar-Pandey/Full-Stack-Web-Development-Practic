@@ -1,24 +1,28 @@
+import { useState } from 'react';
 import './App.css';
 
-import Color from'./Components/Color.js';
-import Clock from './Components/Clock.js';
+import Clock from'./Components/Clock.js';
 
 
 
 function App() {
-  const data = new Date();
-    console.log(data)
+
+  const [color, setColor] = useState('red')
+
   return (
     <>
      <h1>digital Clock</h1>
 
-      <Color />    
 
 
       <br />
-      <br />
-      <Clock  data= {data.getHours} />
 
+
+      <Clock color = {color} />
+
+      <br />
+
+      <input type="color" onChange={(e)=>{setColor(e.target.value)}} />
     </>
   );
 }
