@@ -3,7 +3,7 @@ import Teacher from "./Teacher";
 const College = () => {
     return (
         <div style={{backgroundColor:"lightgray", padding:'10px', borderRadius: '5px'}}>
-            <h1>College</h1>
+            <h1>College Component</h1>
             <Teacher />
         </div>
     );

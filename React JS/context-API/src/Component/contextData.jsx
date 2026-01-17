@@ -1,3 +1,3 @@
-import { useContext } from "react";
+import { createContext } from "react";
 
-export const studentContext = useContext('Maths');
+export const StudentContext = createContext('Maths');
