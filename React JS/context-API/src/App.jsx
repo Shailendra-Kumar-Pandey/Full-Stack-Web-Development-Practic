@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import College from "./Component/College"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+    
+      <div style={{backgroundColor:'lightcoral', padding:'10px', borderRadius:'5px'}}>
+        <h1>Context API</h1>
+        <College />
+      </div>
     </>
   )
 }
