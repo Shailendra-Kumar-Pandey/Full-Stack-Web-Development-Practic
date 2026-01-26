@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <h1>Using a useActionState Hook</h1>
+      <h1>Validation with useActionState Hook in React</h1>
       <LogIN />
     </>
   )

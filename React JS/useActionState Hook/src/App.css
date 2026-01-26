@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+input{
+  padding:10px;
+  border-radius: 5px;
+  border:1px solid #ccc;
+  width:200px;
+  font-size:16px;
+}
+button{
+  padding:10px 15px;
+  margin-left:10px;
+  border-radius: 5px;
+  color:#fff;
+  font-size:16px;
+}
