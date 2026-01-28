@@ -13,7 +13,6 @@ const landloadSchema = mongoose.Schema(
             trim : true,
             minlength: 5
         },
-        
         rent:{
             type: Number,
             required: true,
@@ -28,3 +27,5 @@ const landloadSchema = mongoose.Schema(
         timestamps: true
     }
 )
+
+export default mongoose.model('landload', landloadSchema)
