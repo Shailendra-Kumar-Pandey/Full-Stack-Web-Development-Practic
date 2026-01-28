@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const landloadSchema = mongoose.Schema(
+const landloadSchema = new mongoose.Schema(
     {
         userID:{
             type:mongoose.Schema.Types.ObjectId,
