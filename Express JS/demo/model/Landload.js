@@ -5,7 +5,6 @@ const landloadSchema = new mongoose.Schema(
         userID:{
             type:mongoose.Schema.Types.ObjectId,
             ref:'user',
-            required: true
         },
         address:{
             type: String,

@@ -1,6 +1,7 @@
-import userModle from "../model/User.js";
 import bcrypt from "bcrypt";
 import { token } from "../utility/ganerateToken.js";
+import userModle from "../model/User.js";
+import landloadModel from "../model/Landload.js";
 
 export const ragistrationUser = async (req, res)=>{
 
@@ -52,6 +53,19 @@ export const logIN = async (req, res)=>{
 
         if(!verify){
             return res.status(404).json({massage: "Incorrect Password, Please Enter Vailid Password"})
+        }
+
+        if(existUser.role === 'LANDLOAD'){
+
+            let existLandload = await landloadModel.findById(existUser._id);
+
+            if(!existLandload){
+                return res.status(404).json({massage : "Please Complete Your Profile..."});
+            }
+
+            if(existLandload.status !== 'APPROVED'){
+                return res.status(404).json({massage: 'Please Contact the Admin Team...'})
+            }
         }
 
         return res.status(200).json({
