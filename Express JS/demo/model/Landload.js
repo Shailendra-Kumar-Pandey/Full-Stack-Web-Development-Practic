@@ -20,6 +20,13 @@ const landloadSchema = new mongoose.Schema(
             type:String,
             enum:['APPROVED', 'PENDING', 'REJECT', 'BLOCK'],
             default: 'PENDING'
+        },
+        remark:{
+            type:String,
+            trim: true
+        },
+        approvedAt:{
+            type:Date
         }
     },
     {
