@@ -12,7 +12,7 @@ export const completeProfile = async (req, res)=>{
         
         let existUser = await landloadProfile.findOne({userID:userID});
     
-        if(!existUser){
+        if(existUser){
             return res.status(404).json({massage : "Profile Already Exist... Please Contact to Admin..."})
         }
 
