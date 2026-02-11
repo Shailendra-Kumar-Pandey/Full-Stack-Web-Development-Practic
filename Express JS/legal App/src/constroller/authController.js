@@ -46,7 +46,7 @@ export const logIN = async(req, res)=>{
 
     try {
         
-        let existUser = await userModel.findOne(email)
+        let existUser = await userModel.findOne({email: email})
 
         if(!existUser){
             return res.status(400).json({massage : "Please Enter Vailid Email Id... This user Not exist..."})
@@ -54,8 +54,14 @@ export const logIN = async(req, res)=>{
 
         let isMatch = await bcrypt.compare(password, existUser.password);
 
-        
+        if(!isMatch){
+            return res.status(400).json({massage: "Please enter correct password..."});
+        }
 
+        return res.status(201).json({
+            massage : " User Log In Successfully..."
+
+        })
 
     } catch (error) {
         return res.status(500).json({massage : `${error} Server Error...`})
