@@ -1,4 +1,5 @@
 import Counter from "./Components/Counter"
+import Password from "./Components/Password";
 
 function App() {
 
@@ -6,6 +7,9 @@ function App() {
     <>
         <h1>Hello React App</h1>
         <Counter />
+
+
+        <Password />
     </>
   )
 }
