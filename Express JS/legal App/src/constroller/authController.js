@@ -1,5 +1,8 @@
 import userModel from '../models/Users.js'
 import bcrypt from 'bcrypt';
+import token from '../utiles/tokenGenerate.js';
+import lawyerModel from '../models/LawyerProfile.js'
+
 
 export const RagistrationController = async (req, res)=>{
 
@@ -58,8 +61,29 @@ export const logIN = async(req, res)=>{
             return res.status(400).json({massage: "Please enter correct password..."});
         }
 
+        // LAWYER validation
+        if(existUser.role === "LAWYER"){
+
+            let existLawyer = await lawyerModel.findOne({userId:existUser._id});
+
+            if(!existLawyer){
+                return res.status(404).json({massage : "Please Complite Profile First..."})
+            }
+
+            if(existLawyer?.status != "APPROVED"){
+                return res.status(404).json({massage : "Please contact Admin Panel Profile Not Approved..."})
+            }
+        }
+
         return res.status(201).json({
-            massage : " User Log In Successfully..."
+            massage : " User Log In Successfully...",
+            result : {
+                name : existUser?.name,
+                token : token(existUser?._id, existUser?.name ),
+                email : existUser?.email,
+                role : existUser?.role,
+                phone: existUser?.phone
+            }
 
         })
 
