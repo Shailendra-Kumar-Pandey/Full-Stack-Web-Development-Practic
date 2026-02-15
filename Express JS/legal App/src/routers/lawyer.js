@@ -1,5 +1,5 @@
 import express from 'express';
-import { lawyerProfile } from '../constroller/lawyerController';
+import { lawyerProfile } from '../constroller/lawyerController.js';
 
 const router = express.Router()
 

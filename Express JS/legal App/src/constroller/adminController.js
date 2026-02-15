@@ -1,10 +1,10 @@
-import userModel from "../models/Users.js"
+import lawyerModel from "../models/LawyerProfile.js"
 
 
 export const fetchLawyers = async(req, res)=>{
 
     try {
-        let getAllLawyers = await userModel?.find({role:"LAWYER"})
+        let getAllLawyers = await lawyerModel.find()
         return res.status(200).json({
             massage : "Get All Lawyers...",
             result : getAllLawyers
