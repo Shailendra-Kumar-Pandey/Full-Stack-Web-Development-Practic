@@ -1,7 +1,10 @@
 
-function Prop(){
+function Prop(props){
     return (
-        <h1>User Full Name </h1>
+        <>
+            <h1>User Full Name = {props.name}</h1>
+            <h2>User Age = {props.age}</h2>
+        </>
     );
 }
 

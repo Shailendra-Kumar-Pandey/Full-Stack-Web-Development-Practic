@@ -7,7 +7,7 @@ const App = ()=>{
   return (
     <>
       <h1>Parent Component</h1>
-      <Prop/>
+      <Prop  name = "Shailendra Kumar Pandey" age = "21"/>
     </>
   )
 }
