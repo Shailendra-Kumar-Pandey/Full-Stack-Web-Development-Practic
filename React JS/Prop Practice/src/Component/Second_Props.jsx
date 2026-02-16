@@ -1,9 +1,9 @@
 
 
-function Second_Props(){
+function Second_Props({data}){
     return (
         <>
-            <h1>hello 2</h1>
+            <h1>address = {data}</h1>
         </>
     )
 }
