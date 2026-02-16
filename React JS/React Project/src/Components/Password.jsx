@@ -20,10 +20,7 @@ const Password = ()=>{
     return(
         <>
             <h1>Change Text Color</h1>
-
-            <input type="text" style={{color:color}} value={word}  onChange={(e)=> {
-                changeValue(e.target.value)
-            }}/>
+            <input type="text" style={{color:color}} value={word}  onChange={(e)=> {changeValue(e.target.value)}}/>
         </>
     )
 }
