@@ -10,12 +10,15 @@ function App(){
             console.log(response)
         })
         .catch((err)=>{
-            
+            console.log(err)
         })
     },[])
     return(
         <>
-            <h1>home page</h1>
+            <div className="title">
+                <h1>User Data</h1>
+            </div>
+            
         </>
     );
 }
