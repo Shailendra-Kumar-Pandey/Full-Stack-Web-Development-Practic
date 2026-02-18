@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Users from "./Users";
 
 function App(){
     useEffect(()=>{
@@ -18,7 +19,9 @@ function App(){
             <div className="title">
                 <h1>User Data</h1>
             </div>
-            
+
+            <Users/>
+
         </>
     );
 }
