@@ -18,3 +18,21 @@ body{
     color: #333;
     padding-top: 10px ;
 }
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* background-color: aqua; */
+}
+table{
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    padding: 10px;
+}
+th, td{
+    border: 1px solid #0f0f0f;
+    padding: 10px;
+    text-align: left;
+}
