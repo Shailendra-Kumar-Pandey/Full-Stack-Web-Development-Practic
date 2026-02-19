@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 const Child = () => {
     
-    let ele = useRef("")
+    let ele = useRef("")  /// useRef hook is a holding in refrence and also Dom manupulation
 
     // console.log(ele)
     function dom(){
