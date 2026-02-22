@@ -41,3 +41,19 @@ h1{
   text-align: center;
   padding: 20px;
 }
+
+.product{
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.product > button{
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  outline: 1px 1px 0px 1px rgb(185, 185, 211);
+  background-color: #c2b5b5;
+  color: #fff;
+  border: 1px solid transparent;
+}
