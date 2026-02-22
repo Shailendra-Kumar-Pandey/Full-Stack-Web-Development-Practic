@@ -8,3 +8,36 @@ body{
   background-color: #7aacf8c2;
   font-family: 'Courier New', Courier, monospace;
 }
+.main{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #dadf9ec2;
+  /* padding: 10px; */
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.main > ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+li{
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+li:hover{
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
+}
+h1{
+  text-align: center;
+  padding: 20px;
+}
