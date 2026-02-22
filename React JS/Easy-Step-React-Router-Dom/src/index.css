@@ -14,15 +14,17 @@ body{
   justify-content: space-between;
   align-items: center;
   background-color: #dadf9ec2;
-  /* padding: 10px; */
+  padding: 10px;
   font-size: 20px;
   font-weight: 700;
+  flex-wrap: wrap;
 }
 
 .main > ul{
   list-style-type: none;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
 li{
@@ -30,13 +32,14 @@ li{
   padding: 10px;
   border-radius: 10px;
   border: 1px solid transparent;
+  text-decoration: none;
+  /* color: black; */
+}
+a{
+  text-decoration: none;
+  color: black; 
 }
 
-li:hover{
-  cursor: pointer;
-  background-color: #333;
-  color: #fff;
-}
 h1{
   text-align: center;
   padding: 20px;
@@ -53,7 +56,12 @@ h1{
   font-size: 18px;
   border-radius: 10px;
   outline: 1px 1px 0px 1px rgb(185, 185, 211);
-  background-color: #c2b5b5;
+  background-color: hsl(286, 79%, 72%);
   color: #fff;
   border: 1px solid transparent;
 }
+li:hover, a:hover,button:hover{
+    cursor: pointer;
+    background-color: #333;
+    color: #fff;
+  }
