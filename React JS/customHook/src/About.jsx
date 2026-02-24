@@ -1,26 +1,19 @@
-import About from "./About"
-import { useMathProblem } from "./useChangeState"
+import React from 'react'
+import { useMathProblem } from './useChangeState'
 
-
-function App() {
-
-  let {count, increment, decrement, reset} =useMathProblem()
-
+function About() {
+    let {count, increment,reset} = useMathProblem(100)
   return (
     <>
-      <h1>Home Page</h1>
+      <h1>About Page</h1>
       <h1 style={{textAlign:'center'}}>Counter = {count}</h1><br />
       <div style={{display:'flex',justifyContent:'center', alignItems:'center', gap:'10px'}}>
 
         <button onClick={increment}>increment</button> <br /><br />
-        <button onClick={decrement}>decrement</button><br /><br />
         <button onClick={reset}>reset</button>
       </div>
-      <hr />
-      <About/>
-      
     </>
   )
 }
 
-export default App
+export default About
