@@ -1,9 +1,18 @@
-import React from "react";
+import { useState } from "react";
 import {useNavigate } from 'react-router-dom'
 
 function Form() {
 
   const navigator = useNavigate();
+
+  const [userData, setUserData] = useState({
+    name: null,
+    email: null,
+    password: null,
+  })
+
+  const users = localStorage.setItem('user', userData) || []
+  
 
   function handleNavigator(){
     navigator('/')
