@@ -1,10 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+
+    const navigator = useNavigate()
+
+    const handleNavigator = ()=>{
+        navigator('/form')
+    }
   return (
         <>
             <div>
-               <button>Create New USER</button>
+               <button onClick={handleNavigator} >Create New USER</button>
 
                <table >
                     <thead >
