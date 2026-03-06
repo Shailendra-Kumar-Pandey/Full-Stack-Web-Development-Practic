@@ -1,27 +1,20 @@
-import { useForm } from 'react-hook-form';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './componants/Home';
+import Form from './componants/Form';
 
 function App() {
-  
-  const {register, handleSubmit} = useForm()
-  
-  function onSubmit(data){
-    console.log(data)
-  }
+ 
 
   return (
     <>
-    <div className='flex justify-center items-center'>
-      <h1 className="font-bold p-4">React Hook Form</h1>      
-    </div>
-    <form className='bg-sky-400 w-full h-1/2'  onSubmit={handleSubmit(onSubmit)}>
-      <input type="id" name="id" id="id" />
-      <input type="text" name="name" id="name" />
-      <input type="email" name="email" id="email" />
-      <input type="password" name="password" id="password" />
-      <button type="submit">submit</button>
-    </form>
+        <BrowserRouter>
+          <Routes>
+              <Route path='/'  element={<Home />} />
+              <Route path='/form' element={<Form />} />
+          </Routes>        
+        </BrowserRouter>     
     </>
-  )
+  );
 }
 
-export default App
+export default App;
