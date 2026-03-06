@@ -1,18 +1,22 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {  Routes, Route, useNavigate } from 'react-router-dom';
 import Home from './componants/Home';
 import Form from './componants/Form';
+import { useRef } from 'react';
 
 function App() {
  
+  const navigator = useNavigate()
+
+  let data = useRef([])
+
+
 
   return (
     <>
-        <BrowserRouter>
           <Routes>
-              <Route path='/'  element={<Home />} />
-              <Route path='/form' element={<Form />} />
+              <Route path='/'  element={<Home  onNavigate={() => {navigator('/form')}}/>} />
+              <Route path='/form' element={<Form onNavigate={() => {navigator('/')}} />} />
           </Routes>        
-        </BrowserRouter>     
     </>
   );
 }

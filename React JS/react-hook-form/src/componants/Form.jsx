@@ -2,11 +2,12 @@ import React from 'react'
 import { useForm } from "react-hook-form";
 
 
-function Form() {
+function Form({onNavigate}) {
      const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
     console.log(data);
+    onNavigate()
   }
   return (
     <div>

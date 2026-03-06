@@ -1,11 +1,13 @@
-import React from 'react'
+import React from 'react';
 
+function Home({onNavigate}) {
 
-function Home() {
+    
+
   return (
     <>
         <div className='flex flex-wrap flex-col justify-center items-center'>
-            <button>Add new Data</button>
+            <button onClick={onNavigate} >Add new Data</button>
             <div>
                 <table>
                     <thead>
