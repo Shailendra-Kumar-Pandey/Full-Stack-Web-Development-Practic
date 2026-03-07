@@ -12,4 +12,5 @@ function solution(arr) {
 
 
 let data = [0,0,0,1,1,2,3,3,3,4,4,4]
+
 console.log(solution(data));
