@@ -71,7 +71,7 @@ export const createCaseWithAIResponse = async (req, res) => {
 
         
         const ai = new GoogleGenAI({
-          apiKey: 'AIzaSyA5UzD44a6kdsRTb_JFZvof60E9TNSFrFM'
+          apiKey: 'AIzaSyDdfSl4S4u-dBDBgqmq6VHyNJVxpyuC5-4'
         });
 
         const response = await ai.models.generateContent({
@@ -83,13 +83,13 @@ export const createCaseWithAIResponse = async (req, res) => {
             }
         });
 
-        console.log("Raw AI Response:", response);
+        // console.log("Raw AI Response:", response);
 
         let result=response?.candidates[0]?.content?.parts[0]?.text;
         let resultAI = result.split("```json")[1]?.split("```")[0]?.trim();
 
         let axtractedData=JSON.parse(resultAI);
-        console.log(axtractedData)
+        // console.log(axtractedData)
 
         res.json({
             success: true,
@@ -100,7 +100,7 @@ export const createCaseWithAIResponse = async (req, res) => {
 
         
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         return res.status(500).json({message : `${error}, Server Error...`})
     }
 }
