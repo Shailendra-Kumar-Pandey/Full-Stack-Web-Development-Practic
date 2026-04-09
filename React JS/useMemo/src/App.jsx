@@ -21,7 +21,9 @@ function App() {
    <div style={{display:"flex", justifyContent:"center", alignItems:"center",}}>
     <div style={{width:"400px", padding: "10px", border:"1px solid red", display:"flex", justifyContent:"center", gap:"10px",flexDirection:"column "}}>
         <h1 style={{textAlign:"center",}}>Result = {result}</h1>
-          <button onClick={()=> setCount(count+1)}>Increse Count</button>
+        <h1 style={{textAlign:"center",}}>Number = {num}</h1>
+        <h1 style={{textAlign:"center",}}>Count = {count}</h1>
+          <button onClick={()=> setCount(count+1)}>rerender Component Increse Count</button>
           <button onClick={()=> setNum(num+1)}>change Number</button>
     </div>
    </div>
